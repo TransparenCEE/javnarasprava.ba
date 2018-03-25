@@ -1,0 +1,84 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Quiz_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-4">
+    <div class="panel">
+        <div class="panel-body">
+            <p>
+                @Html.ActionLink( GlobalLocalization.Admin_Quiz_StartQuiz, "Take", "Quiz", new { Id = Model.QuizId }, new { target = "_blank", Class="btn btn-default btn-block" } )
+            </p>            
+            @if ( !String.IsNullOrEmpty( Model.ImageRelativePath ) )
+            {
+                <p> <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetQuizImage( Model.ImageRelativePath )" class="img-responsive"> </p>
+            }
+            else
+            {
+                <p>@GlobalLocalization.Admin_Global_NoPictureAssigned</p>
+            }
+
+            <p>
+                @Html.DisplayNameFor( model => model.TimeCreated ): 
+                @Html.DisplayFor( model => model.TimeCreated )
+            <br>
+                @Html.DisplayNameFor( model => model.Title ): 
+                @Html.DisplayFor( model => model.Title )
+            <br>
+                @Html.DisplayNameFor( model => model.Description ): 
+                @Html.DisplayFor( model => model.Description )
+            </p>
+            <p>
+                @Html.ActionLink( GlobalLocalization.Admin_Global_Edit, "EditQuiz", new { id = Model.QuizId }, new{@class="btn btn-default btn-sm"} )
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteQuiz", new { id = Model.QuizId }, new{@class="btn btn-default btn-sm"} )
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8">
+
+    <div class="panel">
+        <div class="panel-heading">
+            @GlobalLocalization.Admin_Global_InfoBox_Heading
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label">@GlobalLocalization.Admin_Global_InfoBox_TopList</label>
+                @Html.Action("InfoBoxStatus", new { Reference = Model.QuizId, Partition = Model.ParliamentId, BoxName = "Top", Type = "Quiz", Class="form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading">
+            @GlobalLocalization.Admin_Quiz_Items
+        </div>
+        <table class="table">
+            @foreach ( var item in Model.Items )
+            {
+                <tr>
+                    <td nowrap>
+                        @GlobalLocalization.QuizItem_Order: @item.Order
+                    </td>
+                    <td>
+                        <i class="fa fa-book"></i> @Html.ActionLink( item.LawTitle, "LawDetails", "JavnaRasprava", new { lawId = item.LawId }, new { target = "_blank" } )
+                        <br />
+                        @if ( item.Type == JavnaRasprava.WEB.DomainModels.QuizItemType.LawSection )
+                        {
+                            <i class="fa fa-lightbulb-o"></i> @Html.ActionLink( item.SectionTitle, "LawDetails", "JavnaRasprava", new { lawId = item.LawId }, new { target = "_blank" } )
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="panel-footer">
+            @Html.ActionLink( GlobalLocalization.Admin_Quiz_EditItems, "EditQuizItems", new { id = Model.QuizId }, new { @class="btn btn-default"} )
+            @Html.ActionLink( GlobalLocalization.Admin_Global_BackToList, "ManageQuiz", null, new { @class="btn btn-default"} )
+        </div>
+    </div>
+
+</div>
+

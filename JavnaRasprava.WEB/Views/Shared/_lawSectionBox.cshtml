@@ -1,0 +1,45 @@
+﻿@model LawSectionSummaryModel
+
+<div class="theme col-sm-3 col-md-3 space-bottom-lg">
+    @if ( !String.IsNullOrWhiteSpace( Model.ImageRelativePath ) )
+    {
+    <div class="img-container-4x3">
+        <a href='@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.LawID, sp = "lawSection_" + Model.LawSectionID } )'>
+            <img src='@Url.Content( JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawSectionImage( Model.ImageRelativePath ) )' class="img-responsive" />
+        </a>
+    </div>
+    }
+    <div class="theme-stats">
+        @if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+        {
+            <div class="progress">
+                @if ( Model.VotesUpPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-success" style="width: @Model.VotesUpPercentage%" aria-valuenow=@Model.VotesUpPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesUpPercentage%
+                    </div>
+}
+                @if ( Model.VotesDownPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-danger" style="width: @Model.VotesDownPercentage%" aria-valuenow=@Model.VotesDownPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesDownPercentage%
+                    </div>
+}
+            </div>
+        }
+        else
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width:2em;">
+                    0%
+                </div>
+            </div>
+        }
+    </div>
+    <h4>@Html.RouteLink( Model.Title, JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.LawID, sp = "lawSection_" + Model.LawSectionID }, null )</h4>
+    <span>@Model.Text</span>
+    <hr style="margin:10px 0; border-top:1px solid #DDD">
+    <div class="col-xs-1 no-padding"><i class="fa fa-book"></i></div>
+    <div class="col-xs-11 no-padding">@Html.RouteLink( Model.LawTitle, JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.LawID }, null )</div>
+</div>
+

@@ -1,0 +1,12 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizItemResultsModel
+
+<div class="col-md-12 space-bottom-lg">
+        <h4>
+            <span class="fa fa-book"></span> @Html.ActionLink( Model.LawTitle, "LawDetails", "JavnaRasprava", new { lawId = Model.LawId }, null )
+        </h4>
+
+       @Html.Partial("_VotesDistribution", Model )
+        
+        <i> @Model.CustomUserVoteText</i>
+</div>
+

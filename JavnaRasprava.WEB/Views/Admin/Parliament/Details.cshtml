@@ -1,0 +1,50 @@
+﻿@model JavnaRasprava.WEB.Models.Parliament.ParliamentEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Parliament_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <fieldset>
+        <legend>
+            @GlobalLocalization.Admin_Parliament_Details_PageTitle
+        </legend>
+
+        <dl class="dl-horizontal">
+            <dt> @Html.DisplayNameFor(model => model.Name) </dt>
+            <dd> @Html.DisplayFor(model => model.Name) </dd>
+
+            <dt> @Html.DisplayNameFor(model => model.Code) </dt>
+            <dd> @Html.DisplayFor(model => model.Code) </dd>
+
+            <dt> @Html.DisplayNameFor(model => model.Order) </dt>
+            <dd> @Html.DisplayFor(model => model.Order) </dd>
+
+            <dt> @Html.DisplayNameFor(model => model.RepresentativesScreenTitle) </dt>
+            <dd> @Html.DisplayFor(model => model.RepresentativesScreenTitle) </dd>
+        </dl>
+        <p>
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditParliament", new { id = Model.ParliamentID }) |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteParliament", new { id = Model.ParliamentID })
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            @GlobalLocalization.Admin_Parliament_ParliamentHouses
+        </legend>
+
+        @foreach (var item in Model.ParliamentHouses)
+        {
+            <dl class="dl-horizontal">
+                <dt> @GlobalLocalization.ParliamentHouse_Order: @item.Order </dt>
+                <dd> @item.Name </dd>
+            </dl>
+        }
+        <p> @Html.ActionLink(GlobalLocalization.Admin_Parliament_EditParliamentHouses, "EditParliamentHouses", new { id = Model.ParliamentID }) </p>
+    </fieldset>
+
+    <p> @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "ManageParliament") </p>
+</div>
+

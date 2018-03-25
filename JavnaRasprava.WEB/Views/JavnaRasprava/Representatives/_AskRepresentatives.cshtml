@@ -1,0 +1,84 @@
+﻿@model AskLawQuestionModel
+
+
+        @*@using ( Ajax.BeginForm( actionName: "AskRepresentative", routeValues: new { lawId = Model.LawID }, ajaxOptions: new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "representatives", InsertionMode = InsertionMode.Replace } ) )
+        {*@
+        <form id="askRepresentativesForm">
+
+
+            <div>
+                <h4>@GlobalLocalization.JavnaRasprava_AskRep_SelectedRep_Heading</h4>
+                <div class="clearfix">
+                    @foreach ( var representative in Model.SuggestedRepresentatives )
+                    {
+                            <div class="representative thumbnail" id="divSuggestedRepresentative_@representative.ID" onclick="ToggleRepresentativeSelection('divSuggestedRepresentative_', 'suggestedRepresentative_', @representative.ID)">
+                                <a href="#" class="">
+                                    <div class="representative-image">
+                                        <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( representative.ImageRelativePath )" class="img-responsive">
+                                    </div>
+                                    <div class="representative-info">
+                                        <strong>@representative.FullName</strong>
+                                        <br>
+                                        @representative.PartyName
+                                        <br>
+                                        @representative.Reason
+                                    </div>
+                                </a>
+                            @Html.HiddenFor( m => Model.SuggestedRepresentatives[ Model.SuggestedRepresentatives.IndexOf( representative ) ].ID )
+                            @Html.CheckBoxFor( m => Model.SuggestedRepresentatives[ Model.SuggestedRepresentatives.IndexOf( representative ) ].IsSelected, new { @class="repSelected", customid = "suggestedRepresentative_" + representative.ID, hidden = "hidden" } )
+                            </div>
+                    }
+                </div>
+
+
+                @foreach ( var question in Model.Questions )
+                {
+                    @Html.HiddenFor( m => Model.Questions[ Model.Questions.IndexOf( question ) ].ID )
+                    @Html.HiddenFor( m => Model.Questions[ Model.Questions.IndexOf( question ) ].Text )
+                    @Html.CheckBoxFor( m => Model.Questions[ Model.Questions.IndexOf( question ) ].IsSelected, new { @class = "predefinedQuestion"} ) @question.Text
+                    <br />
+                }
+                <br />
+                @Html.TextAreaFor( m => m.Text, new { placeholder = GlobalLocalization.JavnaRasprava_AskRep_CustomQuestion_ValuePlaceHolder, @class = "form-control", id = "customQuestion", rows = "3" } )
+                <br />
+                <a id="btnAskQuestionTop" class="btn btn-primary pull-right" onclick="btnAskQuestionClicked(@Model.LawID)">@GlobalLocalization.JavnaRasprava_OpenAskRepresentativeModal_Button</a>
+                <br />
+                <br />
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="ToggleButtonVisibility()">
+                                    @GlobalLocalization.JavnaRasprava_AskRep_ChooseOter
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <div class="">
+                                @foreach ( var otherRepresentative in Model.OtherRepresentatives )
+                                {
+                                        <a href="#" class="representative thumbnail" id="divOtherRepresentative_@otherRepresentative.ID" onclick="ToggleRepresentativeSelection('divOtherRepresentative_', 'otherRepresentative_', @otherRepresentative.ID)">
+                                            <div class="representative-image">
+                                                <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( otherRepresentative.ImageRelativePath )" class="img-responsive">
+                                            </div>
+                                            <div class="representative-info">
+                                            <strong>@otherRepresentative.FullName</strong>
+                                            <br>
+                                            @otherRepresentative.PartyName
+                                            <br>
+                                            @otherRepresentative.Reason
+                                            </div>
+                                        </a>
+                                    @Html.HiddenFor( m => Model.OtherRepresentatives[ Model.OtherRepresentatives.IndexOf( otherRepresentative ) ].ID )
+                                    @Html.CheckBoxFor( m => Model.OtherRepresentatives[ Model.OtherRepresentatives.IndexOf( otherRepresentative ) ].IsSelected, new { @class = "repSelected", customid = "otherRepresentative_" + otherRepresentative.ID, hidden = "hidden" } )
+                                }
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a id="btnAskQuestionBottom" class="btn btn-primary" style="display: none;" onclick="btnAskQuestionClicked(@Model.LawID)">@GlobalLocalization.Representative_AskRep_Button</a>
+            </div>
+            @*}*@
+        </form>

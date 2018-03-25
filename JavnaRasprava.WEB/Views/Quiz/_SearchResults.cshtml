@@ -1,0 +1,26 @@
+﻿@model PagedList.IPagedList<JavnaRasprava.WEB.Models.Quiz.QuizSummaryModel>
+
+
+<div class="clearfix">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong><span class="fa fa-book"></span>@GlobalLocalization.Global_Quizes</strong>
+        </div>
+        <br />
+
+        @if ( Model.Count == 0 )
+        {
+            <h5>@GlobalLocalization.Global_SearchResults_NoResultsMessage</h5>
+        }
+
+        @foreach ( var item in Model )
+        {
+            @Html.Partial( "_quizBox", item );
+        }
+        
+        <div class="clearfix"></div>
+        <br />
+    </div>
+</div>
+
+

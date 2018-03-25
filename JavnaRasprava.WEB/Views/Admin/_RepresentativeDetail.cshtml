@@ -1,0 +1,31 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawRepresentativeModel
+
+    <div id="divRepresentative_@Model.LawRepresentativeAssociationID">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.FirstName )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.LastName )
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Reason)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Reason )
+            </dd>
+        </dl>
+        @Ajax.ActionLink( GlobalLocalization.Admin_Global_Delete, "DeleteLawSuggestedRepresentative", new { lawRepresentativeAssociationID = Model.LawRepresentativeAssociationID }, 
+       new AjaxOptions { OnSuccess = "DeleteSuggestedRepresentative", HttpMethod = "Post", Confirm = GlobalLocalization.Global_AreYouSureToDelete } )
+
+    </div>

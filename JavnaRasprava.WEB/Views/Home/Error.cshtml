@@ -1,0 +1,17 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = GlobalLocalization.Error;
+}
+
+<h1 class="text-danger">@GlobalLocalization.Error</h1>
+@{
+    if ( String.IsNullOrEmpty( ViewBag.errorMessage ) )
+    {
+        <h2 class="text-danger">@GlobalLocalization.RequestError</h2>
+    }
+    else
+    {
+        <h2 class="text-danger">@ViewBag.errorMessage</h2>
+    }
+}

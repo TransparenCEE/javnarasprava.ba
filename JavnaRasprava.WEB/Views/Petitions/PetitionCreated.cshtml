@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = GlobalLocalization.Petition_Created_PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@GlobalLocalization.Petition_Created_PageTitle</h2>
+
+<div>@GlobalLocalization.Petition_Created_ConfirmationMessage</div>
+
+@Html.ActionLink( GlobalLocalization.Global_BackToList_Link, "Index" )

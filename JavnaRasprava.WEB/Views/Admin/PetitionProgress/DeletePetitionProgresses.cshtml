@@ -1,0 +1,48 @@
+﻿@model JavnaRasprava.WEB.Models.Petition.PetitionProgressEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_PetitionProgress_Delete_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>@GlobalLocalization.Admin_PetitionProgress_Delete_Heading</h3>
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelectedRepresentativeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelectedRepresentativeName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@GlobalLocalization.Admin_Global_Delete" class="btn btn-default" /> |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "ManagePetitionProgresses")
+        </div>
+    }
+</div>

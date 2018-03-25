@@ -1,0 +1,51 @@
+﻿@model JavnaRasprava.WEB.Models.Law.PostAnswerModel
+
+@{
+    ViewBag.Title = GlobalLocalization.JavnaRasprava_Answering_PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@GlobalLocalization.JavnaRasprava_Answering_Heading</h2>
+
+@if ( Model.LawID.HasValue && Model.LawID.Value != 0 )
+{
+    <p>@GlobalLocalization.Global_Law: @Html.ActionLink( Model.LawTitle, "LawDetails", new { lawId = Model.LawID }, new { target = "_blank" } )</p>
+}
+<p>
+    @GlobalLocalization.Global_Representative: @Html.ActionLink(Model.RepresentativeDisplayName , "Representative", "Representatives", new { repId = Model.RepresentativeID }, new { target = "_blank" } )
+
+</p>
+<p>@GlobalLocalization.Global_Question: @Model.QuestionText</p>
+
+
+@using ( Html.BeginForm() )
+{
+    @Html.AntiForgeryToken()
+
+
+    @Html.HiddenFor( model => model.LawID )
+    @Html.HiddenFor( model => model.QuestionID )
+    @Html.HiddenFor( model => model.AnswerToken )
+    @Html.HiddenFor( model => model.RepresentativeID )
+
+
+
+
+    <div class="form-group">
+
+        <div class="col-md-10">
+            @GlobalLocalization.Global_YourAnswer:
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor( model => model.Answer, new { htmlAttributes = new { @class = "form-control" } } )
+            @Html.ValidationMessageFor( model => model.Answer, "", new { @class = "text-danger" } )
+        </div>
+
+
+
+        <div class="col-md-10">
+            <input type="submit" value="@GlobalLocalization.Global_Send" class="btn btn-default" />
+        </div>
+
+    </div>
+}

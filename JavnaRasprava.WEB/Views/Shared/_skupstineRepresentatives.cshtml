@@ -1,0 +1,13 @@
+﻿@model List<JavnaRasprava.WEB.DomainModels.Parliament>
+
+<div class="row">
+    @foreach (var parliament in Model)
+    {
+        <div class="@ViewBag.DivClass  sveto-trojstvo" role="presentation">
+            <a href="@Url.RouteUrl( ViewBag.ReturnUrl, new { pCode = parliament.Code})"
+               class="@(ViewBag.ParliamentId == parliament.ParliamentID ? "psbih active paper" : "psbih" )">
+                @parliament.RepresentativesScreenTitle
+            </a>
+        </div>
+    }
+</div>

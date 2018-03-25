@@ -1,0 +1,9 @@
+﻿@model JavnaRasprava.WEB.Models.Law.ExpertCommentEditModel
+
+<div id="divExpertCommentDetail_@Model.ExpertCommentID">
+    <p>@Model.ExpertFirstName @Model.ExpertLastName</p>
+    <p>@Model.ExpertAbout</p>
+    <p>@Html.Raw(Model.Text)</p>
+    @Ajax.ActionLink(@GlobalLocalization.Admin_Global_Delete, "DeleteLawExpertComment", new { lawExpertCommentId = Model.ExpertCommentID }, 
+    new AjaxOptions { OnSuccess = "DeleteExpertComment", HttpMethod = "Post", Confirm = GlobalLocalization.Global_AreYouSureToDelete } )
+</div>

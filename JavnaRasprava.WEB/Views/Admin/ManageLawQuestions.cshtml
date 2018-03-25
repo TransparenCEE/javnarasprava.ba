@@ -1,0 +1,39 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Law_ManagePredefinedQuestions;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Admin_Law_ManagePredefinedQuestions</h2>
+<h4>@GlobalLocalization.Admin_Global_LawTitle: @Model.Title</h4>
+<div>
+    @if ( Model.Questions != null )
+    {
+        <div class="panel">
+            <div class="panel-heading">@GlobalLocalization.Admin_Law_PredefinedQuestions</div>
+            <div class="panel-body">
+                @foreach ( var question in Model.Questions.Where( x => x.IsSuggested ) )
+                {
+                    @Html.Partial( "_QuestionDetails", question )
+                }
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink( GlobalLocalization.Admin_PredefinedQuestion_AddNew, "CreateLawQuestion", new { lawId = Model.LawID } )
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">@GlobalLocalization.Admin_Law_OtherQuestions</div>
+            <div class="panel-body">
+                @foreach ( var question in Model.Questions.Where( x => !x.IsSuggested ) )
+                {
+                    @Html.Partial( "_QuestionDetails", question )
+                }
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink( GlobalLocalization.Admin_Global_BackToLaw, "LawDetails", new { lawId = Model.LawID } )
+            </div>
+        </div>
+    }
+</div>

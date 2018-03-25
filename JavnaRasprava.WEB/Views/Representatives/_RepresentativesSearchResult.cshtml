@@ -1,0 +1,21 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeListModel
+
+<div id="searchResult">
+    <div class="row">
+        @{
+            foreach ( var item in Model.ParliamentHouses )
+            {
+                if (Model.ParliamentHouses.Count == 1) // tk
+                {
+                    <div class="col-md-12">
+                        @Html.Partial( "_ParliamentHouse", item )
+                    </div>
+                }else{
+                    <div class="col-md-6">
+                        @Html.Partial( "_ParliamentHouse", item )
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

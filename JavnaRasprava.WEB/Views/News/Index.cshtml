@@ -1,0 +1,27 @@
+﻿@model JavnaRasprava.WEB.Models.News.NewsListModel
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@Html.Action( "NewsIndex", "ParliamentSelection", new { pCode = ViewBag.ParliamentCode })
+
+@{
+    ViewBag.Title = GlobalLocalization.News_PageTitle;
+}
+
+<div class="panel panel-default home-search-filter">
+    @Html.Partial( "_SearchPanel", Model.SearchModel )
+</div>
+
+<div id="SearchResults" class="clearfix">
+    @if ( 1 == 1 )
+    {
+        var res = Model.Results;
+        @Html.Partial( "_SearchResults", res )
+    }
+</div>
+
+<div id="Paging">
+    @string.Format(GlobalLocalization.Global_Paging, (Model.Results.PageCount < Model.Results.PageNumber ? 0 : Model.Results.PageNumber), @Model.Results.PageCount))
+
+    @Html.PagedListPager( Model.Results, page => Url.Action( "Search", new { page, searchModel = Model.SearchModel } ) )
+</div>

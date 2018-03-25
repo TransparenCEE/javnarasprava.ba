@@ -1,0 +1,100 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Representatives_Deatail_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-3">
+<div class="panel">
+    <div class="panel-heading">
+        <strong>@Html.DisplayFor( model => model.FirstName ) @Html.DisplayFor( model => model.LastName )</strong>
+    </div>
+    <div class="panel-body">
+        @if ( !String.IsNullOrEmpty( Model.ImageRelativePath ) )
+        {
+            <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( Model.ImageRelativePath )" class="img-responsive">}
+        else
+        {
+            <p>Parlamentarac/ka nema dodijeljenu fotografiju</p>
+        }
+        
+        @Html.HiddenFor( model => model.RepresentativeID )
+        </p>
+    <p>
+    @Html.DisplayNameFor( model => model.Email ):
+    @Html.DisplayFor( model => model.Email )
+    <br>
+    @Html.DisplayNameFor( model => model.SelectedPartyID ):
+    @Html.DisplayFor( model => model.PartyName )
+    <br>
+    @Html.DisplayNameFor(model => model.EletorialUnit):
+    @Html.DisplayFor( model => model.EletorialUnit )
+    <br>
+    @Html.DisplayNameFor(model => model.Function):
+    @Html.DisplayFor( model => model.Function )
+    <br>
+    @Html.DisplayNameFor(model => model.NumberOfVotes):
+    @Html.DisplayFor( model => model.NumberOfVotes )
+    </p>
+
+    <p>@Html.ActionLink( GlobalLocalization.Admin_Representatives_SeeProfile, "Representative", "Representatives", new { repId = Model.RepresentativeID }, new { target = "_blank" } )</p>
+                
+        </div>
+    </div>    
+
+    <p>
+        @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditRepresentative", new { repId = Model.RepresentativeID }, new {@class = "btn btn-default btn-sm"} )
+        @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteRepresentative", new { repId = Model.RepresentativeID }, new {@class = "btn btn-default btn-sm"} )
+        @Html.ActionLink( GlobalLocalization.Admin_Global_BackToList, "ManageRepresentatives", null, new {@class = "btn btn-default btn-sm"} )
+    </p>
+
+</div>
+
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">@Html.DisplayNameFor(model => model.Resume)</div>
+        <div class="panel-body">
+            @Html.Raw( Model.Resume )
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <div class="panel">
+        <div class="panel-body">
+            @if ( Model.Assignments != null )
+            {
+                <h4>@GlobalLocalization.Admin_Representatives_Assignments</h4>
+                <div>
+                    @foreach ( var item in Model.Assignments )
+                    {
+                        <p>@item.Title</p>
+                    }
+                </div>
+            }
+            
+            <p> @Html.ActionLink(GlobalLocalization.Admin_RepresentativeAssignment_PageTitle, "ManageRepresentativeAssigments", new { repId = Model.RepresentativeID } )</p>
+
+            @if ( Model.ExternalLinks != null )
+            {
+                <h4>@GlobalLocalization.Admin_Representatives_ExternalLinks</h4>
+                <div>
+                    @foreach ( var item in Model.ExternalLinks )
+                    {
+                        <a href="@item.Url">@item.Description</a>
+                    }
+                </div>
+            }
+
+            <p> @Html.ActionLink(GlobalLocalization.Admin_RepresentativeLinks_PageTitle, "ManageRepresentativeExternalLinks", new { repId = Model.RepresentativeID } )</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.Action( "RepresentativeQuestions", new { repId = Model.RepresentativeID } )
+    </div>
+</div>

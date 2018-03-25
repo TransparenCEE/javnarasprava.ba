@@ -1,0 +1,30 @@
+﻿@model JavnaRasprava.WEB.Models.Representative.TopRepresentativesModel
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>@GlobalLocalization.JavnaRasprava_Representative_MostActive</strong></div>
+            <div class="panel-body">
+                @foreach ( var rep in Model.MostActive )
+                {
+                <div class="representative-full thumbnail thumbnail-light">
+                    @Html.Partial( "../Representatives/_RepresentativeQuickNavigationView", rep )
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>@GlobalLocalization.JavnaRasprava_Representative_MostInactive</strong></div>
+            <div class="panel-body">
+                @foreach ( var rep in Model.MostInactive )
+                {
+                <div class="representative-full thumbnail thumbnail-light">
+                    @Html.Partial( "../Representatives/_RepresentativeQuickNavigationView", rep )
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

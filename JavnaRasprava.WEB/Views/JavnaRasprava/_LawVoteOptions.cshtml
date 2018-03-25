@@ -1,0 +1,16 @@
+﻿@model LawCustomVoteListModel
+<table class="table">
+    @foreach ( var voteOption in Model.LawCustomVotes )
+    {
+        <tr>
+            <td><input type="radio" name="lawVote" id="@String.Format("lawVote{0}",voteOption.LawCustomVoteID)" value="@voteOption.LawCustomVoteID" onclick="ClearCustomAnswer()" /></td>
+            <td><label for="@String.Format("lawVote{0}",voteOption.LawCustomVoteID)">@voteOption.Text</label></td>
+        </tr>
+
+    }
+    <tr>
+        <td><input type="radio" name="lawVote" id="lawVoteCustom" value="-1" /></td>
+        <td><input class="form-control" type="text" id="customVoteAnswer" placeholder="@GlobalLocalization.JavnaRasprava_VoteLawModal_CustomVote_Placeholder" onfocus="SelectCustomAnswer('lawVoteCustom')" /></td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" onclick="VoteForLaw(@Model.LawID)">@GlobalLocalization.Global_Vote</button>

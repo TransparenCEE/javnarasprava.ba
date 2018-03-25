@@ -1,0 +1,8 @@
+﻿@model PagedList.IPagedList<PetitionSummaryModel>
+
+<div>
+    @foreach(var petition in Model)
+    {
+        <h5>@Html.ActionLink( ( string )petition.Title, "Details", "Petitions", new { petitionId = petition.Id }, null )</h5>
+    }
+</div>

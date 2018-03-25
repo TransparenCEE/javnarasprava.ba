@@ -1,0 +1,18 @@
+﻿@model JavnaRasprava.WEB.Models.Parliament.ParliamentEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_ParliamentHouse_Edit_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Parliament_Name: @Model.Name</h2>
+
+<h2>@GlobalLocalization.Global_ParliamentHouses</h2>
+
+@Html.ActionLink(GlobalLocalization.Admin_ParliamentHouse_AddNewItem, "CreateParliamentHouse", new { id = Model.ParliamentID } )
+
+@Html.Partial( "Parliament/_parliamentHousesEditList", Model.ParliamentHouses )
+
+<div>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToDetail, "ParliamentDetails", new { id = Model.ParliamentID })
+</div>

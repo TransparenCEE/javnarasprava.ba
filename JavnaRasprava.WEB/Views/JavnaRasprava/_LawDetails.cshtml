@@ -1,0 +1,132 @@
+﻿@model LawModel
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <strong>@Model.Law.Title</strong>
+    </div>
+    <div class="panel-body">
+
+    <div id="lawVotingDetails">
+        @Html.Partial( "_LawVotingDetails", Model )
+    </div>
+
+    <p>
+        <a title="@GlobalLocalization.Law_ExpetedVotingDay class="glyphicon glyphicon-calendar"></a> @Model.Law.ExpectedVotingDayString
+        <br>
+        @if ( !String.IsNullOrWhiteSpace( Model.Law.TextFileRelativePath ) )
+        {
+        <a href="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawDocument( Model.Law.TextFileRelativePath )" target="_blank"><span class="glyphicon glyphicon-download"></span> @GlobalLocalization.GetLawTextFile</a>
+        }
+        else
+        {
+        <a href="javascript:void(0)" style="color:Grey; text-decoration:none;"><span class="glyphicon glyphicon-download"></span> @GlobalLocalization.GetLawTextFile</a>
+        }
+        <br><a onclick="OpenLawDescriptionModal()"><span class="glyphicon glyphicon-zoom-in"></span> @GlobalLocalization.JavnaRasprava_MoreDetails</a>
+    </p>
+
+    <p>
+        <strong>@GlobalLocalization.Law_Submitter:</strong><br> @Model.Law.Submitter
+        <br>
+        <strong>@GlobalLocalization.Law_Procedure:</strong> @Model.Law.Procedure.Title
+        <br>
+        <strong>@GlobalLocalization.Law_Category:</strong> @Model.Law.Category.Title
+        <br>
+        <strong>@GlobalLocalization.Law_Status:</strong> @Model.Law.StatusTitle <a onclick="OpenLawStatusModal()"><span class="glyphicon glyphicon-zoom-in"></span></a> </p>
+    </p>
+
+        <p>@Html.Raw( Model.Law.Text )</p>
+
+        <div class="btn-group" role="group">
+            <a href="https://twitter.com/share" class="btn btn-default btn-sm" target="_blank" data-dnt="true"><i class="fa fa-twitter fa-lg"></i></span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=@Request.Url.ToString()" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+        </div>
+
+        <div class="btn-group pull-right" role="group">
+            <button type="button" class="btn btn-default btn-sm" onclick="GoToUserComments(@Model.Law.LawID)">@GlobalLocalization.Global_UserComments <span class="fb-comments-count badge" href-data="@Request.Url.AbsoluteUri"></span></button>
+            @{
+                var disabled = "";
+                if ( Model.ExpertCommentsCount == 0 )
+                {
+                    disabled = "disabled";
+                }
+
+            }
+            <button type="button" @disabled class="btn btn-default btn-sm" onclick="GoToExpertComments()">@GlobalLocalization.Global_ExpertsComments <span class="badge">@Model.ExpertCommentsCount</span></button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="voteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.JavnaRasprava_VoteLawModel_Title: @Model.Law.Title</h4>
+            </div>
+            <div class="modal-body" id="lawVoteOptions">
+            
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="lawDescriptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.JavnaRasprava_LawDescriptionModal_Title</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Raw( @Model.Law.Description )
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="lawStatusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.JavnaRasprava_LawStatusModal_Title</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Raw( Model.Law.StatusText )
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="votingDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.JavnaRasprava_VotingResultsModal_Title</h4>
+            </div>
+            <div class="modal-body" id="votingDetailsBody">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="sectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.JavnaRasprava_VoteLawSectionModal_Title</h4>
+            </div>
+            <div class="modal-body" id="sectionBody">
+              
+            </div>
+        </div>
+    </div>
+</div>

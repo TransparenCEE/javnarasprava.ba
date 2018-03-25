@@ -1,0 +1,49 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_PredefinedAnswer_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4>@GlobalLocalization.Admin_Global_LawTitle: @Model.Title</h4>
+
+<fieldset>
+    <legend>@GlobalLocalization.Admin_Law_PredefinedVotes</legend>
+    <div>
+        @if ( Model.CustomVotes != null )
+        {
+            foreach ( var customVote in Model.CustomVotes.Where( x => x.IsSuggested ) )
+            {
+                @Html.Partial( "_CustomVoteDetail", customVote )
+            }
+        }
+
+        <br />
+        <br />
+        @Html.ActionLink( GlobalLocalization.Admin_PredefinedAnswer_AddNew, "CreateLawCustomVote", new { lawId = Model.LawID } )
+        <br />
+        <br />
+
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>@GlobalLocalization.Admin_Law_OtherVotes</legend>
+    <div>
+        @if ( Model.CustomVotes != null )
+        {
+            foreach ( var customVote in Model.CustomVotes.Where( x => !x.IsSuggested ) )
+            {
+                @Html.Partial( "_CustomVoteDetail", customVote )
+            }
+        }
+
+        <br />
+        <br />
+
+    </div>
+</fieldset>
+
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToLaw, "LawDetails", new { lawId = Model.LawID } )
+</p>

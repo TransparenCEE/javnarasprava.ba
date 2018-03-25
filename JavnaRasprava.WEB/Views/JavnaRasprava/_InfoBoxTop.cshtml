@@ -1,0 +1,35 @@
+﻿@model JavnaRasprava.WEB.Models.InfoBox.TopInfoBoxCollectionModel
+
+<div class="clearfix">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong><i class="fa fa-certificate"></i> @Model.Title</strong>
+        </div>
+        <br />
+
+        @foreach ( var item in Model.Items )
+        {
+            if (item.Item == null)
+            {
+                continue;
+            }
+            switch ( item.Type )
+            {
+                case JavnaRasprava.WEB.DomainModels.InfoBoxItemType.Law:
+                    @Html.Partial( "_lawBox", item.Item );
+                    break;
+                case JavnaRasprava.WEB.DomainModels.InfoBoxItemType.LawSection:
+                    @Html.Partial( "_lawSectionBox", item.Item );
+                    break;
+                case JavnaRasprava.WEB.DomainModels.InfoBoxItemType.Quiz:
+                    @Html.Partial( "_quizBox", item.Item );
+                    break;
+                case JavnaRasprava.WEB.DomainModels.InfoBoxItemType.News:
+                    @Html.Partial( "_newsBox", item.Item );
+                    break;
+            }
+        }
+        <div class="clearfix"></div>
+        <br />
+    </div>
+</div>

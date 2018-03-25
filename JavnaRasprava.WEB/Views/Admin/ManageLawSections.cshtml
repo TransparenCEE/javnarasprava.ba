@@ -1,0 +1,31 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawSectionEditModelList
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_LawSections_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Global_LawTitle: @Model.LawTitle</h3>
+
+<div>
+    @Html.ActionLink( GlobalLocalization.Admin_LawSections_AddNew, "CreateLawSection", new { lawId = Model.LawID } )
+    <br />
+    <br />
+    @if ( Model.Sections != null )
+    {
+        foreach ( var section in Model.Sections )
+        {
+            @Html.Partial( "_SectionDetail", section )
+            <br />
+            <br />
+        }
+    }
+
+    <br />
+    <br />
+
+
+</div>
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToLaw, "LawDetails", new { lawId = Model.LawID } )
+</p>

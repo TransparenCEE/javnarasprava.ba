@@ -1,0 +1,40 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.PartyModel>
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Party_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Party_Index_PageTitle</h3>
+
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Party_CreateNew, "PartyCreate", "Admin")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="col-md-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>        
+        <th class="col-md-2"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="col-md-2">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td class="col-md-2">
+            @Html.DisplayFor(modelItem => item.FullName )
+        </td>
+        <td class="col-md-2 text-right">
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "PartyEdit", "Admin", new { id = item.PartyID }, null) |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "PartyDetails", "Admin", new { id = item.PartyID }, null) |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "PartyDelete", "Admin", new { id = item.PartyID }, null)
+        </td>
+    </tr>
+}
+
+</table>

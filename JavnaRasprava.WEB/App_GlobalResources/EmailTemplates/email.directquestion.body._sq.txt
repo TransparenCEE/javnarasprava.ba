@@ -1,0 +1,22 @@
+﻿<p>I/E nderuar $model.Question.Representative.FirstName $model.Question.Representative.LastName,</p>
+
+<p>Ky email Ju është dërguar nga konsultimipublik.al, e cila është një platformë që ka si qëllim përmirësimin e komunikimit ndërmjet qytetarëve dhe depuetetëve të Kuvendit. Ju mund të mësoni më shumë rreth kësaj platforme në këtë <a href="http://www.konsultimipublik.al">link</a>.</p>
+
+<p>Ne ju jemi mirënjohës për pjesëmarrjen tuaj në këtë faqe dhe që jeni pjesë e komunikimit të drejtpërdrejtë me qytetarët duke ndihmuar në këtë mënyrë zhvillimin e mëtejshëm të demokracisë në Shqipëri.</p>
+
+<p>Pyetja është bërë drejtpërdrejtë në profilin tuaj nga një prej përdoruesve të faqes.</p>
+
+
+
+<p>Në rast se keni dëshirë për të shikuar profilin tuaj ku mund të shikoni të gjitha pyetjet që ju janë bërë, ju lutem klikoni në këtë <a href="$model.BaseUrl/Representatives/Representative?repId=$model.Question.RepresentativeID">link</a>.</p>
+
+
+<p>Teksti i pyetjes:</p>
+<p>$model.Question.Question.Text</p>
+
+<p>Në rast se keni dëshirë për t'iu përgjigjur kësaj pyetje dhe t'i bashkoheni konsultimit publik me qytetarët, ju duhet të klikoni në këtë <a href="$model.BaseUrl/JavnaRasprava/PostAnswer?token=$model.Question.AnswerToken.Token">link</a>, dhe të shkruani përgjigjen tuaj.</p>
+
+
+<p>Platforma konsultimipublik.al është krijuar me qëllim që të nxisë pjesëmarrjen e publikut në procesin e hartimit të ligjeve si dhe të ndihmojë në komunikimin e drejtpërdrejtë ndërmjet qytetarëve dhe deputetëve. Përgjigjet tuaja, si edhe çdo pyetje që ju bëhet nga qytetarët, janë publike. Në rast se keni pyetje ose paqartësi ju lutem klikoni në këtë <a href="$model.BaseUrl/Home/RepManual">link</a> i cili përmban të gjitha shpjegimet dhe udhëzimet e nevojshme për përdorimin e faqes konsultimipublik.al</p>
+
+<p>Ne mbetemi në dispozicionin tuaj në rast se keni ndonjë pyetje, komente apo nevojë për asistencë. Për këtë qëllim, ju lutem na shkruani në adresën info@lexferenda.al.</p>

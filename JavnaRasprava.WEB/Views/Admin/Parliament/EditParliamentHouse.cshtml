@@ -1,0 +1,48 @@
+﻿@model JavnaRasprava.WEB.Models.Parliament.ParliamentHouseEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_ParliamentHouse_Edit_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>@GlobalLocalization.Admin_ParliamentHouse_Edit_PageTitle</h2>
+
+@using ( Html.BeginForm( "EditParliamentHouse", "Admin" ) )
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary( true, "", new { @class = "text-danger" } )
+        @Html.HiddenFor( model => model.ParliamentID )
+        @Html.HiddenFor( model => model.ParliamentHouseID )
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2", title = Html.DescriptionFor(x => x.Name) })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Order, htmlAttributes: new { @class = "control-label col-md-2", title = Html.DescriptionFor(x => x.Order) })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Order, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Order, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@GlobalLocalization.Admin_Global_Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToDetail, "ParliamentDetails", new { id = Model.ParliamentID })
+</div>

@@ -1,0 +1,119 @@
+﻿@model JavnaRasprava.WEB.Models.PetitionModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Petition_Edit_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Petition_Edit_PageTitle</h3>
+
+@using ( Html.BeginForm( "EditPetition", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" } ) )
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary( true, "", new { @class = "text-danger" } )
+
+        @Html.HiddenFor( model => model.PetitionID )
+
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Title, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.Title )
+                @Html.ValidationMessageFor( model => model.Title, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Description, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.Description )
+                @Html.ValidationMessageFor( model => model.Description, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.YoutubeCode, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.TextBoxFor( model => model.YoutubeCode, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.YoutubeUrl, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.YoutubeUrl, new { htmlAttributes = new { @class = "form-control" } } )              
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label( GlobalLocalization.Admin_Global_Image, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div id="Image" class="col-md-10">
+                @if ( String.IsNullOrEmpty( @Model.ImageRelativePath ) )
+                {
+                    <input type="File" name="Image" id="Image" value="@GlobalLocalization.Admin_Global_ChooseImage" class="form-control" />
+                }
+                else
+                {
+                    @Html.HiddenFor( x => x.ImageRelativePath )
+                    @Html.TextBoxFor( x => x.ImageRelativePath, new { disabled = "disabled" } )
+                    <a onclick="AddUploadFileControl('Image', '@GlobalLocalization.Admin_Global_ChooseImage')">@GlobalLocalization.Admin_Global_ChangeImage</a>
+                }
+            </div>
+        </div>
+
+      
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.SelectedTargetInstitution, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.DropDownListFor( model => model.SelectedTargetInstitution,
+                             Model.TargetInstitutionList.Select( x => new SelectListItem
+                             {
+                                 Text = x.Name,
+                                 Value = x.Id.ToString()
+                             } ).ToList(),
+                                        GlobalLocalization.Global_Dropdown_ValuePlaceHolder,
+                                         new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.SelectedTargetInstitution )
+                @Html.ValidationMessageFor( model => model.SelectedTargetInstitution, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.AdminIgnore, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor( model => model.AdminIgnore )
+                    @Html.RequiredFieldFor( model => model.AdminIgnore )
+                    @Html.ValidationMessageFor( model => model.AdminIgnore, "", new { @class = "text-danger" } )
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Verified, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor( model => model.Verified )
+                    @Html.RequiredFieldFor( model => model.Verified )
+                    @Html.ValidationMessageFor( model => model.Verified, "", new { @class = "text-danger" } )
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@GlobalLocalization.Admin_Global_Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToDetail, "PetitionDetails", new { petitionId = Model.PetitionID } ) | 
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList,   "ManagePetitions" )
+</p>

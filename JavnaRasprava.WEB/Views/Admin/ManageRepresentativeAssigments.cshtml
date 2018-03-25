@@ -1,0 +1,31 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_RepresentativeAssignment_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.DisplayFor( model => model.FirstName ) @Html.DisplayFor( model => model.LastName )
+
+<div>
+
+    @if ( Model.Assignments != null )
+    {
+        foreach ( var assignment in Model.Assignments )
+        {
+            @Html.Partial( "_RepresentativeAssignmentItem", assignment )
+        }
+        <div id="newLink">
+        </div>
+        <div id="addLink">
+            @using ( Ajax.BeginForm( "CreateRepresentativeAssignment", new { representativeId = Model.RepresentativeID }, 
+                new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "newLink", HttpMethod = "Post", OnSuccess = "$('#Title').val('');" } ) )
+            {
+                @Html.Partial( "_CreateRepresentativeAssignment", new JavnaRasprava.WEB.Models.Representative.RepresentativeAssignmentModel() )
+            }
+        </div>
+    }
+</div>
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToDetail, "RepresentativeDetails", new { repId = Model.RepresentativeID } )
+</p>

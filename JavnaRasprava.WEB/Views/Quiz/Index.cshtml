@@ -1,0 +1,28 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizListModel
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@Html.Action( "QuizIndex", "ParliamentSelection", new { pCode = ViewBag.ParliamentCode })
+
+@{
+    ViewBag.Title = GlobalLocalization.Quiz_PageTitle;
+}
+
+<div class="panel panel-default home-search-filter">
+    @Html.Partial( "_SearchPanel", Model.SearchModel )
+</div>
+
+<div id="SearchResults" class="clearfix">
+    @if ( 1 == 1 )
+    {
+        var res = Model.Results;
+        @Html.Partial( "_SearchResults", res )
+    }
+</div>
+
+<div id="Paging">
+    @String.Format(GlobalLocalization.Global_Paging, (Model.Results.PageCount < Model.Results.PageNumber ? 0 : Model.Results.PageNumber), @Model.Results.PageCount)
+
+    @Html.PagedListPager( Model.Results, page => Url.Action( "Search",
+     new { page, searchModel = Model.SearchModel } ) )
+</div>

@@ -1,0 +1,74 @@
+﻿@model LawModel
+
+<div>
+    @Html.Partial( "Representatives/_SuggestedRepresentatives", Model )
+</div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        @GlobalLocalization.JavnaRasprava_RepresentativesAnswers_Heading
+    </div>
+    <div class="panel-body">
+        @if ( Model.RepresentativeAnswers != null && Model.RepresentativeAnswers.Answers != null )
+        {
+            foreach ( var item in Model.RepresentativeAnswers.Answers )
+            {
+                <p class="bg-info small-padding"><strong>Pitanje:</strong> @item.Question.Text</p>
+                <p><strong>@GlobalLocalization.Question_LikeCount:</strong> @item.Question.LikesCount, <strong>@GlobalLocalization.Question_DislikeCount:</strong> @item.Question.DislikesCount</p>
+                <div class="clearfix">
+                    <div class="answerer col-xs-1 no-padding">
+                        <a href="@String.Format( "../Representatives/Representative?repId={0}", item.Representative.ID )" target="_blank">
+                            <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( item.Representative.ImageRelativePath )" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="answer col-xs-11">
+                        <p>
+                            <a href="@String.Format( "../Representatives/Representative?repId={0}", item.Representative.ID )" target="_blank">
+                                <strong>@item.Representative.FullName,</strong>
+                            </a> @item.Representative.PartyName, @item.TimeAnsweredUtc.ToLocalTime().ToString( "dd.MM.yyyy." )<br>
+                            @Html.Raw( item.Text )
+                        </p>
+                    </div>
+                    <div class="btn-group pull-right" role="group" id="answerLikes_@item.ID">
+                        @Html.Partial( "_AnswerLikes", item )
+                    </div>
+                </div>
+                <hr>
+}
+        }
+        <div>
+            @Html.ActionLink( GlobalLocalization.JavnaRasprava_LawQuestionsAndAnswers_Button, "GetLawQuestionsDetails", new { lawId = Model.Law.LawID }, new { @class = "btn btn-block btn-primary" } )
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">@GlobalLocalization.Global_Statistics</div>
+    <div class="panel-body">
+        <strong>@GlobalLocalization.JavnaRasprava_Stat_TotalNumberOfQuestions:</strong> @Model.Statistics.TotalQuestions
+        <br><br>
+        @if ( Model.Statistics.MostActiveRepresentativeId != 0 )
+        {
+            <strong>@string.Format(GlobalLocalization.JavnaRasprava_Stat_MostActiveRep_MessageFormat, Model.Statistics.MostActiveRepresentativeCount):</strong><br>
+            <a href="@String.Format( "../Representatives/Representative?repId={0}", Model.Statistics.MostActiveRepresentativeId )" target="_blank">
+                @Model.Statistics.MostActiveRepresentativeName
+            </a><br>
+        }
+        else
+        {
+            <strong>@GlobalLocalization.JavnaRasprava_Stat_NoAnswers</strong>
+        }
+        <br />
+        @if ( Model.Statistics.MostActiveLawId != 0 )
+        {
+            <strong>@string.Format( GlobalLocalization.JavnaRasprava_Stat_MostActiveLaw_MessageFormat, @Model.Statistics.MostActiveLawCount ):</strong><br>
+            <a href="@String.Format( "../JavnaRasprava/LawDetails?lawId={0}", Model.Statistics.MostActiveLawId )" target="_blank">
+                @Model.Statistics.MostActiveLawTitle
+            </a><br>
+        }
+        else
+        {
+            <strong>@GlobalLocalization.JavnaRasprava_Stat_NoQuestions</strong>
+        }
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿User-agent: *
+Disallow: /Representatives/LikeQuestion
+Disallow: /Representatives/LikeAnswer
+Disallow: /Representatives/DislikeQuestion
+Disallow: /Representatives/DislikeAnswer
+Disallow: /JavnaRasprava/LikeAnswer
+Disallow: /JavnaRasprava/DislikeAnswer
+Disallow: /JavnaRasprava/LikeQuestion
+Disallow: /JavnaRasprava/DislikeQuestion

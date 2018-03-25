@@ -1,0 +1,44 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.PetitionSummaryModel>
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Petition_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Petition_Index_PageTitle</h3>
+
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-3">
+            @Html.DisplayNameFor( model => model.Title )
+        </th>
+        <th class="col-md-4">
+            @Html.DisplayNameFor( model => model.TargetInstitutionName )
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor( model => model.CurrentCount )
+        </th>
+        <th class="col-md-3"></th>
+    </tr>
+
+    @foreach ( var petition in Model )
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor( modelItem => petition.Title )
+            </td>
+            <td>
+                @Html.DisplayFor( modelItem => petition.TargetInstitutionName )
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor( modelItem => petition.CurrentCount )
+            </td>
+            <td class="text-right">
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditPetition", new { petitionId = petition.Id }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "PetitionDetails", new { petitionId = petition.Id }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeletePetition", new { petitionId = petition.Id })
+            </td>
+        </tr>
+    }
+
+</table>

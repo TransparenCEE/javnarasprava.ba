@@ -1,0 +1,1948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>nalog</value>
+  </data>
+  <data name="Account_ChangePassword_Button" xml:space="preserve">
+    <value>Promijeni šifru</value>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Šifra je uspješno promijenjena.</value>
+  </data>
+  <data name="Account_ConfirmPassword" xml:space="preserve">
+    <value>Potvrdi šifru</value>
+  </data>
+  <data name="Account_ConfirmPassword_Error" xml:space="preserve">
+    <value>Nova šifra i potvrda nove šifre moraju biti iste.</value>
+  </data>
+  <data name="Account_DemographyAge" xml:space="preserve">
+    <value>Starosna dob</value>
+  </data>
+  <data name="Account_DemographyEducation" xml:space="preserve">
+    <value>Nivo obrazovanja</value>
+  </data>
+  <data name="Account_DemographyLocation" xml:space="preserve">
+    <value>Mjesto stanovanja</value>
+  </data>
+  <data name="Account_DemographyParty" xml:space="preserve">
+    <value>Stranka za koju ste glasali na prošlim izborima</value>
+  </data>
+  <data name="Account_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ErrorOcurred" xml:space="preserve">
+    <value>Desila se greška.</value>
+  </data>
+  <data name="InvalidUsernameOrPasswordError" xml:space="preserve">
+    <value>Netačno korisničko ime ili šifra</value>
+  </data>
+  <data name="LoggedInUser" xml:space="preserve">
+    <value>Ulogovani korisnik</value>
+  </data>
+  <data name="Account_LoginUsing" xml:space="preserve">
+    <value>Prijavi se koristeći</value>
+  </data>
+  <data name="MinLengthError" xml:space="preserve">
+    <value>{0} mora biti namjanje {2} karaktera.</value>
+  </data>
+  <data name="Account_NewPassword" xml:space="preserve">
+    <value>Nova šifra</value>
+  </data>
+  <data name="Account_OldPassword" xml:space="preserve">
+    <value>Trenutna šifra</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Šifra</value>
+  </data>
+  <data name="Account_RememberMe" xml:space="preserve">
+    <value>Zapamti me?</value>
+  </data>
+  <data name="RemoveLoginSuccess" xml:space="preserve">
+    <value>Vanjski nalog je uspješno uklonjen.</value>
+  </data>
+  <data name="SetPasswordSuccess" xml:space="preserve">
+    <value>Šifra je uspješno postavljena.</value>
+  </data>
+  <data name="UseOtherServiceForLogIn" xml:space="preserve">
+    <value>Koristi drugi servis za prijavu</value>
+  </data>
+  <data name="UserDoesNotExistOrNotConfirmedError" xml:space="preserve">
+    <value>Korisnik ne postoji ili nije potvrđen.</value>
+    <comment>The user either does not exist or is not confirmed.</comment>
+  </data>
+  <data name="UserNotFoundError" xml:space="preserve">
+    <value>Korisnik nije pronađen.</value>
+  </data>
+  <data name="Account_Confirmation_PageTitle" xml:space="preserve">
+    <value>Potvrda naloga</value>
+  </data>
+  <data name="Account_ConfirmationText_p1" xml:space="preserve">
+    <value>Hvala što ste potvrdili nalog. Molimo da</value>
+  </data>
+  <data name="Account_ConfirmationText_p2" xml:space="preserve">
+    <value>kliknete ovdje za prijavu</value>
+  </data>
+  <data name="Account_CreateLocalAccount_Message" xml:space="preserve">
+    <value>Kreiraj lokalni nalog</value>
+  </data>
+  <data name="Account_NoLocalAccountWarning" xml:space="preserve">
+    <value>Ne posjedujete lokalni nalog za ovu stranicu. Dodajte lokalni nalog kako biste se mogli prijaviti bez korištenja vanjskih naloga.</value>
+    <comment>You do not have a local username/password for this site. Add a local
+    account so you can log in without an external login.</comment>
+  </data>
+  <data name="Account_RegistredAccounts" xml:space="preserve">
+    <value>Registrovani nalozi na socijalnim mrežama</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="Account_SetPassword_Button" xml:space="preserve">
+    <value>Postavi šifru</value>
+  </data>
+  <data name="Account_2" xml:space="preserve">
+    <value>nalogom</value>
+  </data>
+  <data name="AddCommentButton" xml:space="preserve">
+    <value>Dodaj komentar</value>
+  </data>
+  <data name="JavnaRasprava_AddCustomAnswer_ValuePlaceHolder" xml:space="preserve">
+    <value>Upiši vlastiti odgovor</value>
+  </data>
+  <data name="AskQuestion" xml:space="preserve">
+    <value>Postavi pitanje</value>
+  </data>
+  <data name="AskRepresentativeChooseButton" xml:space="preserve">
+    <value>Izaberi</value>
+  </data>
+  <data name="JavnaRasprava_AskRepresentatives_BoxTitle" xml:space="preserve">
+    <value>Pitaj parlamentarce</value>
+  </data>
+  <data name="Account_AssignYour_Message" xml:space="preserve">
+    <value>Dodijeli svoj</value>
+  </data>
+  <data name="Account_ExternalLogin_AssociationForm" xml:space="preserve">
+    <value>Forma za dpovezivanje naloga na socijalnim mrežama</value>
+  </data>
+  <data name="Account_ExternalLogin_AuthenticationWithSuccessMessage" xml:space="preserve">
+    <value>Uspješno ste se autentificirali sa</value>
+    <comment>You've successfully authenticated with [LoginProvider]
+            </comment>
+  </data>
+  <data name="ChooseOtherRepresentatives" xml:space="preserve">
+    <value>Izaberi ostale parlamentarce</value>
+  </data>
+  <data name="ChooseParliament" xml:space="preserve">
+    <value>Izaberi parlament</value>
+  </data>
+  <data name="Global_Close" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Kreiraj novi nalog</value>
+  </data>
+  <data name="Global_Dropdown_ValuePlaceHolder" xml:space="preserve">
+    <value>Odaberi...</value>
+  </data>
+  <data name="Account_ForgotPassword_EmailLinkButton" xml:space="preserve">
+    <value>Pošalji link na email</value>
+  </data>
+  <data name="Account_ForgotPassword_EnterEmailMessage" xml:space="preserve">
+    <value>Unesite email adresu</value>
+    <comment>Enter your email.</comment>
+  </data>
+  <data name="Global_Error" xml:space="preserve">
+    <value>Greška</value>
+  </data>
+  <data name="Global_ExpertsComments" xml:space="preserve">
+    <value>Mišljenje eksperata</value>
+  </data>
+  <data name="Law_ExpetedVotingDay" xml:space="preserve">
+    <value>Datum odlučivanja</value>
+  </data>
+  <data name="Account_ExternalLogin_ConfirmationButton" xml:space="preserve">
+    <value>Pošalji</value>
+    <comment>Register</comment>
+  </data>
+  <data name="Account_ForgotPassword_PageTitle" xml:space="preserve">
+    <value>Zaboravili ste šifru?</value>
+  </data>
+  <data name="Account_ForgotPasswordConfirmation_PageTitle" xml:space="preserve">
+    <value>Potvrda zaboravljene šifre</value>
+  </data>
+  <data name="LawText" xml:space="preserve">
+    <value>Tekst zakona</value>
+  </data>
+  <data name="Account_LogIn_PageTitle" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Account_LoginFailure_PageTitle" xml:space="preserve">
+    <value>Neuspješna prijava</value>
+  </data>
+  <data name="Account_Manage" xml:space="preserve">
+    <value>Uredi nalog</value>
+  </data>
+  <data name="NewCommentTitle" xml:space="preserve">
+    <value>Novi komentar</value>
+  </data>
+  <data name="NewCommentWarningText" xml:space="preserve">
+    <value>Da biste komentarisali, potrebno je da se</value>
+  </data>
+  <data name="Global_Parliament" xml:space="preserve">
+    <value>Parlament</value>
+  </data>
+  <data name="Global_ParliamentHouse" xml:space="preserve">
+    <value>Dom parlamenta</value>
+  </data>
+  <data name="Global_Party" xml:space="preserve">
+    <value>Stranka</value>
+  </data>
+  <data name="Account_PleaseCheckEmailToResetPassword_Message" xml:space="preserve">
+    <value>Molimo provjerite email da biste resetovali šifru.</value>
+    <comment>Please check your email to reset your password.</comment>
+  </data>
+  <data name="Account_ExternalLogin_PleaseEnterUsernameMessage" xml:space="preserve">
+    <value>Molimo da unesete podatke ispod i kliknete na Pošalji kako biste se ulogovali.</value>
+    <comment>Please enter a user name for this site below and click the Register button to finish
+            logging in.</comment>
+  </data>
+  <data name="Law_Procedure" xml:space="preserve">
+    <value>Vrsta procedure</value>
+  </data>
+  <data name="RegisterAsNewUserButton" xml:space="preserve">
+    <value>Registruj se kao novi korisnik</value>
+    <comment>Register as a new user</comment>
+  </data>
+  <data name="Account_Register_Button" xml:space="preserve">
+    <value>Pošalji</value>
+  </data>
+  <data name="Account_Register_PageTitle" xml:space="preserve">
+    <value>Registracija</value>
+  </data>
+  <data name="Representatives" xml:space="preserve">
+    <value>Parlamentarci</value>
+  </data>
+  <data name="JavnaRasprava_RepresentativesAnswers_Heading" xml:space="preserve">
+    <value>Odgovori parlamentaraca</value>
+  </data>
+  <data name="Error_RequestError" xml:space="preserve">
+    <value>Dogodila se greška tokom obrade zahtjeva.</value>
+    <comment>An error occurred while processing your request.</comment>
+  </data>
+  <data name="Account_Reset_Button" xml:space="preserve">
+    <value>Resetuj</value>
+  </data>
+  <data name="Account_ResetPassword_PageTitle" xml:space="preserve">
+    <value>Resetuj šifru</value>
+  </data>
+  <data name="Account_ResetPassword_ConfirmationLink" xml:space="preserve">
+    <value>kliknete ovdje za prijavu</value>
+  </data>
+  <data name="Account_ResetPassword_ConfirmationText" xml:space="preserve">
+    <value>Šifra je uspješno resetovana. Molimo da provjerite vaš email za link resetovanje vaše šifre</value>
+  </data>
+  <data name="Account_ResetPasswordConfirmation_PageTitle" xml:space="preserve">
+    <value>Šifra uspjesno resetovana</value>
+    <comment>Reset password confirmation</comment>
+  </data>
+  <data name="SectionExplanation" xml:space="preserve">
+    <value>Specifične teme</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Podijeli</value>
+  </data>
+  <data name="Global_Statistics" xml:space="preserve">
+    <value>Statistika</value>
+  </data>
+  <data name="Law_Submitter" xml:space="preserve">
+    <value>Predlagač</value>
+  </data>
+  <data name="Top10LawDiscussions" xml:space="preserve">
+    <value>Top 10 prijedloga zakona</value>
+  </data>
+  <data name="Account_UnsuccessfulLoginWithService_Message" xml:space="preserve">
+    <value>Niste se uspjeli prijaviti na servis.</value>
+    <comment>Unsuccessful login with service.</comment>
+  </data>
+  <data name="UseLocalAccountToLogIn" xml:space="preserve">
+    <value>Koristite lokalni nalog za prijavu.</value>
+    <comment>Use a local account to log in.</comment>
+  </data>
+  <data name="Global_UserComments" xml:space="preserve">
+    <value>Komentari korisnika</value>
+  </data>
+  <data name="Global_Vote" xml:space="preserve">
+    <value>Glasaj</value>
+  </data>
+  <data name="VotingWarningText" xml:space="preserve">
+    <value>Da biste glasali, potrebno je da se</value>
+  </data>
+  <data name="JavnaRasprava_CustomAnswersDistribution_Heading" xml:space="preserve">
+    <value>Distribucija odgovora</value>
+  </data>
+  <data name="Global_Search_Age_ValuePlaceHolder" xml:space="preserve">
+    <value>Godine...</value>
+  </data>
+  <data name="Global_Search_Education_ValuePlaceHolder" xml:space="preserve">
+    <value>Obrazovanje...</value>
+  </data>
+  <data name="Global_Search_Location_ValuePlaceHolder" xml:space="preserve">
+    <value>Lokacija...</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtriraj</value>
+  </data>
+  <data name="FilterResults" xml:space="preserve">
+    <value>Filtriraj rezultate</value>
+  </data>
+  <data name="JavnaRasprava_MoreDetails" xml:space="preserve">
+    <value>Detaljnije</value>
+  </data>
+  <data name="Global_VoteDown" xml:space="preserve">
+    <value>Protiv</value>
+  </data>
+  <data name="Global_VoteUp" xml:space="preserve">
+    <value>Za</value>
+  </data>
+  <data name="JavnaRasprava_VotingResultsModal_Title" xml:space="preserve">
+    <value>Resultati glasanja</value>
+  </data>
+  <data name="JavnaRasprava_AskRepresentativeSuccess_Message" xml:space="preserve">
+    <value>Hvala. Vaše pitanje je proslijeđeno parlamentarcima koje ste odabrali. Odgovori parlamentaraca će biti objavljeni javno.</value>
+  </data>
+  <data name="JavnaRasprava_AskRepresentativesWarningText" xml:space="preserve">
+    <value>Da biste postavili pitanje parlamentarcu, potrebno je da se</value>
+  </data>
+  <data name="JavnaRasprava_OpenAskRepresentativeModal_Button" xml:space="preserve">
+    <value>Postavi pitanje</value>
+  </data>
+  <data name="Global_ToLogIn" xml:space="preserve">
+    <value>ulogujete</value>
+  </data>
+  <data name="Global_ToRegister" xml:space="preserve">
+    <value>registrujete</value>
+  </data>
+  <data name="JavnaRasprava_LawQuestionsAndAnswers_Button" xml:space="preserve">
+    <value>Sva postavljena pitanja i odgovori</value>
+  </data>
+  <data name="LawQuestionsAndAnswersTitle" xml:space="preserve">
+    <value>Sva postavljena pitanja i odgovori</value>
+  </data>
+  <data name="LatestLawsTitle" xml:space="preserve">
+    <value>Posljednji dodani zakoni</value>
+  </data>
+  <data name="MostActiveLawsTitle" xml:space="preserve">
+    <value>Najaktivniji zakoni</value>
+  </data>
+  <data name="NextLawsInVoteTitle" xml:space="preserve">
+    <value>Sljedeći zakoni u proceduri</value>
+  </data>
+  <data name="PointedOutLawsTitle" xml:space="preserve">
+    <value>Izdvojeni zakoni</value>
+  </data>
+  <data name="Petition_CreateNewPetition_Button" xml:space="preserve">
+    <value>Kreiraj novu peticiju</value>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>Kratka biografija</value>
+  </data>
+  <data name="Petition_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Petition_EndTime" xml:space="preserve">
+    <value>Kraj</value>
+  </data>
+  <data name="Petition_StartTime" xml:space="preserve">
+    <value>Početak</value>
+  </data>
+  <data name="Petition_TargetInsitution" xml:space="preserve">
+    <value>Nadležna institucija</value>
+  </data>
+  <data name="Petition_Title" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="GetLawTextFile" xml:space="preserve">
+    <value>Preuzmite tekst zakona</value>
+  </data>
+  <data name="Global_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Global_Title" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="Global_RequiredMessage" xml:space="preserve">
+    <value>"{0}" je obavezno polje.</value>
+  </data>
+  <data name="Law_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Global_Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="Representative_Reason" xml:space="preserve">
+    <value>Razlog</value>
+  </data>
+  <data name="Global_Representative" xml:space="preserve">
+    <value>Parlamentarac/ka</value>
+  </data>
+  <data name="Global_aVote" xml:space="preserve">
+    <value>Glas</value>
+  </data>
+  <data name="Global_Email" xml:space="preserve">
+    <value>Email adresa</value>
+  </data>
+  <data name="Global_FirstName" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="GlobalImageRelativePath" xml:space="preserve">
+    <value>Relativna putanja do fotografije</value>
+  </data>
+  <data name="Global_LastName" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="Global_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="Global_AdminIgnore" xml:space="preserve">
+    <value>Ignoriši</value>
+  </data>
+  <data name="Global_IsSuggested" xml:space="preserve">
+    <value>Predloženo</value>
+  </data>
+  <data name="BodyEmaila" xml:space="preserve">
+    <value>&lt;html&gt;
+
+&lt;head&gt;
+&lt;meta http-equiv=Content-Type content="text/html; charset=windows-1252"&gt;
+&lt;meta name=Generator content="Microsoft Word 15 (filtered)"&gt;
+&lt;style&gt;
+&lt;!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--&gt;
+&lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body lang=EN-US&gt;
+
+&lt;div class=WordSection1&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Poštovani/a ##FNAME## ##LNAME##,&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Na portalu javnarasprava.ba Vam je
+postavljeno pitanje na temu zakona ##LAWTITLE##. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Pitanje je postavljeno
+##QUESTIONCOUNT## i ono glasi:&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;##QUESTIONTEXT##&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Ako želite da pogledate cijelu
+diskusiju vezano za zakon kliknite na ##LAWLINK##.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Ako želite da odgovorite na pitanje
+kliknite na ##ANSWERLINK##.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Srda&amp;#269;no Vas pozdravlja,&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Vaš javnarasprava.ba tim&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</value>
+  </data>
+  <data name="PointedOutSectionsTitle" xml:space="preserve">
+    <value>Istaknute teme</value>
+  </data>
+  <data name="Petition_YoutubeCode" xml:space="preserve">
+    <value>Youtube video code</value>
+  </data>
+  <data name="Petition_SubmitterName" xml:space="preserve">
+    <value>Podnosilac peticije</value>
+  </data>
+  <data name="JavnaRasprava_LawDescriptionModal_Title" xml:space="preserve">
+    <value>Detaljnije pojašnjenje zakona</value>
+  </data>
+  <data name="JavnaRasprava_LawStatusModal_Title" xml:space="preserve">
+    <value>Pojašnjenje statusa zakona</value>
+  </data>
+  <data name="Section_Description" xml:space="preserve">
+    <value>Opis izdvojene oblasti</value>
+  </data>
+  <data name="Law_Category" xml:space="preserve">
+    <value>Oblast zakona</value>
+  </data>
+  <data name="UnknownExpectedVotingDay" xml:space="preserve">
+    <value>Nepoznat</value>
+  </data>
+  <data name="Petition_CurrentCount" xml:space="preserve">
+    <value>Broj potpisa</value>
+  </data>
+  <data name="Global_Verified" xml:space="preserve">
+    <value>Verifikovano</value>
+  </data>
+  <data name="NoPartySelected" xml:space="preserve">
+    <value>Nisam glasao/la</value>
+  </data>
+  <data name="AnswerDislikeCount" xml:space="preserve">
+    <value>Odgovor nije podržan</value>
+  </data>
+  <data name="AnswerLikeCount" xml:space="preserve">
+    <value>Odgovor podržan</value>
+  </data>
+  <data name="Question_DislikeCount" xml:space="preserve">
+    <value>Pitanje nije podržano</value>
+  </data>
+  <data name="Question_LikeCount" xml:space="preserve">
+    <value>Pitanje podržano</value>
+  </data>
+  <data name="Account_DemographyAge_Required" xml:space="preserve">
+    <value>Starosna dob je obavezno polje</value>
+  </data>
+  <data name="Account_DemographyEducation_Required" xml:space="preserve">
+    <value>Nivo obrazovanja je obavezno polje</value>
+  </data>
+  <data name="Account_DemographyLocation_Required" xml:space="preserve">
+    <value>Mjesto stanovanja je obavezno polje</value>
+  </data>
+  <data name="Account_DemographyParty_Required" xml:space="preserve">
+    <value>Stranka za koju ste glasali na prošlim izborima je obavezno polje</value>
+  </data>
+  <data name="Account_Email_Required" xml:space="preserve">
+    <value>Email je obavezno polje</value>
+  </data>
+  <data name="Account_NewPassword_Required" xml:space="preserve">
+    <value>Nova šifra je obavezno polje</value>
+  </data>
+  <data name="Account_OldPassword_Required" xml:space="preserve">
+    <value>Trenutna šifra je obavezno polje</value>
+  </data>
+  <data name="Account_Password_Required" xml:space="preserve">
+    <value>Šifra je obavezno polje</value>
+  </data>
+  <data name="Quiz_Description" xml:space="preserve">
+    <value>Opis kviza</value>
+  </data>
+  <data name="Quiz_LawTitle" xml:space="preserve">
+    <value>Naslov zakon</value>
+  </data>
+  <data name="Quiz_QuestionDescription" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Quiz_SectionTitle" xml:space="preserve">
+    <value>Izdvojena tema</value>
+  </data>
+  <data name="Quiz_Title" xml:space="preserve">
+    <value>Naslov kviza</value>
+  </data>
+  <data name="Quiz_TimeCreated" xml:space="preserve">
+    <value>Vrijeme kreiranja</value>
+  </data>
+  <data name="Law" xml:space="preserve">
+    <value>Zakon</value>
+  </data>
+  <data name="LawSection" xml:space="preserve">
+    <value>Izdvojena oblast</value>
+  </data>
+  <data name="PointedOutTop" xml:space="preserve">
+    <value>Izdvojeno</value>
+  </data>
+  <data name="News_Summary" xml:space="preserve">
+    <value>Sažetak vijesti</value>
+  </data>
+  <data name="News_Text" xml:space="preserve">
+    <value>Sadržaj vijest</value>
+  </data>
+  <data name="News_Title" xml:space="preserve">
+    <value>Naslov vijesti</value>
+  </data>
+  <data name="Global_About" xml:space="preserve">
+    <value>Kratki opis</value>
+  </data>
+  <data name="Party_FullName" xml:space="preserve">
+    <value>Puno ime stranke</value>
+  </data>
+  <data name="Party_Name" xml:space="preserve">
+    <value>Skraćeno ime stranke</value>
+  </data>
+  <data name="Account_Age_ValuePlaceholder" xml:space="preserve">
+    <value>Odaberite starosnu dob *</value>
+  </data>
+  <data name="Account_DemographyDisclamer" xml:space="preserve">
+    <value>Svi demografski podaci prikupljeni putem ove stranice se koriste jedino za potrebe generiranja statistika, te se u druge svrhe neće i ne mogu koristiti.</value>
+  </data>
+  <data name="Account_Education_ValuePlaceholder" xml:space="preserve">
+    <value>Odaberite nivo obrazovanja *</value>
+  </data>
+  <data name="Account_EmailLoginMessage" xml:space="preserve">
+    <value>Prijavite se na stranicu pomoću email-a...</value>
+  </data>
+  <data name="Account_Email_ValuePlaceholder" xml:space="preserve">
+    <value>Upišite svoj Email *</value>
+  </data>
+  <data name="Account_ExternalLoginMessage" xml:space="preserve">
+    <value>...ili koristeći račun na socijalnim mrežama.</value>
+  </data>
+  <data name="Account_ForgotPassword" xml:space="preserve">
+    <value>Zaboravili ste šifru?</value>
+  </data>
+  <data name="Account_Location_ValuePlaceholder" xml:space="preserve">
+    <value>Odaberite mjesto stanovanja *</value>
+  </data>
+  <data name="Account_LoginButton" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Account_Party_ValuePlaceholder" xml:space="preserve">
+    <value>Odaberite stranku za koju ste glasali na prošlim izborima</value>
+  </data>
+  <data name="Account_Password" xml:space="preserve">
+    <value>Šifra</value>
+  </data>
+  <data name="Account_PasswordConfirmation_ValuePlaceholder" xml:space="preserve">
+    <value>Potvrdite upisanu šifru *</value>
+  </data>
+  <data name="Account_Password_ValuePlaceholder" xml:space="preserve">
+    <value>Upišite šifru *</value>
+  </data>
+  <data name="Account_Register" xml:space="preserve">
+    <value>Registrujte se</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Global_SearchResults_NoResultsMessage" xml:space="preserve">
+    <value>Nema rezultata koji zadovoljavaju parametre pretrage.</value>
+  </data>
+  <data name="Global_Search_Category_ValuePlaceholder" xml:space="preserve">
+    <value>Odaberi oblast...</value>
+  </data>
+  <data name="Global_Search_Sort_ValuePlaceholder" xml:space="preserve">
+    <value>Poredaj po...</value>
+  </data>
+  <data name="Global_Search_String_ValuePlaceholder" xml:space="preserve">
+    <value>Naslov/opis</value>
+  </data>
+  <data name="AllLawSections_Index_PageTitle" xml:space="preserve">
+    <value>Sve izdvojene teme</value>
+  </data>
+  <data name="AllLaws_Index_PageTitle" xml:space="preserve">
+    <value>Svi zakoni</value>
+  </data>
+  <data name="Global_Search_Button" xml:space="preserve">
+    <value>Traži</value>
+  </data>
+  <data name="Global_Laws" xml:space="preserve">
+    <value>Zakoni</value>
+  </data>
+  <data name="Global_LawSections" xml:space="preserve">
+    <value>Izdvojene teme</value>
+  </data>
+  <data name="Global_News" xml:space="preserve">
+    <value>Vijesti</value>
+  </data>
+  <data name="Global_Paging" xml:space="preserve">
+    <value>Stranica {0} od {1}</value>
+  </data>
+  <data name="News_PageTitle" xml:space="preserve">
+    <value>Vijesti</value>
+  </data>
+  <data name="News_Search_String_ValuePlaceholder" xml:space="preserve">
+    <value>Naslov/tekst:</value>
+  </data>
+  <data name="PetitionYoutubeUrl_ValuePlaceholder" xml:space="preserve">
+    <value>Ako želite uključiti youtube video ovdje unesite URL</value>
+  </data>
+  <data name="Petition_Create_PageTitle" xml:space="preserve">
+    <value>Nova peticija</value>
+  </data>
+  <data name="Petition_Details_PageTitle" xml:space="preserve">
+    <value>Peticija</value>
+  </data>
+  <data name="Petition_ImageRelativePath" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="Petition_Index_PageTitle" xml:space="preserve">
+    <value>Peticije</value>
+  </data>
+  <data name="Petition_LatestList_Title" xml:space="preserve">
+    <value>Posljednje postavljene peticije</value>
+  </data>
+  <data name="Petition_List_Link" xml:space="preserve">
+    <value>Sve peticije</value>
+  </data>
+  <data name="Petition_MostActiveList_Title" xml:space="preserve">
+    <value>Najaktivnije peticije</value>
+  </data>
+  <data name="Petition_PetitionManual_Link" xml:space="preserve">
+    <value>Napravi uspješnu peticiju...</value>
+  </data>
+  <data name="Petition_Search_Title" xml:space="preserve">
+    <value>Pretraga peticija</value>
+  </data>
+  <data name="Petition_TargetInsitution_ValuePlaceholder" xml:space="preserve">
+    <value>Nadležna institucija... *</value>
+  </data>
+  <data name="Petition_Title_ValuePlaceHolder" xml:space="preserve">
+    <value>Naslov kampanje</value>
+  </data>
+  <data name="Petition_YoutubeUrl" xml:space="preserve">
+    <value>Youtube video</value>
+  </data>
+  <data name="Global_BackToList_Link" xml:space="preserve">
+    <value>Povratak na listu</value>
+  </data>
+  <data name="Global_NumberOfVotes" xml:space="preserve">
+    <value>glasova</value>
+  </data>
+  <data name="Petition_AlreadySigned_Message" xml:space="preserve">
+    <value>Potpisali ste ovu peticiju!</value>
+  </data>
+  <data name="Petition_Created_ConfirmationMessage" xml:space="preserve">
+    <value>Hvala sto ste kreirali peticiju. Peticija ce biti objavljena nakon što bude verificirana od strane administratora.</value>
+  </data>
+  <data name="Petition_Created_PageTitle" xml:space="preserve">
+    <value>Peticija je kreirana</value>
+  </data>
+  <data name="Petition_Manual_PageTitle" xml:space="preserve">
+    <value>Uputstvo za uspješno kreiranje peticije</value>
+  </data>
+  <data name="Petition_SearchFilter_InstitutionValuePlaceholder" xml:space="preserve">
+    <value>Izaberi instituciju...</value>
+  </data>
+  <data name="Petition_Signatures" xml:space="preserve">
+    <value>Potpisa</value>
+  </data>
+  <data name="Petition_SignInToSign_Message" xml:space="preserve">
+    <value>Uloguj se da bi potpisao peticiju!</value>
+  </data>
+  <data name="Petition_Unverified_Message" xml:space="preserve">
+    <value>Peticija nije verificirana od strane administratora i trenutno se ne može potpisati.</value>
+  </data>
+  <data name="Answer_Date" xml:space="preserve">
+    <value>Datum odgovora</value>
+  </data>
+  <data name="Global_AnsweCount" xml:space="preserve">
+    <value>Broj odgovora</value>
+  </data>
+  <data name="Global_Answer" xml:space="preserve">
+    <value>Odgovor</value>
+  </data>
+  <data name="Global_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Global_NoAnswer" xml:space="preserve">
+    <value>Nema odgovora</value>
+  </data>
+  <data name="Global_Question" xml:space="preserve">
+    <value>Pitanje</value>
+  </data>
+  <data name="Global_QuestionCount" xml:space="preserve">
+    <value>Broj pitanja</value>
+  </data>
+  <data name="Global_Quizes" xml:space="preserve">
+    <value>Kvizovi</value>
+  </data>
+  <data name="Global_Search_Name_ValuePlaceHolder" xml:space="preserve">
+    <value>Ime i/ili prezime</value>
+  </data>
+  <data name="Global_Search_Party_ValuePlaceHolder" xml:space="preserve">
+    <value>Stranka...</value>
+  </data>
+  <data name="Global_Search_SortBy_MostAnswers" xml:space="preserve">
+    <value>Najviše odgovora</value>
+  </data>
+  <data name="Global_Search_SortBy_MostQuestions" xml:space="preserve">
+    <value>Najviše pitanja</value>
+  </data>
+  <data name="Global_Search_SortBy_ValuePlaceHolder" xml:space="preserve">
+    <value>Poredaj po...</value>
+  </data>
+  <data name="Global_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="Quiz_PageTitle" xml:space="preserve">
+    <value>Svi kvizovi</value>
+  </data>
+  <data name="Quiz_Results_PageTitle" xml:space="preserve">
+    <value>Rezulati kviza</value>
+  </data>
+  <data name="Quiz_Results_SectionTitle" xml:space="preserve">
+    <value>Poređenje vaših glasova i ukupno prikupljenih glasova na stranici</value>
+  </data>
+  <data name="Quiz_Take_ChooseAnswer_Message" xml:space="preserve">
+    <value>Izaberite odgovor:</value>
+  </data>
+  <data name="Quiz_Take_Footer" xml:space="preserve">
+    <value>Upitnik je kreiran sa ciljem da u sto kraćem vremenu date vaše mišljenje na cijeli skup zakona i istaknutih tema grupisanih po kriteriju opisanom u opisu upitnika. Na kraju ovog upitnika možete uporediti u kojoj mjeri se slažete sa ostalim korisnicima ove stranice na svako pojedinačno pitanje.</value>
+  </data>
+  <data name="Quiz_Take_NextQuestion_Button" xml:space="preserve">
+    <value>Sljedeće pitanje</value>
+  </data>
+  <data name="Quiz_Take_SeeResults_Button" xml:space="preserve">
+    <value>Vidi rezultate</value>
+  </data>
+  <data name="Quiz_Take_StartQuiz_Button" xml:space="preserve">
+    <value>Pokreni upitnik</value>
+  </data>
+  <data name="Representatives_Parliament_1_Members" xml:space="preserve">
+    <value>Članovi Predstavničkog doma i Doma naroda Parlamentarna skupština Bosne i Hercegovine</value>
+  </data>
+  <data name="Representatives_Parliament_2_Members" xml:space="preserve">
+    <value>Članovi Predstavničkog doma i Doma naroda Parlament Federacije Bosne i Hercegovine</value>
+  </data>
+  <data name="Representatives_Parliament_3_Members" xml:space="preserve">
+    <value>Članovi Predstavničkog doma i Doma naroda Narodna Skupština RS</value>
+  </data>
+  <data name="Representatives_Parliament_4_Members" xml:space="preserve">
+    <value>Članovi Skupštine Tuzlanskog Kantona</value>
+  </data>
+  <data name="Representative_AskDirectQuestion_Button" xml:space="preserve">
+    <value>Postavi direktno pitanje ovom parlamentarcu</value>
+  </data>
+  <data name="Representative_AskRepresentative" xml:space="preserve">
+    <value>Postavi pitanje parlamentarcu</value>
+  </data>
+  <data name="Representative_AskRep_Button" xml:space="preserve">
+    <value>Postavi pitanje</value>
+  </data>
+  <data name="Representative_AskRep_Success_Message" xml:space="preserve">
+    <value>Hvala na postavljenom pitanju...</value>
+  </data>
+  <data name="Representative_Assignments" xml:space="preserve">
+    <value>Članstvo u komsiji/tijelu parlamenta</value>
+  </data>
+  <data name="Representative_DirectQuestions" xml:space="preserve">
+    <value>Direktno postavljena pitanja</value>
+  </data>
+  <data name="Representative_ElectoralUnit" xml:space="preserve">
+    <value>Izborna jedinica</value>
+  </data>
+  <data name="Representative_ExternalLinks" xml:space="preserve">
+    <value>Vanjski linkovi</value>
+  </data>
+  <data name="Representative_Filter_Buton" xml:space="preserve">
+    <value>Filtriraj</value>
+  </data>
+  <data name="Representative_Function" xml:space="preserve">
+    <value>Pozicija</value>
+  </data>
+  <data name="Representative_LawQuestions" xml:space="preserve">
+    <value>Javna rasprava: pitanja i odgovori</value>
+  </data>
+  <data name="Representative_LoginOrSignin_Message" xml:space="preserve">
+    <value>Da biste postavili pitanje parmalentarcu, potrebno je da se {0} ili {1}.</value>
+  </data>
+  <data name="Representative_NoAnswer" xml:space="preserve">
+    <value>Parlamentarac/ka nije odgovorio/la na ovo pitanje.</value>
+  </data>
+  <data name="Representative_NumberOfVotes" xml:space="preserve">
+    <value>Broj osvojenih glasova</value>
+  </data>
+  <data name="Representative_QuestionAskedTimes" xml:space="preserve">
+    <value>Pitanje postavljeno puta</value>
+  </data>
+  <data name="Global_JavnaRasprava" xml:space="preserve">
+    <value>Javna rasprava</value>
+  </data>
+  <data name="Global_Law" xml:space="preserve">
+    <value>Zakon</value>
+  </data>
+  <data name="Global_Search_Parliament_ValuePlaceHolder" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Global_Send" xml:space="preserve">
+    <value>Pošalji</value>
+  </data>
+  <data name="Global_Thanks" xml:space="preserve">
+    <value>Hvala</value>
+  </data>
+  <data name="Global_YourAnswer" xml:space="preserve">
+    <value>Vaš odgovor</value>
+  </data>
+  <data name="JavnaRasprava_Answering_ClickForLawMessage" xml:space="preserve">
+    <value>Za više detalja o ovom zakonu kliknite na</value>
+  </data>
+  <data name="JavnaRasprava_Answering_Failed_Message" xml:space="preserve">
+    <value>Nažalost vaš odgovor ne može biti prihvaćen. Odgovor je već poslan ili vaš url nije ispravan.
+Kontaktirajte administratora za pomoć. 
+
+Da biste se otišli na Vaš profil, kliknite</value>
+  </data>
+  <data name="JavnaRasprava_Answering_Falied_PageTitle" xml:space="preserve">
+    <value>Neuspješan odgovor</value>
+  </data>
+  <data name="JavnaRasprava_Answering_Heading" xml:space="preserve">
+    <value>Pošaljite odgovor na postavljeno pitanje</value>
+  </data>
+  <data name="JavnaRasprava_Answering_PageTitle" xml:space="preserve">
+    <value>Odgovor na postavljeno pitanje</value>
+  </data>
+  <data name="JavnaRasprava_Answering_ThankYouMessage" xml:space="preserve">
+    <value>Hvala sto ste odgovorili na pitanje. Da biste se otišli na Vaš profil, kliknite na</value>
+  </data>
+  <data name="JavnaRasprava_Breadcrumb_Home" xml:space="preserve">
+    <value>Početna</value>
+  </data>
+  <data name="JavnaRasprava_Index_PageTitle" xml:space="preserve">
+    <value>Uključi se</value>
+  </data>
+  <data name="JavnaRasprava_NoCurrentQuestions" xml:space="preserve">
+    <value>Trenutno nema postavljenih pitanja.</value>
+  </data>
+  <data name="JavnaRasprava_Rep_NoAnswer" xml:space="preserve">
+    <value>Parlamentarci koji nemaju odgovor na ovo pitanje.</value>
+  </data>
+  <data name="JavnaRasprava_Search_PageTitle" xml:space="preserve">
+    <value>Pretraga zakona</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Kontaktirajte administratora za pomoć.</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Da biste se otišli na Vaš profil, kliknite</value>
+  </data>
+  <data name="Facebook_Law_PageDescription" xml:space="preserve">
+    <value>Uključi se u raspravu o aktuelnim prijedlozima zakona na javnarasprava.ba</value>
+  </data>
+  <data name="Global_Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="Global_Search_FilterData_Button" xml:space="preserve">
+    <value>Filtriraj rezultate</value>
+  </data>
+  <data name="JavnaRasprava_AskRep_ChooseOter" xml:space="preserve">
+    <value>Izaberi ostale parlamentarce</value>
+  </data>
+  <data name="JavnaRasprava_AskRep_CustomQuestion_ValuePlaceHolder" xml:space="preserve">
+    <value>Postavi vlastito pitanje</value>
+  </data>
+  <data name="JavnaRasprava_AskRep_SelectedRep_Heading" xml:space="preserve">
+    <value>Istaknuti parlamentarci odgovorni za ovu oblast ili temu</value>
+  </data>
+  <data name="JavnaRasprava_ExpertComments_BoxTitle" xml:space="preserve">
+    <value>Mišljenje eksperata</value>
+  </data>
+  <data name="JavnaRasprava_HomePage_AllLaws_Link" xml:space="preserve">
+    <value>Svi zakoni</value>
+  </data>
+  <data name="JavnaRasprava_HomePage_AllSections_Link" xml:space="preserve">
+    <value>Sve teme</value>
+  </data>
+  <data name="JavnaRasprava_Home_Vote_NumberDown" xml:space="preserve">
+    <value>Glasovi protiv</value>
+  </data>
+  <data name="JavnaRasprava_Home_Vote_NumberUp" xml:space="preserve">
+    <value>Glasovi za</value>
+  </data>
+  <data name="JavnaRasprava_LawSectionVote_Message" xml:space="preserve">
+    <value>Ovo je jedna od &lt;strong&gt;najvažnijih tema&lt;/strong&gt;&lt;br&gt; u ovom zakonu.</value>
+  </data>
+  <data name="JavnaRasprava_LawSectionVote_VoteMessage" xml:space="preserve">
+    <value>pokaži svoje mišljenje i uključi se u raspravu!</value>
+  </data>
+  <data name="JavnaRasprava_Law_LawSections_BoxTitle" xml:space="preserve">
+    <value>Najvažnije teme vezane uz ovaj zakon</value>
+  </data>
+  <data name="JavnaRasprava_Representative_MostActive" xml:space="preserve">
+    <value>Najaktivniji parlamentarci</value>
+  </data>
+  <data name="JavnaRasprava_ResultsFilter_Heading" xml:space="preserve">
+    <value>Pregledajte distribuciju odgovora korisnika u odnosu na njihove demografske podatke</value>
+  </data>
+  <data name="JavnaRasprava_Stat_MostActiveLaw_MessageFormat" xml:space="preserve">
+    <value>Sa {0} pitanja najaktivniji zakon u istoj kategoriji</value>
+  </data>
+  <data name="JavnaRasprava_Stat_MostActiveRep_MessageFormat" xml:space="preserve">
+    <value>Sa {0} odgovora najaktivniji parlamentarac u ovom parlamentu</value>
+  </data>
+  <data name="JavnaRasprava_Stat_NoAnswers" xml:space="preserve">
+    <value>Nijedan parlamentarac u ovom parlamentu nije dao odgovor.</value>
+  </data>
+  <data name="JavnaRasprava_Stat_NoQuestions" xml:space="preserve">
+    <value>Nema zakona sa pitanjima u istoj oblasti.</value>
+  </data>
+  <data name="JavnaRasprava_Stat_TotalNumberOfQuestions" xml:space="preserve">
+    <value>Ukupno pitanja na zakonu</value>
+  </data>
+  <data name="JavnaRasprava_VoteLawModel_Title" xml:space="preserve">
+    <value>Koje je Vaše mišljenje o zakonu</value>
+  </data>
+  <data name="JavnaRasprava_VoteLawSectionModal_Title" xml:space="preserve">
+    <value>Koje je Vaše mišljenje o izdvojenoj temi?</value>
+  </data>
+  <data name="Admin_Expert_CreateNew" xml:space="preserve">
+    <value>Dodaj novog experta</value>
+  </data>
+  <data name="Admin_Expert_Create_Heading" xml:space="preserve">
+    <value>Novi ekspert</value>
+  </data>
+  <data name="Admin_Expert_Create_PageTitle" xml:space="preserve">
+    <value>Novi ekspert</value>
+  </data>
+  <data name="Admin_Expert_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite obrisati eksperta?</value>
+  </data>
+  <data name="Admin_Expert_Delete_PageTitle" xml:space="preserve">
+    <value>Izbiriši eksperta</value>
+  </data>
+  <data name="Admin_Expert_Details_PageTitle" xml:space="preserve">
+    <value>Osnovni detalji eksperta</value>
+  </data>
+  <data name="Admin_Expert_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni eksperta</value>
+  </data>
+  <data name="Admin_Expert_Index_PageTitle" xml:space="preserve">
+    <value>Uredi eksperte</value>
+  </data>
+  <data name="Admin_Global_BackToList" xml:space="preserve">
+    <value>Nazad na listu</value>
+  </data>
+  <data name="Admin_Global_Create" xml:space="preserve">
+    <value>Kreiraj</value>
+  </data>
+  <data name="Admin_Global_Delete" xml:space="preserve">
+    <value>Izbriši</value>
+  </data>
+  <data name="Admin_Global_Details" xml:space="preserve">
+    <value>Detalji</value>
+  </data>
+  <data name="Admin_Global_Edit" xml:space="preserve">
+    <value>Izmjeni</value>
+  </data>
+  <data name="Admin_Global_Image" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="Admin_Global_ImageForHompage" xml:space="preserve">
+    <value>Slika za homepage</value>
+  </data>
+  <data name="Admin_Global_InfoBox_Heading" xml:space="preserve">
+    <value>Info boxovi</value>
+  </data>
+  <data name="Admin_Global_InfoBox_TopList" xml:space="preserve">
+    <value>Top lista</value>
+  </data>
+  <data name="Admin_Global_LookOnPublicSite" xml:space="preserve">
+    <value>Pogledaj kako izgleda na sajtu</value>
+  </data>
+  <data name="Admin_Global_NoPictureAssigned" xml:space="preserve">
+    <value>Slika nije dodjeljena</value>
+  </data>
+  <data name="Admin_Global_Save" xml:space="preserve">
+    <value>Spasi</value>
+  </data>
+  <data name="Admin_InfoBox_NotPointedOut" xml:space="preserve">
+    <value>Nije izdvojen</value>
+  </data>
+  <data name="Admin_InfoBox_SaveError" xml:space="preserve">
+    <value>Dogodila se greška</value>
+  </data>
+  <data name="Admin_InfoBox_SaveSuccess" xml:space="preserve">
+    <value>Uspješno spašeno</value>
+  </data>
+  <data name="Admin_Menu_Experts" xml:space="preserve">
+    <value>Uredi eksperte</value>
+  </data>
+  <data name="Admin_Menu_Laws" xml:space="preserve">
+    <value>Uredi zakone</value>
+  </data>
+  <data name="Admin_Menu_News" xml:space="preserve">
+    <value>Uredi vijesti</value>
+  </data>
+  <data name="Admin_Menu_Party" xml:space="preserve">
+    <value>Uredi stranke</value>
+  </data>
+  <data name="Admin_Menu_PetitionProgress" xml:space="preserve">
+    <value>Uredi progrese peticija</value>
+  </data>
+  <data name="Admin_Menu_Petitions" xml:space="preserve">
+    <value>Uredi peticije</value>
+  </data>
+  <data name="Admin_Menu_Quiz" xml:space="preserve">
+    <value>Uredi kvizove</value>
+  </data>
+  <data name="Admin_Menu_Representatives" xml:space="preserve">
+    <value>Uredi parlamentarce</value>
+  </data>
+  <data name="Admin_Menu_Top" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Admin_News_CreateNew" xml:space="preserve">
+    <value>Dodaj novi vijest</value>
+  </data>
+  <data name="Admin_News_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite izbrisati vijest?</value>
+  </data>
+  <data name="Admin_News_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši vijest</value>
+  </data>
+  <data name="Admin_News_Details_PageTitle" xml:space="preserve">
+    <value>Osnovni detalji vijesti</value>
+  </data>
+  <data name="Admin_News_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni vijest</value>
+  </data>
+  <data name="Admin_News_Index_PageTitle" xml:space="preserve">
+    <value>Uredi vijesti</value>
+  </data>
+  <data name="Admin_News_New_PageTitle" xml:space="preserve">
+    <value>Nova vijest</value>
+  </data>
+  <data name="Global_Answers" xml:space="preserve">
+    <value>Odgovora</value>
+    <comment>Plural</comment>
+  </data>
+  <data name="Global_Questions" xml:space="preserve">
+    <value>Pitanja</value>
+    <comment>Plural</comment>
+  </data>
+  <data name="Global_Quiz" xml:space="preserve">
+    <value>Kviz</value>
+  </data>
+  <data name="Login_Login" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Login_Logout" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="Login_Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Login_Register" xml:space="preserve">
+    <value>Registracija</value>
+  </data>
+  <data name="Admin_Global_BackToDetail" xml:space="preserve">
+    <value>Povratak na detalje</value>
+  </data>
+  <data name="Admin_Party_CreateNew" xml:space="preserve">
+    <value>Dodaj novu stranku</value>
+  </data>
+  <data name="Admin_Party_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite izbrisati stranku?</value>
+  </data>
+  <data name="Admin_Party_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši stranku</value>
+  </data>
+  <data name="Admin_Party_Details_PageTitle" xml:space="preserve">
+    <value>Osnovni detalji stranke</value>
+  </data>
+  <data name="Admin_Party_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni stranku</value>
+  </data>
+  <data name="Admin_Party_Index_PageTitle" xml:space="preserve">
+    <value>Uredi stranke</value>
+  </data>
+  <data name="Admin_Party_New_PageTitle" xml:space="preserve">
+    <value>Nova stranka</value>
+  </data>
+  <data name="Admin_PetitionProgress_CreateNew" xml:space="preserve">
+    <value>Dodaj novi progres peticije</value>
+  </data>
+  <data name="Admin_PetitionProgress_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite izbrisati progres?</value>
+  </data>
+  <data name="Admin_PetitionProgress_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši progres peticije</value>
+  </data>
+  <data name="Admin_PetitionProgress_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni progres peticije</value>
+  </data>
+  <data name="Admin_PetitionProgress_Index_PageTitle" xml:space="preserve">
+    <value>Uredi progrese peticija</value>
+  </data>
+  <data name="Admin_PetitionProgress_New_PageTitle" xml:space="preserve">
+    <value>Novi progress peticije</value>
+  </data>
+  <data name="Admin_Petition_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite izbrisati peticiju?</value>
+  </data>
+  <data name="Admin_Petition_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši peticiju</value>
+  </data>
+  <data name="Admin_Petition_Details_PageTitle" xml:space="preserve">
+    <value>Osnovni detalji peticije</value>
+  </data>
+  <data name="Admin_Petition_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni peticiju</value>
+  </data>
+  <data name="Admin_Petition_Index_PageTitle" xml:space="preserve">
+    <value>Uredi peticije</value>
+  </data>
+  <data name="Admin_QuizItems_AddNewItem" xml:space="preserve">
+    <value>Dodajte novo pitanje</value>
+  </data>
+  <data name="Admin_QuizItems_Edit_PageTitle" xml:space="preserve">
+    <value>Uredi pitanja</value>
+  </data>
+  <data name="Admin_QuizItem_ChooseLaw" xml:space="preserve">
+    <value>Odaberite zakon</value>
+  </data>
+  <data name="Admin_QuizItem_ChooseLawSection" xml:space="preserve">
+    <value>Opcionalno odaberite oblast iz zakona</value>
+  </data>
+  <data name="Admin_QuizItem_Create_Heading" xml:space="preserve">
+    <value>Kreiraj pitanje za kviz</value>
+  </data>
+  <data name="Admin_QuizItem_Create_PageTitle" xml:space="preserve">
+    <value>Kreiraj pitanje</value>
+  </data>
+  <data name="Admin_Quiz_CreateItem" xml:space="preserve">
+    <value>Kreiraj pitanje za kviz</value>
+  </data>
+  <data name="Admin_Quiz_CreateNew" xml:space="preserve">
+    <value>Dodaj novi kviz</value>
+  </data>
+  <data name="Admin_Quiz_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite izbrisati kviz?</value>
+  </data>
+  <data name="Admin_Quiz_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši kviz</value>
+  </data>
+  <data name="Admin_Quiz_Details_PageTitle" xml:space="preserve">
+    <value>Osnovni detalji kviza</value>
+  </data>
+  <data name="Admin_Quiz_EditItems" xml:space="preserve">
+    <value>Uredi pitanja</value>
+  </data>
+  <data name="Admin_Quiz_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni kviz</value>
+  </data>
+  <data name="Admin_Quiz_Index_PageTitle" xml:space="preserve">
+    <value>Uredi kvizove</value>
+  </data>
+  <data name="Admin_Quiz_Items" xml:space="preserve">
+    <value>Pitanja</value>
+  </data>
+  <data name="Admin_Quiz_New_PageTitle" xml:space="preserve">
+    <value>Novi kviz</value>
+  </data>
+  <data name="Admin_Quiz_QuizItem_DeleteConfirm" xml:space="preserve">
+    <value>Da li ste sigurni da želite izbrisati pitanje</value>
+  </data>
+  <data name="Admin_Quiz_StartQuiz" xml:space="preserve">
+    <value>Pokreni kviz</value>
+  </data>
+  <data name="Admin_RepQuestions_Answered" xml:space="preserve">
+    <value>Odgovoren</value>
+  </data>
+  <data name="Admin_RepQuestions_AskedTimes" xml:space="preserve">
+    <value>Pitan puta:</value>
+  </data>
+  <data name="Admin_RepQuestions_CommandFail" xml:space="preserve">
+    <value>Dogodila se greška, pokušajte ponovo</value>
+  </data>
+  <data name="Admin_RepQuestions_CommandSuccess" xml:space="preserve">
+    <value>Komanda uspješno primljena. Osvježite stranicu za par trenutaka da vidite nove vrijednosti.</value>
+  </data>
+  <data name="Admin_RepQuestions_EmailNumber" xml:space="preserve">
+    <value>E-mailova:</value>
+  </data>
+  <data name="Admin_RepQuestions_Heading" xml:space="preserve">
+    <value>Pitanja postavljena parlamentarcu</value>
+  </data>
+  <data name="Admin_RepQuestions_OnLaw" xml:space="preserve">
+    <value>Na zakonu:</value>
+  </data>
+  <data name="Admin_RepQuestions_Predefined" xml:space="preserve">
+    <value>Predefinisan</value>
+  </data>
+  <data name="Admin_RepQuestions_SendEmailAgain" xml:space="preserve">
+    <value>Pošaljei e-mail ponovo</value>
+  </data>
+  <data name="Admin_RepQuestions_Verified" xml:space="preserve">
+    <value>Verificiran</value>
+  </data>
+  <data name="PetitionProgress_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="PetitionProgress_ImageDone" xml:space="preserve">
+    <value>Slika za dostignuto</value>
+  </data>
+  <data name="PetitionProgress_ImageToDo" xml:space="preserve">
+    <value>Slika za dostizanje</value>
+  </data>
+  <data name="PetitionProgress_ParliamentName" xml:space="preserve">
+    <value>Parlament</value>
+  </data>
+  <data name="PetitionProgress_Representative" xml:space="preserve">
+    <value>Parlamentarac/ka</value>
+  </data>
+  <data name="PetitionProgress_Title" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="QuizItem_LawTitle" xml:space="preserve">
+    <value>Zakon</value>
+  </data>
+  <data name="QuizItem_Order" xml:space="preserve">
+    <value>Redni broj</value>
+  </data>
+  <data name="QuizItem_SectionTitle" xml:space="preserve">
+    <value>Izdvojena oblast</value>
+  </data>
+  <data name="Quiz_Items" xml:space="preserve">
+    <value>Pitanja</value>
+  </data>
+  <data name="Admin_CustomVoteDetail_VoteTypeIgnore" xml:space="preserve">
+    <value>Odgovor nije postavljen - admin oznacio da ignorise ovaj odgovor</value>
+  </data>
+  <data name="Admin_CustomVoteDetail_VoteTypeNotSet" xml:space="preserve">
+    <value>Odgovor nije postavljen</value>
+  </data>
+  <data name="Admin_CustomVote_Edit_PageTitle" xml:space="preserve">
+    <value>Izmijeni predefinisani odgovor</value>
+  </data>
+  <data name="Admin_CustomVote_New_PageTitle" xml:space="preserve">
+    <value>Novi predefinisani odgovor</value>
+  </data>
+  <data name="Admin_ExpertComments_AddNew" xml:space="preserve">
+    <value>Kreiraj novo mišljenje eksperta</value>
+  </data>
+  <data name="Admin_ExpertComments_Index_PageTitle" xml:space="preserve">
+    <value>Uredi mišljenje eksperata</value>
+  </data>
+  <data name="Admin_ExpertComment_New_PageTitle" xml:space="preserve">
+    <value>Dodaj mišljenje eksperta na zakon</value>
+  </data>
+  <data name="Admin_Global_AddNewPredefinedAnswer" xml:space="preserve">
+    <value>Dodaj predefinisani odgovor</value>
+  </data>
+  <data name="Admin_Global_AdminSetIgnore" xml:space="preserve">
+    <value>Ne, ali admin je izabrao da ignoriše</value>
+  </data>
+  <data name="Admin_Global_BackToLaw" xml:space="preserve">
+    <value>Povratak na zakon</value>
+  </data>
+  <data name="Admin_Global_ChangeFile" xml:space="preserve">
+    <value>Izmijeni/Obriši file</value>
+  </data>
+  <data name="Admin_Global_ChangeImage" xml:space="preserve">
+    <value>Izmijeni/Obriši sliku</value>
+  </data>
+  <data name="Admin_Global_ChooseFile" xml:space="preserve">
+    <value>Izaberite fajl...</value>
+  </data>
+  <data name="Admin_Global_ChooseImage" xml:space="preserve">
+    <value>Izaberite sliku...</value>
+  </data>
+  <data name="Admin_Global_LawTitle" xml:space="preserve">
+    <value>Naslov zakona</value>
+  </data>
+  <data name="Admin_Global_MainDetails" xml:space="preserve">
+    <value>Osnovni detalji</value>
+  </data>
+  <data name="Admin_Global_OtherAnswers" xml:space="preserve">
+    <value>Ostali odgovori</value>
+  </data>
+  <data name="Admin_Global_ParliamentHouses" xml:space="preserve">
+    <value>Domovi</value>
+  </data>
+  <data name="Admin_Global_PredefinedAnswers" xml:space="preserve">
+    <value>Predefinisani odgovori</value>
+  </data>
+  <data name="Admin_Index_DirectQuestions" xml:space="preserve">
+    <value>Direktna pitanja parlamentarcima</value>
+  </data>
+  <data name="Admin_Index_PageTitle" xml:space="preserve">
+    <value>Admin homepage</value>
+  </data>
+  <data name="Admin_Index_UnverifiedLawAnswers" xml:space="preserve">
+    <value>Predloženi odgovori</value>
+  </data>
+  <data name="Admin_Index_UnverifiedLawSectionAnswers" xml:space="preserve">
+    <value>Predloženi odgovori na sekcijama</value>
+  </data>
+  <data name="Admin_Index_UnverifiedPetitions" xml:space="preserve">
+    <value>Neverificirane peticije</value>
+  </data>
+  <data name="Admin_Index_UnverifiedQuestions" xml:space="preserve">
+    <value>Neverificirana pitanja</value>
+  </data>
+  <data name="Admin_LawSeciton_Edit_PageTitle" xml:space="preserve">
+    <value>Izmijeni izdvojenu oblast</value>
+  </data>
+  <data name="Admin_LawSections_AddNew" xml:space="preserve">
+    <value>Dodaj novu izdvojenu temu</value>
+  </data>
+  <data name="Admin_LawSections_Index_PageTitle" xml:space="preserve">
+    <value>Uredi izdvojene teme</value>
+  </data>
+  <data name="Admin_LawSection_New_PageTitle" xml:space="preserve">
+    <value>Nova izdvojena oblast</value>
+  </data>
+  <data name="Admin_Laws_AddNew" xml:space="preserve">
+    <value>Dodaj novi zakon</value>
+  </data>
+  <data name="Admin_Laws_Index_PageTitle" xml:space="preserve">
+    <value>Uredi zakone</value>
+  </data>
+  <data name="Admin_Law_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite obrisati ovaj zakon?</value>
+  </data>
+  <data name="Admin_Law_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši zakon</value>
+  </data>
+  <data name="Admin_Law_Details_PageTitle" xml:space="preserve">
+    <value>Detalji zakona</value>
+  </data>
+  <data name="Admin_Law_Details_SeeLaw" xml:space="preserve">
+    <value>Pogledaj zakon na JavnaRasprava</value>
+  </data>
+  <data name="Admin_Law_Edit_PageTitle" xml:space="preserve">
+    <value>Izmjeni zakon</value>
+  </data>
+  <data name="Admin_Law_ManageLawExpertComments" xml:space="preserve">
+    <value>Uredi mišljenja eksperata</value>
+  </data>
+  <data name="Admin_Law_ManageLawSections" xml:space="preserve">
+    <value>Uredi izdvojene teme</value>
+  </data>
+  <data name="Admin_Law_ManagePredefinedQuestions" xml:space="preserve">
+    <value>Uredi predefinisana pitanja</value>
+  </data>
+  <data name="Admin_Law_ManagePredefinedVotes" xml:space="preserve">
+    <value>Uredi predefinisane odgovore</value>
+  </data>
+  <data name="Admin_Law_ManageQuestions" xml:space="preserve">
+    <value>Uredi pitanja</value>
+  </data>
+  <data name="Admin_Law_ManageSuggestedRepresentatives" xml:space="preserve">
+    <value>Uredi istaknute parlamentarce</value>
+  </data>
+  <data name="Admin_Law_ManageVotes" xml:space="preserve">
+    <value>Uredi odgovore</value>
+  </data>
+  <data name="Admin_Law_New_PageTitle" xml:space="preserve">
+    <value>Novi zakon</value>
+  </data>
+  <data name="Admin_Law_NoFile" xml:space="preserve">
+    <value>Ovaj zakon nema dodijeljen dokument zakona</value>
+  </data>
+  <data name="Admin_Law_OtherQuestions" xml:space="preserve">
+    <value>Ostala pitanja postavljena za ovaj zakon</value>
+  </data>
+  <data name="Admin_Law_OtherVotes" xml:space="preserve">
+    <value>Ostali odgovori odgovoreni tokom gasanja</value>
+  </data>
+  <data name="Admin_Law_PredefinedQuestions" xml:space="preserve">
+    <value>Predefinisana pitanja</value>
+  </data>
+  <data name="Admin_Law_PredefinedVotes" xml:space="preserve">
+    <value>Predefinisani odgovori</value>
+  </data>
+  <data name="Admin_Law_SuggestedRepresentatives" xml:space="preserve">
+    <value>Istaknuti parlamentarci</value>
+  </data>
+  <data name="Admin_PredefinedAnswer_AddNew" xml:space="preserve">
+    <value>Dodaj novi predefinisani odgovor</value>
+  </data>
+  <data name="Admin_PredefinedAnswer_Index_PageTitle" xml:space="preserve">
+    <value>Uredi predefinisane odgovore</value>
+  </data>
+  <data name="Admin_PredefinedQuestion_AddNew" xml:space="preserve">
+    <value>Dodaj novo predefinisano pitanje</value>
+  </data>
+  <data name="Admin_PredefinedQuestion_Edit_PageTitle" xml:space="preserve">
+    <value>Izmijeni predefinisano pitanje</value>
+  </data>
+  <data name="Admin_Reppresentative_Edit_PageTitle" xml:space="preserve">
+    <value>Izmijeni detalje reprezentativca/ke</value>
+  </data>
+  <data name="Admin_RepQuestions_ParliamentNameMessage" xml:space="preserve">
+    <value>Iz parlamenta</value>
+  </data>
+  <data name="Admin_RepQuestions_RepNameMessage" xml:space="preserve">
+    <value>Pitanje je postavljeno parlementarcu</value>
+  </data>
+  <data name="Admin_RepresentativeAssignment_PageTitle" xml:space="preserve">
+    <value>Uredi članstvo u komsiji/tijelu parlamenta</value>
+  </data>
+  <data name="Admin_RepresentativeLinks_PageTitle" xml:space="preserve">
+    <value>Uredi vanjske linkove parlamentaraca</value>
+  </data>
+  <data name="Admin_Representatives_AddNewFormat" xml:space="preserve">
+    <value>Dodaj parlamentarca u {0}</value>
+  </data>
+  <data name="Admin_Representatives_Assignments" xml:space="preserve">
+    <value>Članstvo u komsiji/tijelu parlamenta</value>
+  </data>
+  <data name="Admin_Representatives_Deatail_PageTitle" xml:space="preserve">
+    <value>Detalji parlamentarca/ke</value>
+  </data>
+  <data name="Admin_Representatives_ExternalLinks" xml:space="preserve">
+    <value>Vanjski linkovi</value>
+  </data>
+  <data name="Admin_Representatives_FirstNameAndLastName" xml:space="preserve">
+    <value>Ime i prezime</value>
+  </data>
+  <data name="Admin_Representatives_Index_PageTitle" xml:space="preserve">
+    <value>Uredi parlamentarce</value>
+  </data>
+  <data name="Admin_Representatives_SeeProfile" xml:space="preserve">
+    <value>Pogledaj profil na JavnaRasprava</value>
+  </data>
+  <data name="Admin_Representative_New_PageTitle" xml:space="preserve">
+    <value>Novi parlamentarac/ka</value>
+  </data>
+  <data name="Admin_Rep_Delete_Heading" xml:space="preserve">
+    <value>Da li ste sigurni da želite obrisati parlamentarca/ku?</value>
+  </data>
+  <data name="Admin_Rep_Delete_PageTitle" xml:space="preserve">
+    <value>Izbriši parlamentarca/ku?</value>
+  </data>
+  <data name="Admin_SuggestedQuestion_New_PageTitle" xml:space="preserve">
+    <value>Novi predloženi odgovor</value>
+  </data>
+  <data name="Admin_SuggestedRepresentatives" xml:space="preserve">
+    <value>Istaknuti parlamentarci</value>
+  </data>
+  <data name="Admin_SuggestedRepresentatives_AddNew" xml:space="preserve">
+    <value>Dodaj novog istaknutog parlamentarca</value>
+  </data>
+  <data name="Admin_SuggestedRepresentatives_PageTitle" xml:space="preserve">
+    <value>Uredi istaknute parlamentarce</value>
+  </data>
+  <data name="Admin_SuggestedRep_New_PageTitle" xml:space="preserve">
+    <value>Dodaj predloženog perlamentarca/ku</value>
+  </data>
+  <data name="Admin_UnverifiedCustomAnswers_Heading" xml:space="preserve">
+    <value>Neverificirani predloženi odgovori</value>
+  </data>
+  <data name="Admin_UnverifiedDirectQuestions_Heading" xml:space="preserve">
+    <value>Neverificirana pitanja postavljena direktno parlamentarcu/ki</value>
+  </data>
+  <data name="Admin_UnverifiedLawQuestions_Heading" xml:space="preserve">
+    <value>Neverificirana pitanja postavljena na zakon</value>
+  </data>
+  <data name="Admin_UnverifiedLawSectionQuestions_Heading" xml:space="preserve">
+    <value>Neverificirani predloženi odgovori od sekcija</value>
+  </data>
+  <data name="Admin_UnverifiedPetitions_Heading" xml:space="preserve">
+    <value>Neverificirane peticije</value>
+  </data>
+  <data name="Admin_Unverified_NothingHere" xml:space="preserve">
+    <value>Ništa novo za verifikovati.</value>
+  </data>
+  <data name="Global_AreYouSureToDelete" xml:space="preserve">
+    <value>Jeste li sigurni da želite obrisati, ova operacija nema undo?</value>
+  </data>
+  <data name="Global_FollowLink" xml:space="preserve">
+    <value>Pogledaj</value>
+  </data>
+  <data name="Global_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="Global_Negative" xml:space="preserve">
+    <value>Negativan</value>
+  </data>
+  <data name="Global_No" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="Global_Positive" xml:space="preserve">
+    <value>Pozitivan</value>
+  </data>
+  <data name="Global_Resume" xml:space="preserve">
+    <value>CV</value>
+  </data>
+  <data name="Global_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="Law_IsActive" xml:space="preserve">
+    <value>Aktivan</value>
+  </data>
+  <data name="Law_StatusText" xml:space="preserve">
+    <value>Opis statusa zakona</value>
+  </data>
+  <data name="Law_StatusTitle" xml:space="preserve">
+    <value>Status zakona</value>
+  </data>
+  <data name="Law_TextFile" xml:space="preserve">
+    <value>Tekst zakona</value>
+  </data>
+  <data name="Admin_Menu_Manage" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="JavnaRasprava_Representative_MostInactive" xml:space="preserve">
+    <value>Najneaktivniji parlamentarci</value>
+  </data>
+  <data name="Education_Bachelor" xml:space="preserve">
+    <value>Bachelor</value>
+  </data>
+  <data name="Education_Doctoral" xml:space="preserve">
+    <value>Doktorat</value>
+  </data>
+  <data name="Education_Elementary" xml:space="preserve">
+    <value>Osnovna</value>
+  </data>
+  <data name="Education_Faculty" xml:space="preserve">
+    <value>Visoka</value>
+  </data>
+  <data name="Education_Master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="Education_MiddleScool" xml:space="preserve">
+    <value>Srednja</value>
+  </data>
+  <data name="Education_UpperSchool" xml:space="preserve">
+    <value>Viša</value>
+  </data>
+  <data name="Account_ChangePassword_EmailBody" xml:space="preserve">
+    <value>Da biste promijenili vašu šifru kliknite &lt;a href="{0}"&gt;ovdje.&lt;/a&gt;</value>
+  </data>
+  <data name="Account_ChangePassword_EmailSubject" xml:space="preserve">
+    <value>Postavi šifru ponovo</value>
+  </data>
+  <data name="Account_ConfirmEmailRepeated" xml:space="preserve">
+    <value>Potvrdite email adresu - ponovljena poruka</value>
+  </data>
+  <data name="Account_ConfirmEmail_EmailBody" xml:space="preserve">
+    <value>Da biste aktivirali vaš račun kliknite &lt;a href="{0}"&gt;ovdje&lt;/a&gt;</value>
+  </data>
+  <data name="Account_ConfirmEmail_EmailSent_Message" xml:space="preserve">
+    <value>Email sa linkom za potvrdu računa Vam je poslan. Kliknite na link iz emaila da biste se logirali</value>
+  </data>
+  <data name="Account_ConfirmEmail_EmailSubject" xml:space="preserve">
+    <value>Potvrdite email adresu</value>
+  </data>
+  <data name="Account_DisabledMessage" xml:space="preserve">
+    <value>Vaš račun je blokiran, molimo kontaktirajte administratora.</value>
+  </data>
+  <data name="Account_PleaseConfirmEmailMessage" xml:space="preserve">
+    <value>Morate prvo potvrditi email da biste se logirali.</value>
+  </data>
+  <data name="Admin_Menu_Parliament" xml:space="preserve">
+    <value>Uredi parliamente</value>
+  </data>
+  <data name="Admin_Menu_Users" xml:space="preserve">
+    <value>Uredi korisnike</value>
+  </data>
+  <data name="Admin_ParliamentHouses_Edit_PageTitle" xml:space="preserve">
+    <value>Edit Parliament House</value>
+  </data>
+  <data name="Admin_ParliamentHouse_AddNewItem" xml:space="preserve">
+    <value>Create new house</value>
+  </data>
+  <data name="Admin_ParliamentHouse_Create_PageTitle" xml:space="preserve">
+    <value>Create Parliament House</value>
+  </data>
+  <data name="Admin_ParliamentHouse_Edit_PageTitle" xml:space="preserve">
+    <value>Edit Parliament Houses</value>
+  </data>
+  <data name="Admin_Parliament_CreateNew" xml:space="preserve">
+    <value>Create new Parliament</value>
+  </data>
+  <data name="Admin_Parliament_Delete_Heading" xml:space="preserve">
+    <value>Are you sure you want to delete Parliament?</value>
+  </data>
+  <data name="Admin_Parliament_Delete_PageTitle" xml:space="preserve">
+    <value>Delete Parliament</value>
+  </data>
+  <data name="Admin_Parliament_Details_PageTitle" xml:space="preserve">
+    <value>Parliament details</value>
+  </data>
+  <data name="Admin_Parliament_EditParliamentHouses" xml:space="preserve">
+    <value>Edit Parliament Houses</value>
+  </data>
+  <data name="Admin_Parliament_Edit_PageTitle" xml:space="preserve">
+    <value>Edit Parliament</value>
+  </data>
+  <data name="Admin_Parliament_Index_PageTitle" xml:space="preserve">
+    <value>Manage Parliaments</value>
+  </data>
+  <data name="Admin_Parliament_New_PageTitle" xml:space="preserve">
+    <value>Parliaments</value>
+  </data>
+  <data name="Admin_Parliament_ParliamentHouses" xml:space="preserve">
+    <value>Parliament Houses</value>
+  </data>
+  <data name="Admin_Parliament_ParliamentHouse_DeleteConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete Parliament House?</value>
+  </data>
+  <data name="Admin_PetitionProgress_WhenRepNotSet_SectionTitle" xml:space="preserve">
+    <value>Values to use when representative is not set</value>
+  </data>
+  <data name="Admin_Users_AddToAdmin" xml:space="preserve">
+    <value>Add to Admins</value>
+  </data>
+  <data name="Admin_Users_DisableUser" xml:space="preserve">
+    <value>Disable user</value>
+  </data>
+  <data name="Admin_Users_EnableUser" xml:space="preserve">
+    <value>Enable user</value>
+  </data>
+  <data name="Admin_Users_RemoveFromAdmin" xml:space="preserve">
+    <value>Remove from Admins</value>
+  </data>
+  <data name="Admin_User_Details_PageTitle" xml:space="preserve">
+    <value>User details</value>
+  </data>
+  <data name="Admin_User_Index_PageTitle" xml:space="preserve">
+    <value>Manage users</value>
+  </data>
+  <data name="Global_Or" xml:space="preserve">
+    <value>ili</value>
+  </data>
+  <data name="Global_ParliamentHouses" xml:space="preserve">
+    <value>Houses of Parliament</value>
+  </data>
+  <data name="Global_Sort_Latest" xml:space="preserve">
+    <value>Najnoviji</value>
+  </data>
+  <data name="Global_Sort_QuestionCount" xml:space="preserve">
+    <value>Broju pitanja</value>
+  </data>
+  <data name="Global_Sort_Title" xml:space="preserve">
+    <value>Naslovu</value>
+  </data>
+  <data name="Global_Sort_VoteTime" xml:space="preserve">
+    <value>Datumu glasanja</value>
+  </data>
+  <data name="JavnaRasprava_DiscussWithReps" xml:space="preserve">
+    <value>i diskutuj sa parlamentarcima/kama</value>
+  </data>
+  <data name="JavnaRasprava_LawVote_Message" xml:space="preserve">
+    <value>Da li si &lt;strong&gt;za&lt;/strong&gt; ili &lt;strong&gt;protiv&lt;/strong&gt; ovog prijedloga zakona?</value>
+  </data>
+  <data name="JavnaRasprava_VoteLawModal_CustomVote_Placeholder" xml:space="preserve">
+    <value>Upišite vlastiti odgovor</value>
+  </data>
+  <data name="ParliamentHouse_Name" xml:space="preserve">
+    <value>Parliament House Name</value>
+  </data>
+  <data name="ParliamentHouse_Order" xml:space="preserve">
+    <value>Ordering in list</value>
+  </data>
+  <data name="ParliamentHouse_Order_Description" xml:space="preserve">
+    <value>Parliament houses will be ordered based on this number </value>
+  </data>
+  <data name="Parliament_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Parliament_Code_Description" xml:space="preserve">
+    <value>Parliament Code will be part of urls. Keep it short, max 8 chars</value>
+  </data>
+  <data name="Parliament_IsExclusive" xml:space="preserve">
+    <value>Is Exclusive</value>
+  </data>
+  <data name="Parliament_IsExclusive_Description" xml:space="preserve">
+    <value>If exclusive there will be no parliament selection for this parliament</value>
+  </data>
+  <data name="Parliament_Name" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name of the parliament</comment>
+  </data>
+  <data name="Parliament_Name_Description" xml:space="preserve">
+    <value>Parliament Name will be displayed on main parliament selection and in dropdowns</value>
+  </data>
+  <data name="Parliament_Order" xml:space="preserve">
+    <value>Ordering in list</value>
+  </data>
+  <data name="Parliament_Order_Description" xml:space="preserve">
+    <value>Parliaments will be ordered based on this number</value>
+  </data>
+  <data name="Parliament_RepScreenName" xml:space="preserve">
+    <value>Rep Screen Name</value>
+  </data>
+  <data name="Parliament_RepScreenName_Description" xml:space="preserve">
+    <value>Rep Screen Name will be used as title for parliament selection on rep screen</value>
+  </data>
+  <data name="Petition_Create_Button" xml:space="preserve">
+    <value>Kreiraj peticiju</value>
+  </data>
+  <data name="Petition_Sign_Button" xml:space="preserve">
+    <value>Potpiši peticiju</value>
+  </data>
+  <data name="Quiz_Take_AlreadyVoted_Message" xml:space="preserve">
+    <value>Već ste glasali:</value>
+  </data>
+  <data name="Quiz_YourVote" xml:space="preserve">
+    <value>Vaš odgovor</value>
+  </data>
+  <data name="User_AccessFailedCount" xml:space="preserve">
+    <value>Access failed count</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_EmailConfirmed" xml:space="preserve">
+    <value>Email confirmed</value>
+  </data>
+  <data name="User_IsAdmin" xml:space="preserve">
+    <value>Is Admin</value>
+  </data>
+  <data name="User_IsDisabled" xml:space="preserve">
+    <value>Used disabled</value>
+  </data>
+  <data name="User_UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="JS_Admin_DeleteError" xml:space="preserve">
+    <value>Desila se greška prilikom brisanja.</value>
+  </data>
+  <data name="JS_Admin_DeleteSuccess" xml:space="preserve">
+    <value>Uspješno obrisano.</value>
+  </data>
+  <data name="JS_Global_Error" xml:space="preserve">
+    <value>Greška</value>
+  </data>
+  <data name="JS_Law_ErrorSavingVote" xml:space="preserve">
+    <value>Dogodila se greška prilikom spašavanja glasa.</value>
+  </data>
+  <data name="JS_Law_PleaseChooseOneOfAnswers" xml:space="preserve">
+    <value>Molimo da odaberete jedan od ponudjenih odgovora.</value>
+  </data>
+  <data name="JS_Law_PleaseProvideYourAnswer" xml:space="preserve">
+    <value>Molimo da napišete vlastiti odgovor.</value>
+  </data>
+  <data name="JS_Law_PleaseSelectQuestion" xml:space="preserve">
+    <value>Molimo da izbarete predefinisano pitanje ili postavite vlastito. &lt;br /&gt;</value>
+  </data>
+  <data name="JS_Law_PleaseSelectRep" xml:space="preserve">
+    <value>Molimo da izaberete parlamentarca kojem postavljate pitanje.</value>
+  </data>
+</root>

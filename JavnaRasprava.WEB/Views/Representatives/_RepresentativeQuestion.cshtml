@@ -1,0 +1,31 @@
+﻿@model JavnaRasprava.WEB.Models.Representative.RepresentativeQuestionModel
+
+<div class="question">
+    <p>
+        <strong>@GlobalLocalization.Global_Question:</strong> @Model.Title
+        <br>
+    </p>
+    @Html.Partial( "_QuestionLikes", Model )
+    <small>@GlobalLocalization.Representative_QuestionAskedTimes: @Model.AskedTimeUtc.ToString( "dd.MM.yyyy" )</small>
+
+    @if ( Model.Answer == null )
+    {
+        <span class="label label-danger">@GlobalLocalization.Representative_NoAnswer</span>
+    }
+</div>
+
+
+@if ( Model.Answer != null )
+{
+    <div class="answer">
+        <p>
+            <strong>@GlobalLocalization.Global_Answer:</strong> @Html.Raw( Model.Answer.Answer )
+            <br>
+        </p>
+
+        @Html.Partial( "_AnswerLikes", Model.Answer )
+        <small>@GlobalLocalization.Answer_Date: @Model.Answer.AnswerTime.ToString( "dd.MM.yyyy" )</small>
+    </div>
+}
+    </p>
+<hr>

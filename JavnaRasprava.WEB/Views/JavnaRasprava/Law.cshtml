@@ -1,0 +1,70 @@
+﻿@model LawModel
+@{
+    ViewBag.Title = Model.Law.Title;
+    ViewBag.OgTitle = Model.Law.Title;
+    ViewBag.Description = GlobalLocalization.Facebook_Law_PageDescription;
+    ViewBag.Image = Model.Law.ImageRelativePath== null ? 
+        JavnaRasprava.WEB.Infrastructure.ImageHelper.GetImage("javna_rasprava_logo.png" ) :
+        JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawImage( Model.Law.ImageRelativePath );
+}
+
+@if ( ViewBag.TenantCode == FeatureToggle.Tenant_BA )
+{
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink( @GlobalLocalization.JavnaRasprava_Breadcrumb_Home, "Index", "Home")</li>
+        <li>@Html.RouteLink(GlobalLocalization.Global_JavnaRasprava, Routes.JavnaRasprava_Index)</li>
+        <li>@Html.RouteLink(Model.Law.Parliament.Name, Routes.Representatives_Index)</li>
+        <li class="active">@Model.Law.Title</li>
+    </ol>
+}
+
+<input type="text" id="scroll" value="@ViewBag.scrollPosition" hidden="hidden" />
+
+<div class="row">
+    <div class="col-lg-6">
+        @Html.Partial( "_LawDetails", Model )
+        @if ( Model.Sections != null && Model.Sections.Count > 0 )
+        {
+            <div>
+                @Html.Partial( "_LawSections", Model.Sections )
+            </div>
+        }
+
+        @if ( Model.ExpertCommentsCount != 0 )
+        {
+            <div id="expertCommentsWrapper">
+                @Html.Partial( "_LawExpertComments", Model.Law.ExpertComments )
+            </div>
+        }
+
+        <div id="userCommentsWrapper" class="fb-comments" data-width="100%" data-href="@Model.FbCommentsPath" data-numposts="5" data-colorscheme="light"></div>
+
+        
+    </div>
+
+    <div class="col-lg-6">
+        @Html.Partial( "Representatives/_RepresentativesMain", Model )
+    </div>
+</div>
+
+
+@section translationScript
+{
+    @Scripts.Render("~/Scripts/javnarasprava-translations.js")
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            var scrollValue = $('#scroll').val();
+            if (scrollValue !== null && scrollValue !== undefined && scrollValue != "") {
+                $('html,body').animate({
+                    scrollTop: $('#' + scrollValue).offset().top - 20
+                }, 'slow');
+            }
+        });
+    </script>
+}
+
+

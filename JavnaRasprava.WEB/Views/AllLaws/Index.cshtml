@@ -1,0 +1,25 @@
+﻿@model JavnaRasprava.WEB.Models.AllLawsModel
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@Html.Action( "AllLaws", "ParliamentSelection", new { pCode = ViewBag.ParliamentCode }  )
+
+@{
+    ViewBag.Title = GlobalLocalization.AllLaws_Index_PageTitle;
+}
+
+<div class="panel panel-default home-search-filter">
+    @Html.Partial( "_SearchPanel", Model.SearchModel )
+</div>
+
+<div id="SearchResults" class="clearfix">
+    @Html.Partial( "_SearchResults", Model.Results )
+</div>
+
+<div id="Paging">
+    @string.Format(GlobalLocalization.Global_Paging, (Model.Results.PageCount < Model.Results.PageNumber ? 0 : Model.Results.PageNumber), @Model.Results.PageCount)
+
+
+    @Html.PagedListPager( Model.Results, page => Url.Action( "Search",
+     new { page, LawSort = Model.SearchModel.LawSort, QueryString = Model.SearchModel.QueryString, CategoryId = Model.SearchModel.CategoryId } ) )
+</div>

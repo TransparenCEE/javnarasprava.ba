@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.News.NewsModel>
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_News_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.Action("Admin", "ParliamentSelection", new { returnUrl = Url.Action("GetAllNews", "admin") })
+@*@Html.Partial( "../Shared/_skupstineAdmin", "Admin/GetAllNews" )*@
+
+<h3>@GlobalLocalization.Admin_News_Index_PageTitle</h3>
+
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_News_CreateNew, "NewsCreate" )
+</p>
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-6">
+            @Html.DisplayNameFor( model => model.Title )
+        </th>
+        <th class="col-md-2"></th>
+    </tr>
+
+    @foreach ( var item in Model )
+    {
+        <tr>
+            <td class="col-md-6">
+                @Html.DisplayFor( modelItem => item.Title )
+            </td>
+            <td class="col-md-2 text-right">
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "NewsEdit", new { id = item.NewsId }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "NewsDetails", new { id = item.NewsId }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteNews", new { id = item.NewsId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,30 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_RepresentativeLinks_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.DisplayFor( model => model.FirstName ) @Html.DisplayFor( model => model.LastName )
+
+<div>
+
+    @if ( Model.ExternalLinks != null )
+    {
+        foreach ( var externalLink in Model.ExternalLinks )
+        {
+            @Html.Partial( "_RepresentativeExternalLinkItem", externalLink )
+        }
+        <div id="newLink">
+        </div>
+        <div id="addLink">
+            @using ( Ajax.BeginForm( "CreateRepresentativeExternalLink", new { representativeId = Model.RepresentativeID }, new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "newLink", HttpMethod = "Post", OnSuccess = "$('#Description').val('');$('#Url').val('');" } ) )
+            {
+                @Html.Partial( "_CreateRepresentativeExternalLink", new RepresentativeExternalLinkModel() )
+            }
+        </div>
+    }
+</div>
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToDetail, "RepresentativeDetails", new { repId = Model.RepresentativeID })
+</p>

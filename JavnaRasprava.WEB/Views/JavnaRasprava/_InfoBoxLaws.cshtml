@@ -1,0 +1,20 @@
+﻿@model LawSummaryListModel
+
+<div class="clearfix">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong><i class="fa fa-book"></i> @Model.Title</strong> 
+            <a class="pull-right" href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.AllLaws_Index, new { pCode = ViewBag.ParliamentCode } )">
+                <strong><i class="fa fa-link"></i> @GlobalLocalization.JavnaRasprava_HomePage_AllLaws_Link </strong>
+            </a>
+        </div>
+        <br />
+
+            @foreach ( var item in Model.Laws )
+            {
+               @Html.Partial( "_lawBox", item );
+            }
+        <div class="clearfix"></div>
+        <br />
+    </div>
+</div>

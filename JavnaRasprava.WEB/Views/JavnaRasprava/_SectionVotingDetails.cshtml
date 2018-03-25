@@ -1,0 +1,50 @@
+﻿@model JavnaRasprava.WEB.Models.LawSectionModel
+<div class="col-md-6 pull-right no-padding">
+    <div class="sectionVotingDetailsInner paper">
+    @if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+    {
+            <div class="progress">
+                @if ( Model.VotesUpPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-success" style="width: @Model.VotesUpPercentage%" aria-valuenow=@Model.VotesUpPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesUpPercentage%
+                    </div>
+                }
+                @if ( Model.VotesDownPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-danger" style="width: @Model.VotesDownPercentage%" aria-valuenow=@Model.VotesDownPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesDownPercentage%
+                    </div>
+                }
+            </div>
+    }
+    else
+    {
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+                0%
+            </div>
+        </div>
+    }
+        <span class="label label-success label">@GlobalLocalization.Global_VoteUp: @Model.VotesUp</span>
+        <span class="label label-danger label">@GlobalLocalization.Global_VoteDown: @Model.VotesDown</span>
+    @if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+    {
+        <a class="btn btn-xs btn-default pull-right" onclick="OpenVotingDetailsModal('GetSectionVotingDetails', @Model.LawSection.LawSectionID)">@GlobalLocalization.JavnaRasprava_MoreDetails</a>
+    }
+
+        @{
+            string votingDisabled = Model.UserVoted ? "disabled" : "";
+        }
+        <br>
+        <p class="text-center" style="padding:15px 0 0">
+            @Html.Raw(GlobalLocalization.JavnaRasprava_LawSectionVote_Message)
+        </p>
+        <button id="openSectionVoteDialog_@Model.LawSection.LawSectionID" type="button" class="btn btn-primary btn-block" data-toggle="modal" onclick="GetSectionVoteOptions(@Model.LawSection.LawID, @Model.LawSection.LawSectionID, '@Model.UserVoted' )" @votingDisabled>
+            @GlobalLocalization.Global_Vote
+        </button>
+        <p class="text-center" style="padding:5px 0 0">
+            @GlobalLocalization.JavnaRasprava_LawSectionVote_VoteMessage
+        </p>
+    </div>
+</div>

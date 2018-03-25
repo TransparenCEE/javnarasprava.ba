@@ -1,0 +1,29 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_SuggestedRepresentatives_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Admin_SuggestedRepresentatives</h2>
+<h4>@GlobalLocalization.Admin_Global_LawTitle: @Model.Title</h4>
+
+<div>
+    @if ( Model.Representatives != null )
+    {
+        foreach ( var representative in Model.Representatives )
+        {
+            @Html.Partial( "_RepresentativeDetail", representative )
+        }
+    }
+
+    <br />
+    <br />
+    @Html.ActionLink( GlobalLocalization.Admin_SuggestedRepresentatives_AddNew, "CreateSuggestedRepresentative", new { lawId = Model.LawID } )
+    <br />
+    <br />
+
+</div>
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToLaw, "LawDetails", new { lawId = Model.LawID } )
+</p>

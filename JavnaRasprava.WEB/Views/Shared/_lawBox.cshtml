@@ -1,0 +1,51 @@
+﻿@model LawSummaryModel
+
+<div class="theme-no-thumbnail col-sm-3 col-md-3 space-bottom-lg law-box">
+    @if ( !String.IsNullOrWhiteSpace( Model.ImageRelativePath ) )
+    {
+    <div class="img-container-4x3">
+        <a href='@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.ID } )'>
+            <img src='@Url.Content( JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawImage( Model.ImageRelativePath ) )' class="img-responsive" />
+        </a>
+    </div>
+    }
+    <div class="theme-stats">
+        @if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+        {
+            <div class="progress">
+                @if ( Model.VotesUpPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-success" style="width: @Model.VotesUpPercentage%" aria-valuenow=@Model.VotesUpPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesUpPercentage%
+                    </div>
+}
+                @if ( Model.VotesDownPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-danger" style="width: @Model.VotesDownPercentage%" aria-valuenow=@Model.VotesDownPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesDownPercentage%
+                    </div>
+}
+            </div>
+        }
+        else
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+                    0%
+                </div>
+            </div>
+        }
+        <h4>@Html.RouteLink( Model.Title, JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.ID } )</h4>
+        @Model.AskedCount @GlobalLocalization.Global_Questions.ToLowerInvariant() / @Model.AnswersCount @GlobalLocalization.Global_Answers.ToLowerInvariant()
+        <br>
+        <strong>@GlobalLocalization.Law_ExpetedVotingDay:</strong>  @Model.ExpetedVotingDay
+    </div>
+
+
+    @foreach ( var lawSection in Model.Sections )
+    {
+        <h5 style="border-top:1px solid #DDD; padding-top:.5em;"><i class="fa fa-lightbulb-o"></i> @Html.RouteLink( lawSection.Title, JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.ID, sp = "lawSection_" + lawSection.LawSectionID }, null )</h5>
+    }
+
+</div>
+

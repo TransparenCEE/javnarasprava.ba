@@ -1,0 +1,20 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeModel
+
+	<div class="col-xs-3 col-sm-2 no-padding">
+		<div class="img-container">
+		<a class="" href="@Url.RouteUrl( Routes.Representatives_Representative, new { repId = Model.Representative.RepresentativeID })">
+			<img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( Model.Representative.ImageRelativePath )" class="img-responsive">
+		</a>
+		</div>
+	</div>
+	<div class="col-xs-9 col-sm-10 no-padding">
+		<div class="representative-stats">
+			<span class="title">
+				<strong>@Html.RouteLink(Model.Representative.DisplayName, Routes.Representatives_Representative, new { repId = Model.Representative.RepresentativeID }, null )</strong>
+			</span>
+			<br />
+			@GlobalLocalization.Global_Party: @Html.DisplayFor( model => model.Representative.Party.Name )
+			<br />
+			@Html.Partial( "~/Views/Representatives/_RepresentativeStatus.cshtml", Model )
+		</div>
+	</div>

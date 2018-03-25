@@ -1,0 +1,26 @@
+﻿@model JavnaRasprava.WEB.Models.LawHomeModel
+@{
+    ViewBag.Title = GlobalLocalization.JavnaRasprava_Index_PageTitle;
+}
+
+@Html.Action( "JavnaRasprava", "ParliamentSelection", new { pCode = ViewBag.ParliamentCode })
+
+@Html.Action( "InfoBoxTop" )
+
+@Html.Action( "InfoBoxLawSections" )
+
+@Html.Action( "InfoBoxLaws" )
+
+@Html.Partial( "_reprezentativci", Model.TopRepresentatives )
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.Partial( "_LawSummary", Model.LatestLaws )
+    </div>
+    <div class="col-md-4">
+        @Html.Partial( "_LawSummary", Model.MostActive )
+    </div>
+    <div class="col-md-4">
+        @Html.Partial( "_LawSummary", Model.NextLawsInVote )
+    </div>
+</div>

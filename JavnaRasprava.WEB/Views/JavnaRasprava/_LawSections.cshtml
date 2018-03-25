@@ -1,0 +1,16 @@
+﻿@model ICollection<LawSectionModel>
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <strong><i class="fa fa-lightbulb-o"></i> @GlobalLocalization.JavnaRasprava_Law_LawSections_BoxTitle</strong>
+    </div>
+
+<ul class="list-group">
+    @foreach ( var section in Model )
+    {
+        @Html.Partial( "_LawSection", section )
+    }
+
+</ul>
+
+</div>

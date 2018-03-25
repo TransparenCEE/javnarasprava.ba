@@ -1,0 +1,53 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeListModel
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+@Html.Action( "Representatives", "ParliamentSelection", new { pCode = ViewBag.ParliamentCode })
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+            <h3 class="panel-title"><strong>@GlobalLocalization.Global_Filter:</strong> @Model.Title</h3>
+    </div>
+    <div class="panel-body">
+    
+    @using ( Ajax.BeginForm( "FilterSearch", "Representatives", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "searchResult", InsertionMode = InsertionMode.Replace }, new { id = "repSearch" } ) )
+    {
+        @Html.HiddenFor(m=>m.SearchModel.ParliamentId)
+        <div class="row">
+        <div class="col-sm-2">
+            @Html.DropDownListFor(
+            x => x.SearchModel.SelectedParty,
+            Model.SearchModel.Parties.Select(
+                x => new SelectListItem {
+                    Text = x.Name,
+                    Value = x.PartyID.ToString()
+                } ).ToList(),
+                GlobalLocalization.Global_Search_Party_ValuePlaceHolder,
+                htmlAttributes: new {
+                @class = "form-control"
+                }
+                                            )
+        </div>
+        <div class="col-sm-5">
+            @Html.TextBoxFor( x => x.SearchModel.SearchName, htmlAttributes: new { @class = "form-control", @placeholder =GlobalLocalization.Global_Search_Name_ValuePlaceHolder }  )
+        </div>
+        <div class="col-sm-2">
+            @Html.DropDownListFor( x => x.SearchModel.SortOrder, new List<SelectListItem>
+                                                {
+                                                   new SelectListItem { Text = GlobalLocalization.Global_Search_SortBy_ValuePlaceHolder, Value = JavnaRasprava.WEB.Models.Representative.SortOrder.None.ToString() },
+                                                   new SelectListItem { Text = GlobalLocalization.Global_Search_SortBy_MostAnswers, Value = JavnaRasprava.WEB.Models.Representative.SortOrder.MostAnswers.ToString() },
+                                                   new SelectListItem { Text = GlobalLocalization.Global_Search_SortBy_MostQuestions, Value = JavnaRasprava.WEB.Models.Representative.SortOrder.MostQuestions.ToString() }
+                                                },
+                                                htmlAttributes: new { @class = "form-control" }
+                                                 )
+        </div>
+        <div class="col-sm-3">
+            <input class="btn btn-primary btn-block" type="submit" value="@GlobalLocalization.Representative_Filter_Buton" id="filterRepresentatives" />
+        </div>
+        </div>
+    }
+    </div>
+</div>
+
+@Html.Partial( "_RepresentativesSearchResult", Model )

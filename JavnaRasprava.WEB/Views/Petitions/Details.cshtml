@@ -1,0 +1,60 @@
+﻿@model JavnaRasprava.WEB.Models.PetitionModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Petition_Details_PageTitle + ": " + Model.Title;
+}
+
+@section OpenGraphProtocol {
+
+    <meta property="og:title" content="@(GlobalLocalization.Petition_Details_PageTitle + ": " + Model.Title)" />
+    <meta property="og:description" content="@Model.Description" />
+}
+
+
+<div class="col-md-5">
+
+    <h2>@Html.DisplayFor( model => model.Title )</h2>
+    <p> @Html.Raw( Model.Description )</p>
+    @if (Model.YoutubeCode != null)
+    {
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@Html.Raw(Model.YoutubeCode)"></iframe>
+    </div> 
+    }
+    <br>
+        @Html.ActionLink( GlobalLocalization.Petition_List_Link, "Index", null, new { @class = "btn btn-sm btn-default" } )
+
+</div>
+
+
+<div class="col-md-4">
+    <div id="divSignPetition">
+        @Html.Partial( "_Sign", Model )
+    </div>
+
+    <table class="table">
+       <tr>
+            <td>@Html.DisplayNameFor( model => model.TargetInstitution )</td>
+            <td>@Html.DisplayFor( model => model.TargetInstitution )</td>
+        </tr>
+        
+    </table>
+
+    @if (!string.IsNullOrWhiteSpace(Model.ImageRelativePath))
+    { 
+    <img src='@Url.Content( @JavnaRasprava.WEB.Infrastructure.ImageHelper.GetPetitionImage( Model.ImageRelativePath ) )' class="img-responsive" />
+    }
+    
+    <hr>
+    <div class="fb-like" data-href="@Request.Url.AbsoluteUri" data-width="100%" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+
+    <div class="fb-comments" data-width="100%" data-href="@Request.Url.AbsoluteUri" data-numposts="5" data-colorscheme="light"></div>
+</div>
+
+
+
+@if ( Model.HasNextProgress )
+{
+   @Html.Partial("_PetitionProgress", Model.NextProgress)
+}
+

@@ -1,0 +1,79 @@
+﻿@model JavnaRasprava.WEB.Models.LawQuestionsModel
+
+@{
+    ViewBag.Title = GlobalLocalization.LawQuestionsAndAnswersTitle;
+}
+
+
+@if ( Model.TotalQuestionsMade == 0 )
+    {
+    <strong>@GlobalLocalization.JavnaRasprava_NoCurrentQuestions</strong>
+    }
+    else
+    {
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">@ViewBag.Title</h2>
+        </div>
+            <ul class="list-group">
+    @foreach ( var question in Model.Questions )
+    {
+    <li class="list-group-item">
+    <div class="questions">
+            
+            <h3>@Html.ActionLink( Model.Law.Title, "LawDetails", new { lawId = Model.LawID }, null )</h3>
+            <p class="lead">@question.Text</p>
+            <span id="questionLikes_@question.Id">
+                @Html.Partial( "_QuestionLikes", question )
+            </span>
+            <hr>
+            
+            @foreach ( var representative in question.Representatives )
+            {
+                if ( representative.Answered )
+                {
+                    <div class="clearfix">
+                        <div class="answerer col-xs-1 no-padding">
+                            <a href="@String.Format( "../Representatives/Representative?repId={0}", representative.ID )">
+                                <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( representative.ImageRelativePath )" class="img-responsive">
+                            </a>
+                        </div>
+                            <div class="answer col-xs-11">
+                            <p>
+                                <a href="@String.Format( "../Representatives/Representative?repId={0}", representative.ID )" target="_blank">
+                                    <strong>@representative.FullName,</strong>
+                                </a> @representative.Answer.TimeAnsweredUtc.ToLocalTime().ToString( "dd.MM.yyyy." )
+                                <br>
+                                @Html.Raw( representative.Answer.Text )
+                            </p>
+                            
+                                <span id="answerLikes_@representative.Answer.ID">
+                                    @Html.Partial( "_AnswerLikes", representative.Answer )
+                                </span>
+                        </div>
+                    </div>
+                    <hr>
+                }
+            }
+            
+            <h4>@GlobalLocalization.JavnaRasprava_Rep_NoAnswer</h4>
+            <div class="space-bottom">
+                <small class="text-justify">
+            @foreach ( var representative in question.Representatives )
+            {
+                if ( representative.Answered == false )
+                {
+                    <a class="btn btn-default btn-xs" href="@String.Format( "../Representatives/Representative?repId={0}", representative.ID )">
+                        <span class="glyphicon glyphicon-user"></span>
+                        @representative.FullName
+                    </a>
+                }
+            }
+            </small>
+        </div>
+    </div>
+    </li>
+    }
+</ul>
+    </div>
+}

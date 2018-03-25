@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="200000">
+    <meta property="fb:app_id" content="@System.Configuration.ConfigurationManager.AppSettings["FB.AppId"]" />
+    <title>@ViewBag.Title - @JavnaRasprava.Resources.StaticPageData.PageTitleSufix</title>
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.structure.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <link href="@ViewBag.CssName" rel="stylesheet" />
+
+    <meta property="og:title" content="@ViewBag.OgTitle" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.Image" />
+
+
+    <!--
+    To collect end-user usage analytics about your application,
+    insert the following script into each page you want to track.
+    Place this code immediately before the closing </head> tag,
+    and before any other scripts. Your first data will appear
+    automatically in just a few seconds.
+    -->
+    <script type="text/javascript">
+  var appInsights=window.appInsights||function(config){
+    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+    }({
+        instrumentationKey:"@System.Configuration.ConfigurationManager.AppSettings[ "AI.Key" ]"
+    });
+
+    window.appInsights=appInsights;
+    appInsights.trackPageView();
+    </script>
+
+    @RenderSection( "OpenGraphProtocol", false )
+
+    @Scripts.Render( "~/bundles/modernizr" )
+    @Scripts.Render( "~/bundles/jquery" )
+    @Scripts.Render( "~/bundles/jqueryunob" )
+    @Scripts.Render( "~/bundles/jqueryui" )
+    @Scripts.Render( "~/bundles/jqueryval" )
+    <script type="text/javascript" src="~/Scripts/jquery-ui.datepicker-bs.js"></script>
+    @Scripts.Render( "~/bundles/bootstrap" )
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>
+    @*window.fbAsyncInit = function () {
+        FB.init({
+            appId: '@System.Configuration.ConfigurationManager.AppSettings["FB.AppId"]', status: true, cookie: true,
+            xfbml: true
+        });
+    };*@
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=@System.Configuration.ConfigurationManager.AppSettings["FB.AppId"]";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @if ( ViewBag.TenantCode == "TK" )
+                {
+                            <a class="navbar-brand" href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_Index, new { pCode = (string)ViewBag.ParliamentCode })" style="width:300px; height:auto;">
+                                <img src="~/Content/Images/tk_javna_rasprava_logo.png" class="img-responsive">
+                            </a>
+                }
+                else if ( ViewBag.TenantCode == "ALB" )
+                {
+                            <a class="navbar-brand" href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_Index, new { pCode = (string)ViewBag.ParliamentCode })" style="width:300px; height:auto;">
+                                <img src="~/Content/Images/KonsultimiPublik.al_logo.png" class="img-responsive">
+                            </a>
+                }
+                else
+                {
+                    <a class="navbar-brand" href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_Index, new { pCode = (string)ViewBag.ParliamentCode })" style="width:300px; height:auto;">
+                        <img src="~/Content/Images/javna_rasprava_logo.png" class="img-responsive">
+                    </a>
+                }
+            </div>
+
+
+            <div id="navbarCollapse" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left top-navigation">
+                    <li>@Html.RouteLink( JavnaRasprava.Resources.StaticPageData.Navigation_Representatives, JavnaRasprava.Resources.Routes.Representatives_Index, new { pCode = (string)ViewBag.ParliamentCode })</li>
+                    <li>@Html.ActionLink( JavnaRasprava.Resources.StaticPageData.Navigation_Petitions, "Index", "Petitions" )</li>
+                    <li>@Html.ActionLink( JavnaRasprava.Resources.StaticPageData.Navigation_About, "About", "Home" )</li>
+                    <li>@Html.ActionLink( JavnaRasprava.Resources.StaticPageData.Navigation_Manual, "Manual", "Home" )</li>
+                </ul>
+
+                @Html.Partial( "_LoginPartial" )
+            </div>
+
+        </div>
+        @if ( ViewBag.TenantCode == "TK" )
+        {
+            <div class="region-tk"></div>
+        }
+        else
+        {
+            <div class="region-general"></div>
+        }
+    </nav>
+
+
+    <div class="container">
+        @RenderBody()
+        <hr />
+        @if ( ViewBag.TenantCode == "TK" )
+        {
+            //this is for tk
+
+            <footer class="col-md-12 footer">
+                <div class="col-sm-8 col-sm-push-2">
+                    &copy; @DateTime.Now.Year - @JavnaRasprava.Resources.StaticPageData.Credits_Tuzla
+                </div>
+                <div class="col-xs-6 col-sm-2 col-sm-pull-8 text-left">
+                    <img src="~/Content/Images/too_logo.png" class="img-responsive">
+                </div>
+                <div class="col-xs-6 col-sm-2 text-right">
+                    <img src="~/Content/Images/british_embassy_logo.png" class="img-responsive">
+                </div>
+            </footer>
+        }
+        else
+        {
+            // This is for all other sites.
+            // Create a copy of  file and reference different versions in these two sections
+            <footer class="col-md-12">
+                <p>&copy; @DateTime.Now.Year - @JavnaRasprava.Resources.StaticPageData.Credits</p>
+            </footer>
+        }
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                    <h4 id="errorModalTitle"></h4>
+                </div>
+                <div class="modal-body" id="errorModalBody">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("translationScript", required: false)
+
+    @Scripts.Render( "~/Scripts/javnarasprava-main.js" )
+    @Scripts.Render( "~/Scripts/javnarasprava-lawdetails.js" )
+    @Scripts.Render( "~/Scripts/quiz.js" )
+    @Scripts.Render( "~/Scripts/representatives.js" )
+    @Scripts.Render( "~/Scripts/masonry.pkgd.min.js" )
+
+
+    @RenderSection("scripts", required: false)
+
+     @if ( System.Configuration.ConfigurationManager.AppSettings["GA.Include"] == "true" )
+     {
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="@String.Concat("https://www.googletagmanager.com/gtag/js?id=", System.Configuration.ConfigurationManager.AppSettings["GA.Code"])"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '@System.Configuration.ConfigurationManager.AppSettings["GA.Code"]');
+        </script>
+     }
+
+
+
+
+
+
+</body>
+</html>

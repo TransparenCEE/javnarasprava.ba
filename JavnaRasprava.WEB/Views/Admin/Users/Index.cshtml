@@ -1,0 +1,28 @@
+﻿@model JavnaRasprava.WEB.Models.User.UserSearchPageModel
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_User_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_User_Index_PageTitle</h3>
+
+<div class="panel panel-default home-search-filter">
+    @Html.Partial("Users/_SearchPanel", Model.SearchModel)
+</div>
+
+<div id="SearchResults" class="clearfix">
+    @Html.Partial("Users/_SearchResults", Model.Users)
+</div>
+
+<div id="Paging">
+    @string.Format(GlobalLocalization.Global_Paging, (Model.Users.PageCount < Model.Users.PageNumber ? 0 : Model.Users.PageNumber), @Model.Users.PageCount)
+
+
+    @Html.PagedListPager(Model.Users, page => Url.Action("SearchUsers", new { page, QueryString = Model.SearchModel.QueryString }))
+</div>
+
+
+
+

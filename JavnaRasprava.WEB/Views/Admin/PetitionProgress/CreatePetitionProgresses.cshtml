@@ -1,0 +1,78 @@
+﻿@model JavnaRasprava.WEB.Models.Petition.PetitionProgressEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_PetitionProgress_New_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_PetitionProgress_New_PageTitle</h3>
+
+@using ( Html.BeginForm( "CreatePetitionProgresses", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" } ) )
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary( true, "", new { @class = "text-danger" } )
+
+        @Html.HiddenFor( model => model.ParliamentID )
+
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Title, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.ValidationMessageFor( model => model.Title, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Description, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.ValidationMessageFor( model => model.Description, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedRepresentativeID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SelectedRepresentativeID,
+                                        Model.Representatives.Select(x => new SelectListItem
+                                        {
+                                            Text = x.Name,
+                                            Value = x.ID.ToString()
+                                        }).ToList(),
+                                    GlobalLocalization.Global_Dropdown_ValuePlaceHolder,
+                                    new { htmlAttributes = new { @class = "form-control" } })
+                @Html.RequiredFieldFor(model => model.SelectedRepresentativeID)
+                @Html.ValidationMessageFor(model => model.SelectedRepresentativeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfVotes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumberOfVotes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumberOfVotes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.ImageToDo, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                <input type="File" name="ImageToDo" id="ImageToDo" value="@GlobalLocalization.Admin_Global_ChooseImage" class="form-control" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@GlobalLocalization.Admin_Global_Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "ManagePetitionProgresses" )
+</div>

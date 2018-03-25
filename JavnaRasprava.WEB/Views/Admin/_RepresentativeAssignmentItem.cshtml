@@ -1,0 +1,16 @@
+﻿@model JavnaRasprava.WEB.Models.Representative.RepresentativeAssignmentModel
+    <div id="divAssignment_@Model.RepresentativeAssignmentID">
+        <dl class="dl-horizontal">
+            <dt>
+               @Html.DisplayNameFor(model => model.Title) 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Title )
+            </dd>
+        </dl>
+
+        @Ajax.ActionLink( GlobalLocalization.Admin_Global_Delete, "DeleteRepresentativeAssignment", new { assignmentId = Model.RepresentativeAssignmentID },
+            new AjaxOptions { OnSuccess = "DeleteRepresentativeAssignment", HttpMethod = "Post", Confirm = GlobalLocalization.Global_AreYouSureToDelete } )
+
+    </div>

@@ -1,0 +1,42 @@
+﻿@model JavnaRasprava.WEB.Models.Law.PredefinedQuestionEditModel
+
+<div id="divQuestion_@Model.QuestionID">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        @if (!Model.IsSuggested)
+        {
+            <dt>
+                @GlobalLocalization.Global_Verified
+            </dt>
+
+            <dd>
+                @if (Model.Verified)
+                {
+                    <p>@GlobalLocalization.Global_Yes</p>
+                }
+                else
+                {
+                    if (!Model.AdminIgnore)
+                    {
+                        <p style="color:red">>@GlobalLocalization.Global_No</p>
+                    }
+                    else
+                    {
+                        <p>@GlobalLocalization.Admin_Global_AdminSetIgnore</p>
+                    }
+                }
+            </dd>
+        }
+
+    </dl>
+    @Ajax.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteLawQuestion", new { questionId = Model.QuestionID }, 
+        new AjaxOptions { OnSuccess = "DeleteLawQuestion", HttpMethod = "Post", Confirm = GlobalLocalization.Global_AreYouSureToDelete }) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditLawQuestion", new { questionId = Model.QuestionID })
+</div>

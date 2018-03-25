@@ -1,0 +1,74 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizItemEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_QuizItem_Create_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $('#ddlLaws').change(function () {
+            var selectedValue = $(this).val();
+            $.ajax({
+                url: '@Url.Action("GetLawSections", "Admin")',
+                type: "POST",
+                data: { id: selectedValue },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                },
+                success: function (result) {
+                    var secondDdl = $('#ddlLawSections');
+                    secondDdl.empty();
+                    $.each(result, function () {
+                        secondDdl.append(
+                            $('<option/>', {
+                                value: this.LawSectionId,
+                                html: this.Title
+                            })
+                        );
+                    });
+                }
+            });
+        });
+    });
+</script>
+<h2>@GlobalLocalization.Admin_QuizItem_Create_PageTitle: @Model.QuizTitle</h2>
+
+@using ( Html.BeginForm( "CreateQuizItem", "Admin" ) )
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary( true, "", new { @class = "text-danger" } )
+        @Html.HiddenFor( model => model.QuizId )
+        @Html.HiddenFor( model => model.Order )
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Title">@GlobalLocalization.Admin_QuizItem_ChooseLaw</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor( model => model.LawId, Model.Laws, GlobalLocalization.Admin_QuizItem_ChooseLaw + "...", new { @id = "ddlLaws", @class = "form-control" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Title">@GlobalLocalization.Admin_QuizItem_ChooseLawSection</label>
+            <div class="col-md-10">
+                @*@Html.DropDownListFor( model => model.LawSectionId, Model.LawSections, "Odaberi oblast...", new { @id = "ddlLawSections", @class = "form-control" } )*@
+                <select id="ddlLawSections" name="LawSectionId" class="form-control" ></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@GlobalLocalization.Admin_Global_Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "Index" )
+</div>

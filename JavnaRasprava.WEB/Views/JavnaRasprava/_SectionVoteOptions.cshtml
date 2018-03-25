@@ -1,0 +1,20 @@
+﻿@model LawSectionCustomVoteListModel
+
+<span>
+    @Model.Description
+</span>
+<table class="table">
+
+    @foreach ( var voteOption in Model.LawSectionCustomVotes )
+    {
+        <tr>
+            <td><input type="radio" name="sectionVote" id="@String.Format("sectionVote{0}",voteOption.LawSectionCustomVoteID)" value="@voteOption.LawSectionCustomVoteID" onclick="ClearCustomSectionVoteAnswer(@Model.LawSectionID)" /></td>
+            <td><label for="@String.Format( "sectionVote{0}", voteOption.LawSectionCustomVoteID )">@voteOption.Text</label></td>
+        </tr>
+    }
+    <tr>
+        <td><input type="radio" name="sectionVote" id="@String.Format( "sectionVoteCustom{0}", Model.LawSectionID )" value="-1" /></td>
+        <td><input class="form-control" type="text" id="@String.Format( "customSectionVoteAnswer{0}", Model.LawSectionID )" placeholder="@GlobalLocalization.JavnaRasprava_VoteLawModal_CustomVote_Placeholder" onfocus="SelectCustomSectionVoteAnswer('@String.Format( "sectionVoteCustom{0}", Model.LawSectionID )')" /></td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" onclick="VoteForSection(@Model.LawID, @Model.LawSectionID)">@GlobalLocalization.Global_Vote</button>

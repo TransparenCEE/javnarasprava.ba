@@ -1,0 +1,20 @@
+﻿@model LawSummaryListModel
+<div class="panel panel-default">
+    <div class="panel-heading">@Model.Title</div>
+    <div class="panel-body">
+
+        @foreach ( var item in Model.Laws )
+        {
+
+            <div>
+                <p>
+
+                    <strong>@Html.ActionLink( item.Title, "LawDetails", "JavnaRasprava", new { lawId = item.ID }, null )</strong>
+                    <br />
+                    @GlobalLocalization.JavnaRasprava_Home_Vote_NumberUp: @item.VotesUp (@item.VotesUpPercentage%), @GlobalLocalization.JavnaRasprava_Home_Vote_NumberDown: @item.VotesDown (@item.VotesDownPercentage%)
+                </p>
+            </div>
+
+        }
+    </div>
+</div>

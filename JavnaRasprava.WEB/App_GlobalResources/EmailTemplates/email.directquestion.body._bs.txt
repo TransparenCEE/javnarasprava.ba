@@ -1,0 +1,19 @@
+﻿<p>Poštovani $model.Question.Representative.FirstName $model.Question.Representative.LastName,</p>
+ 
+<p>ovaj mail ste dobili putem portala Javnrasprava.ba a koji je otvorena platforma za unaprijeđenje komunikacije građana/ki i parlamentaraca u Bosni i Hercegovini. Više o samom portalu možete saznati na ovom <a href="http://www.javnarasprava.ba">linku</a>. Unaprijed  zahvalni što vašim učešćem u radu ove stranice i učešćem u direkntoj komunikaciji sa građanima/kama afirmišete procese dalje demokratizaciju bh, društva.  </p>
+
+<p>Pitanje koje Vam je upućeno direktno Vama i ovo pitanje vam je postavio korisnik stranice javnarasprava.ba:</p>
+<p>Za stranicu Vašeg profila gdje možete vidjeti sva vaša pitanja posjetite <a href="$model.BaseUrl/Representatives/Representative?repId=$model.Question.RepresentativeID">link</a>:</p>
+<p>Tekst pitanja koje je Vam je upućeno:</p>
+<p>$model.Question.Question.Text</p>
+
+<p>Da biste odgovorili na ovo pitanje i time se uključili javnu raspravu sa građanima i građankama dovoljno je da posjetite sljedeći link i tamo upišete odgovor na ovo pitanje <a href="$model.BaseUrl/JavnaRasprava/PostAnswer?token=$model.Question.AnswerToken.Token">odgovori</a>.
+</p>
+<p>Stranica Javnarasprava.ba je kreirana sa ciljem uključenja građani/ki u rad i kominukaciju sa direktno izabranim predstavnicima vlasti. Vaši odgovori, kao i sva postavljena pitanja na ovoj stranici su potpuno javni  i za sva konkretna pitanja i njesnoće molimo vas da posjetite sljedeći  info link sa svim objašnjenjima i  uputama za korištenje stranice javnarasprava.ba
+</p>
+<p>Za sva pitanja, primjedbe ili pomoć u korištenju stranice molimo vas da nas kontaktirate na:<br/><br/>
+Javnarasprava.ba<br/>
+U.G. Zašto ne<br/>
++387 33 61 84 61<br/>
+info@javnarasprava.ba<br/>
+</p>

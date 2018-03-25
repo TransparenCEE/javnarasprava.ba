@@ -1,0 +1,19 @@
+﻿@model List<JavnaRasprava.WEB.Models.Law.LawSectionCustomVoteModel>
+
+
+<h3>@GlobalLocalization.Admin_UnverifiedLawSectionQuestions_Heading</h3>
+
+@if ( Model != null && Model.Count > 0 )
+{
+    <div>
+        @foreach ( var sectionCustomVote in Model )
+        {
+            <div>@Html.ActionLink( sectionCustomVote.Text, "ManageLawSections", new { lawId = sectionCustomVote.LawID } )</div>
+                <br />
+        }
+    </div>
+}
+else
+{
+    <p>@GlobalLocalization.Admin_Unverified_NothingHere</p>
+}

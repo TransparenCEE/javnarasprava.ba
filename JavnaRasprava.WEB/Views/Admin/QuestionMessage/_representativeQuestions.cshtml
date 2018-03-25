@@ -1,0 +1,106 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.QuestionMessage.QuestionMessageModel>
+
+<div class="panel">
+    <div class="panel-heading">@GlobalLocalization.Admin_RepQuestions_Heading</div>
+    <div class="panel-body">
+@using ( Ajax.BeginForm( "ProcessRepresentativeQuestions", new AjaxOptions
+{
+    HttpMethod = "Post",
+    OnSuccess = string.Format( "alert(\"{0}\")",GlobalLocalization.Admin_RepQuestions_CommandSuccess),
+    OnFailure = string.Format( "alert(\"Dogodila se greška, pokušajte ponovo\")", GlobalLocalization.Admin_RepQuestions_CommandFail)
+} ) )
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("representativeId", Model.Select(x=>x.RepresentativeId).FirstOrDefault())
+
+
+    foreach ( var item in Model )
+    {
+        <div class="questionMessageSummary row">
+            
+            <div class="col-md-1">
+                <p><input type="checkbox" name="QuestionId" value="@item.QuestionId" /></p>
+            </div>
+
+            <div class="col-md-11">
+
+               <p>
+                    @if ( item.LawId != null )
+                   {
+                       <div>
+                           @Html.ActionLink( item.TrimmedQuestionText, "EditLawQuestion", new { questionId = item.QuestionId }, new { Title = item.QuestionText } )
+                       </div>
+                       <div>
+                           <span style="font-style:italic">@GlobalLocalization.Admin_RepQuestions_OnLaw</span> @Html.ActionLink( item.LawTitle, "LawDetails", new { lawId = item.LawId } )
+                       </div>
+                   }
+                   else
+                   {
+                       <div>
+                           @Html.ActionLink( item.TrimmedQuestionText, "EditRepresentativeQuestion", new { questionId = item.QuestionId }, new { Title = item.QuestionText } )
+                       </div>
+                   }
+
+                    @if ( item.QuestionVerified )
+                    {
+                        <span class="label label-success">
+                            @GlobalLocalization.Admin_RepQuestions_Verified
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">
+                            @GlobalLocalization.Admin_RepQuestions_Verified
+                        </span>
+
+                    }
+
+                    @if ( item.IsSuggested )
+                    {
+                        <span class="label label-primary">
+                            @GlobalLocalization.Admin_RepQuestions_Predefined
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="label label-info">
+                            @GlobalLocalization.Admin_RepQuestions_Predefined
+                        </span>
+
+                    }
+
+                    <span class="label label-default">
+                        <strong>@GlobalLocalization.Admin_RepQuestions_AskedTimes</strong>
+                        <span class="badge">@item.AskedCount</span>
+                    </span>
+
+                    @if ( item.Answered )
+                    {
+                        <span class="label label-success">
+                            <strong>@GlobalLocalization.Admin_RepQuestions_Answered</strong>
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">
+                            <strong>@GlobalLocalization.Admin_RepQuestions_Answered</strong>
+                        </span>
+
+                    }
+
+                    <span class="label label-default" style="margin-right: 10px;">
+                    <strong>@GlobalLocalization.Admin_RepQuestions_EmailNumber</strong><span class="badge">@item.MessagesSentCount</span></span>
+                </p>
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="submit" value="@GlobalLocalization.Admin_RepQuestions_SendEmailAgain" class="btn btn-default" />
+        </div>
+    </div>
+}        
+    </div>
+</div>
+

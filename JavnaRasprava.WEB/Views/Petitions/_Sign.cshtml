@@ -1,0 +1,34 @@
+﻿@model JavnaRasprava.WEB.Models.PetitionModel
+
+    
+    <h2>@Model.Signatures <small>@GlobalLocalization.Petition_Signatures</small></h2>
+
+
+@if ( !Model.SigningEnabled || !Model.Verified )
+{
+    <p class="alert alert-info">@GlobalLocalization.Petition_Unverified_Message</p>
+}
+
+@if ( User.Identity.IsAuthenticated )
+{
+    if ( Model.UserSigned )
+    {
+        <p class="alert alert-success">@GlobalLocalization.Petition_AlreadySigned_Message</p>
+    }
+    
+    if ( Model.SigningEnabled && !Model.UserSigned )
+    {
+
+        <div class="space-bottom">
+            @using ( Ajax.BeginForm( "SignPetition", "Petitions", new { petitionId = Model.PetitionID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "divSignPetition", InsertionMode = InsertionMode.Replace } ) )
+            {
+                <input type="submit" value="@GlobalLocalization.Petition_Sign_Button" class="btn btn-success btn-lg btn-block" />
+            }
+        </div>
+
+    }
+}
+else
+{
+    <p class="alert alert-warning">@GlobalLocalization.Petition_SignInToSign_Message</p>
+}

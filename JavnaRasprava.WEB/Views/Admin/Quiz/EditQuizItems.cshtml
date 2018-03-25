@@ -1,0 +1,14 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_QuizItems_Edit_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Quiz_Title: @Model.Title</h2>
+
+<h2>@GlobalLocalization.Quiz_Items</h2>
+
+<p>@Html.ActionLink(GlobalLocalization.Admin_QuizItems_AddNewItem, "CreateQuizItem", new { id = Model.QuizId }, new { @class="btn btn-default"} )</p>
+
+@Html.Partial( "Quiz/_quizItemsEditList", Model.Items )

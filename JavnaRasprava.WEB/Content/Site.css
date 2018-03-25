@@ -1,0 +1,448 @@
+﻿.navbar-inverse {
+  background-image: -webkit-linear-gradient(top,#183854 0,#0c1d2c 100%);
+  background-image: -o-linear-gradient(top,#183854 0,#0c1d2c 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#183854),to(#0c1d2c));
+  background-image: linear-gradient(to bottom,#183854 0,#0c1d2c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff183854', endColorstr='#ff0c1d2c', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  background-repeat: repeat-x;
+}
+
+.circle {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+  margin:10px 0;
+}
+
+.yellow {
+  background-color: #EDE72B;
+}
+.green {
+  background-color: #2EBF06;
+}
+.red {
+  background-color: #DB0F1D;
+}
+.gray {
+  background-color: #DDD;
+  color: #666;
+}
+.questions form{
+  display: inline;
+}
+
+.horizontal form{
+  display: inline;
+}
+
+.theme{
+  position: relative;
+  min-height: 400px;
+}
+
+.theme-no-thumbnail{
+  position: relative;
+  min-height: 300px;
+}
+
+.theme-stats{
+  position: relative;
+  padding-top: 10px;
+}
+
+.lawVotingDetailsInner{
+  padding: 15px;
+  border:1px solid #DDD;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.sectionVotingDetailsInner{
+  padding: 15px;
+  border:1px solid #DDD;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.larger-label{
+  font-size: 12px;
+}
+
+.bedz-box{
+  padding-top: 20px;
+}
+
+.bedz{
+  background: #337ab7;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  top: 10px;
+  right: -5px;
+  display: block;
+  line-height: .5em;
+  width: 4.6em;
+  height: 4.6em;
+  padding: 1em;
+  font-size: 1.6em;
+  color: #FFF;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform:rotate(45deg);
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  z-index: 99999;
+  box-shadow: 0px 2px 6px hsla(100,0%,0%,.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+  background: #337ab7;
+  background: -moz-linear-gradient(top,  #61ade2 36%, #337ab7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(36%,#61ade2), color-stop(100%,#337ab7));
+  background: -webkit-linear-gradient(top,  #61ade2 36%,#337ab7 100%);
+  background: -o-linear-gradient(top,  #61ade2 36%,#337ab7 100%);
+  background: -ms-linear-gradient(top,  #61ade2 36%,#337ab7 100%);
+  background: linear-gradient(to bottom,  #61ade2 36%,#337ab7 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61ade2', endColorstr='#337ab7',GradientType=0 );
+}
+
+.bedz small{
+  font-size: .5em;
+  line-height: 2em;
+}
+
+
+.representative-full {
+    width: 100%;
+    float: left;
+    margin: 0 0 .5em 0;
+    display: block;
+    overflow: hidden;
+    clear: both;
+    position: relative;
+  }
+
+.representative {
+    width: 100%;
+    float: left;
+    margin: 0 0 .5em 0;
+    display: block;
+    overflow: hidden;
+    clear: both;
+    position: relative;
+  }
+
+
+#askRepresentativesForm  .representative {
+  width: 48%;
+  float: left;
+  margin: 0 1% .5em 1%;
+  display: block;
+  overflow: auto;
+  clear: none;
+  position: relative;
+  }
+#askRepresentativesForm .representative-image{
+    width: 20%;
+    float: left;
+    margin: 0 10px 0 0
+}
+#askRepresentativesForm .representative-info{
+    float: left;
+    width:70%;
+}
+#askRepresentativesForm .selectedRepresentative .representative-info{
+    color:#FFF;
+}
+.representative-image{
+    width: 15%;
+    float: left;
+    margin: 0;
+}
+
+.representative-info{
+  padding: 10px;
+}
+
+.representative-stats{
+  padding: 10px;
+}
+
+.representative-info-big{
+  float: left;
+  width: 85%;
+  padding: .5em;
+}
+
+.representative-info-big .title{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.ask-representative{
+  clear: both;
+}
+
+.small-padding{
+    padding: 0 5px 5px;
+  }
+  .form-group.required .control-label:after {
+  content:" *";
+  color:red;
+}
+.requiredIndicator{
+  display:none;
+}
+.thumbnail-light{
+   background-color:#FFF;
+}
+.small-space-bottom{
+  margin-bottom: .5em;
+}
+.progress{
+  margin-bottom: 10px;
+}
+.paper, .panel{
+  position: relative;
+  background-color: #FFF;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+.no-padding{
+  padding: 0;
+}
+.small-padding{
+  padding: .5em;
+}
+.question{
+  margin-bottom: 1em;
+
+}.answer{
+  border-left: 3px solid #DDD;
+  padding-left: 1em;
+  margin-bottom: 1em;
+
+}
+.space-bottom-xs{
+  margin-bottom: .25em;
+}
+.space-bottom-sm{
+  margin-bottom: .5em;
+}
+.space-bottom-md{
+  margin-bottom: 1em;
+}
+.space-bottom-lg{
+  margin-bottom: 2em;
+}
+.sveto-trojstvo{
+  margin-bottom:20px;
+  text-align:center
+}
+.sveto-trojstvo a{
+    display:block;
+    padding:20px 10px;
+    font-size:18px;
+    line-height:1;
+    color:#666;
+    text-align:center;
+    background-position:center;
+    -webkit-background-size:cover;
+    background-size:cover;
+    border-radius:3px;
+  }
+
+.sveto-trojstvo a:hover{
+  text-decoration: none;
+}
+
+.progress-bar-success {
+  min-width: 15%;
+}
+
+.progress-bar-success {
+  max-width: 85%;
+}
+
+.progress-bar-danger {
+  min-width: 15%;
+}
+
+.progress-bar-danger {
+  max-width: 85%;
+}
+
+.progress-bar[aria-valuenow="100"] {
+  max-width: 100%;
+}
+
+.progress-bar[aria-valuenow="0"] {
+  min-width: 10%;
+}
+
+.home-search-filter .form-group{
+  margin-bottom: 0;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+a{
+  color: #666;
+}
+
+.img-responsive{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#distribucija-odgovora tr td:first-child{
+  width: 50%;
+}
+
+#distribucija-odgovora tr td{
+  width: 25%;
+}
+
+
+.img-container {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 120% 0 0 0;
+}
+
+.img-container-4x3 {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 75% 0 0 0;
+}
+
+.img-container img,
+.img-container-4x3 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.nadnaslov{
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 22px;
+  color: #999;
+  background-color: #DDD;
+  padding: 0 .5em;
+}
+
+.banner{
+  display: block;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  line-height: 22px;
+  font-size: 18px;
+  text-align: center;
+  color: #666;
+  background-image: -webkit-linear-gradient(top,#FFF 0,#F2F2F2 100%);
+  background-image: -o-linear-gradient(top,#FFF 0,#F2F2F2 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#FFF),to(#F2F2F2));
+  background-image: linear-gradient(to bottom,#FFF 0,#F2F2F2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffFFF', endColorstr='#ffF2F2F2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  background-repeat: repeat-x;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  clear: both;
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+.banner:hover{
+  color: #000;
+  text-decoration: none;
+  background-color: #FFF;
+  background-image: none;
+}
+
+.partner{
+  width: 120px;
+  height: auto;
+}
+
+footer table{
+  width: 100%;
+}
+
+footer table tr td{
+  width: 40%;
+}
+
+footer table tr td:first-child{
+  text-align: left;
+  width: 30%;
+}
+
+footer table tr td:last-child{
+  text-align: right;
+  width: 30%;
+}
+
+
+.containerAdmin {
+height: 100px;
+}
+
+.containerAdmin  .img-responsive {
+    display: block;
+    width: auto;
+    max-height: 100%;
+}
+
+.questionMessageSummary{
+    /*float: left;
+    width: auto;
+    padding: 5px 0 5px 0;*/
+    border-bottom: 1px solid #e4e6e8;
+}
+
+.questionMessageFlags{
+    vertical-align: top;
+    float: left;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.questionMessageFlag{
+    text-align: center;
+    display: inline-block;
+    height: 38px;
+    min-width: 38px;
+    margin: 0 3px 0 0;
+    font-size: 11px;
+    /*color: #848d95;*/
+    padding: 8px 5px;
+    line-height: 1;
+}
+
+.panel-heading {
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}

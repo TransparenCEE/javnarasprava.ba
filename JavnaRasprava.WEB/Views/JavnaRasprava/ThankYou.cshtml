@@ -1,0 +1,15 @@
+﻿@model ThankYouModel
+@{
+    ViewBag.Title = GlobalLocalization.Global_Thanks;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@GlobalLocalization.Global_Thanks</h2>
+
+@GlobalLocalization.JavnaRasprava_Answering_ThankYouMessage @Html.ActionLink( "ovdje", "Representative", "Representatives", new { repId = Model.RepresentativeID }, null)
+
+@if ( Model.LawID.HasValue && Model.LawID.Value > 0 )
+{
+    <span>@GlobalLocalization.JavnaRasprava_Answering_ClickForLawMessage @Html.ActionLink( "ovdje", "LawDetails", new { lawId = Model.LawID } )</span>
+}
+

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.Quiz.QuizItemSummaryModel>
+
+
+<table class="table table-striped">
+    <tr>
+        <th> @Html.DisplayNameFor(model => model.Order) </th>
+        <th> @Html.DisplayNameFor(model => model.LawTitle) </th>
+        <th> @Html.DisplayNameFor(model => model.SectionTitle) </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.Order) </td>
+            <td> @Html.DisplayFor(modelItem => item.LawTitle) </td>
+            <td nowrap> @Html.DisplayFor(modelItem => item.SectionTitle) </td>
+            <td nowrap class="text-right">
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditQuizItem", new { quizId = item.QuizId, itemId = item.QuizItemId }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteQuizItem", new { id = item.QuizItemId },
+                    new { onclick = string.Format("return confirm ('{0}');", GlobalLocalization.Admin_Quiz_QuizItem_DeleteConfirm) })
+            </td>
+        </tr>
+    }
+
+</table>

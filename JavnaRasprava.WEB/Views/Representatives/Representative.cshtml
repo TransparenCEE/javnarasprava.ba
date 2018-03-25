@@ -1,0 +1,143 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeModel
+
+@{
+    ViewBag.Title = Model.Representative.DisplayName;
+}
+
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">@GlobalLocalization.Global_Representative</h3>
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt><img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( Model.Representative.ImageRelativePath )" class="img-responsive"></dt>
+                <dd>
+                    <h2>
+                        @Html.DisplayFor(model => model.Representative.DisplayName)                        
+                    </h2>
+                    @Html.Partial( "_RepresentativeStatus", Model )
+                    <button type="button" class="btn btn-primary btn-block" onclick="OpenAskRepresentativeModal('@User.Identity.IsAuthenticated', @Model.Representative.RepresentativeID)">@GlobalLocalization.Representative_AskDirectQuestion_Button</button>
+                </dd>
+                <dt>@GlobalLocalization.Global_Party</dt>
+                <dd>@Html.DisplayFor( model => model.Representative.Party.Name )</dd>
+                @if (!FeatureToggle.IsAlbania())
+                {
+                    <dt>@GlobalLocalization.Global_Parliament</dt>
+                    <dd>@Html.DisplayFor(model => model.Representative.ParliamentHouse.Parliament.Name)</dd>
+                }
+                @if (!Model.IsSingleHouseParliament)
+                {
+                    <dt>@GlobalLocalization.Global_ParliamentHouse</dt>
+                    <dd>@Html.DisplayFor(model => model.Representative.ParliamentHouse.Name)</dd>
+                }
+                <dt>@GlobalLocalization.Biography</dt>
+                <dd>@Html.Raw( Model.Representative.Resume )</dd>
+                <dt>@GlobalLocalization.Representative_ElectoralUnit</dt>
+                <dd>@Html.DisplayFor( model => model.Representative.EletorialUnit )</dd>
+                @if (!FeatureToggle.IsAlbania())
+                {
+                    <dt>@GlobalLocalization.Representative_Function</dt>
+                    <dd>@Html.DisplayFor( model => model.Representative.Function )</dd>
+                }
+                @if (Model.Representative.NumberOfVotes > 0)
+                {
+                    <dt>@GlobalLocalization.Representative_NumberOfVotes</dt>
+                    <dd>@Html.DisplayFor(model => model.Representative.NumberOfVotes)</dd>
+                }
+
+                @if ( Model.Representative.ExternalLinks != null )
+                {
+                    <dt>@GlobalLocalization.Representative_ExternalLinks</dt>
+                    <dd>
+                        <ul>
+                            @foreach ( var externalLink in Model.Representative.ExternalLinks )
+                            {
+                                <li><a href="@externalLink.Url" target="_blank">@externalLink.Description</a></li>
+                            }
+                        </ul>
+                    </dd>
+                }
+            </dl>
+
+            @if ( Model.Representative.Assignments != null && Model.Representative.Assignments.Count > 0 )
+            {
+                <h3>@GlobalLocalization.Representative_Assignments</h3>
+                <div class="row">
+                    @foreach ( var assignemnt in Model.Representative.Assignments )
+                    {
+                        <div>
+                            @assignemnt.Title
+                        </div>
+                        <br />
+                    }
+                </div>
+            }
+
+            @if ( Model.Questions.Count > 0 )
+            {
+                <h3>@GlobalLocalization.Representative_DirectQuestions</h3>
+            }
+            @foreach ( var question in Model.Questions )
+            {
+                @Html.Partial( "_RepresentativeQuestion", question )
+            }
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">@GlobalLocalization.Representative_LawQuestions</h3>
+        </div>
+
+        <ul class="list-group">
+            @foreach ( var law in Model.Laws )
+            {
+                <li class="list-group-item">
+                    <h4>@Html.ActionLink( law.Title, "LawDetails", "JavnaRasprava", new { lawId = law.ID }, null )</h4>
+                    @foreach ( var question in law.Questions )
+                    {
+                        <div class="question">
+                            <p><strong>@GlobalLocalization.Global_Question:</strong> @question.Title</p>
+                            @Html.Partial( "_QuestionLikes", question )
+                            <span class="label label-default">@GlobalLocalization.Representative_QuestionAskedTimes: @question.AskedCount</span>
+                            @if ( question.Answer == null )
+                            {
+                                <span class="label label-danger">@GlobalLocalization.Global_NoAnswer</span>
+                            }
+                        </div>if ( question.Answer != null )
+                        {
+                            <div class="answer">
+                                <p><strong>@GlobalLocalization.Global_Answer:</strong> @Html.Raw( question.Answer.Answer )</p>
+                                @Html.Partial("_AnswerLikes", question.Answer)
+                                @GlobalLocalization.Answer_Date: @question.Answer.AnswerTime.ToString( "dd.MM.yyyy." )
+                            </div>
+                        }
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+<div class="modal fade" id="askQuestionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.Representative_AskRepresentative</h4>
+            </div>
+            <div class="modal-body" id="questionBody">
+                @if ( !User.Identity.IsAuthenticated )
+                {
+                    <i>@Html.Raw(string.Format(GlobalLocalization.Representative_LoginOrSignin_Message, Html.ActionLink( GlobalLocalization.Global_ToRegister, "Register", "Account", routeValues: new { returnUrl = Url.RouteUrl(Routes.Representatives_Representative, new { repId = Model.Representative.RepresentativeID }) }, htmlAttributes: null ), Html.ActionLink( GlobalLocalization.Global_ToLogIn, "Login", "Account", routeValues: new { returnUrl = Url.RouteUrl(Routes.Representatives_Representative, new { repId = Model.Representative.RepresentativeID }) }, htmlAttributes: null )))</i>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+

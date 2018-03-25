@@ -1,0 +1,44 @@
+﻿@model JavnaRasprava.WEB.DomainModels.Expert
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Expert_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div>
+    <fieldset>
+        <legend>@GlobalLocalization.Admin_Expert_Details_PageTitle</legend>
+    </fieldset>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.About)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.About)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Edit,          "ExpertEdit", "Admin", new { id = Model.ExpertID }, null) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Delete,        "ExpertDelete", "Admin", new { id = Model.ExpertID }, null) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList,    "GetAllExperts", "Admin")
+</p>

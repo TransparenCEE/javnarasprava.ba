@@ -1,0 +1,32 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.Parliament.ParliamentHouseEditModel>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditParliamentHouse", new { ParliamentId = item.ParliamentID, HouseId = item.ParliamentHouseID }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteParliamentHouse", new { id = item.ParliamentHouseID },
+                    new { onclick = string.Format("return confirm ('{0}');", GlobalLocalization.Admin_Parliament_ParliamentHouse_DeleteConfirm) })
+            </td>
+        </tr>
+    }
+
+</table>

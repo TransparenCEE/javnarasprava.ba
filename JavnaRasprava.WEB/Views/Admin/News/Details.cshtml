@@ -1,0 +1,84 @@
+﻿@model JavnaRasprava.WEB.Models.News.NewsModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_News_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_LookOnPublicSite, "Details", "News", new { Id = Model.NewsId }, new { target = "_blank" } )
+</p>
+<div>
+    <fieldset>
+        <legend>
+            @GlobalLocalization.Admin_Global_ImageForHompage
+        </legend>
+        <div class="row">
+            <div class="col-md-3">
+                @if ( !String.IsNullOrEmpty( Model.ImageRelativePath ) )
+                {
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetNewsImage( Model.ImageRelativePath )" class="img-responsive" />
+                }
+                else
+                {
+                    <p>@GlobalLocalization.Admin_Global_NoPictureAssigned</p>
+                }
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+           @GlobalLocalization.Admin_News_Details_PageTitle
+        </legend>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor( model => model.Title )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Title )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.Summary )
+            </dt>
+
+            <dd>
+                @Html.Raw( Model.Summary )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.Text )
+            </dt>
+
+            <dd>
+                @Html.Raw( Model.Text )
+            </dd>
+        </dl>
+    </fieldset>
+
+    <fieldset>
+        <legend>@GlobalLocalization.Admin_Global_InfoBox_Heading</legend>
+
+        <dl class="dl-horizontal">
+
+            <dt>@GlobalLocalization.Admin_Global_InfoBox_TopList</dt>
+
+            <dd>
+                @Html.Action( "InfoBoxStatus", new
+           {
+               Reference = Model.NewsId,
+               Partition = Model.ParliamentId,
+               BoxName = "Top",
+               Type = "News"
+           } )
+            </dd>
+        </dl>
+    </fieldset>
+</div>
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Edit,          "NewsEdit", new { id = Model.NewsId }) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Delete,         "NewsDelete", new { id = Model.NewsId } ) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList,    "GetAllNews" )
+</p>

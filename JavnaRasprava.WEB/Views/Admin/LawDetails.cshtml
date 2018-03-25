@@ -1,0 +1,250 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Law_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="panel">
+            <div class="panel-body">
+                <p>@Html.ActionLink( GlobalLocalization.Admin_Law_Details_SeeLaw, "LawDetails", "JavnaRasprava", new { lawId = Model.LawID }, new { target = "_blank" } )</p>
+                <p>
+                @if ( !String.IsNullOrEmpty( Model.ImageRelativePath ) )
+                {
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawImage( Model.ImageRelativePath )" class="img-responsive">}
+                else
+                {
+                    <p>@GlobalLocalization.Admin_Global_NoPictureAssigned</p>
+                }
+                </p>
+                <p>
+                    @Html.DisplayNameFor(model => model.Submitter):
+                    @Html.DisplayFor( model => model.Submitter )
+                    <br>
+                    @Html.DisplayNameFor(model => model.CategoryTitle):
+                    @Html.DisplayFor( model => model.CategoryTitle )
+                    <br>
+                    @Html.DisplayNameFor(model => model.CreateDateTimeUtc):
+                    @Html.DisplayFor( model => model.CreateDateTimeUtc )
+                    <br>
+                    @Html.DisplayNameFor(model => model.ExpetedVotingDay):
+                    @Html.DisplayFor( model => model.ExpetedVotingDay )
+                    <br>
+                    @Html.DisplayNameFor(model => model.ParliamentName):
+                    @Html.DisplayFor( model => model.ParliamentName )
+                    <br>
+                    @Html.DisplayNameFor(model => model.StatusTitle):
+                    @Html.DisplayFor( model => model.StatusTitle )
+                    <br>
+                    @Html.DisplayNameFor(model => model.ProcedureName):
+                    @Html.DisplayFor( model => model.ProcedureName )
+                    <br>
+                    @Html.DisplayNameFor(model => model.IsActive):
+                    @Html.DisplayFor( model => model.IsActive ) </dd>
+                </p>
+            </div>
+        </div>
+                <p>
+                    @Html.ActionLink( GlobalLocalization.Admin_Global_Edit, "EditLaw", new { lawId = Model.LawID }, new {@class = "btn btn-default btn-sm"} )
+                    @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteLaw", new { lawId = Model.LawID }, new {@class = "btn btn-default btn-sm"} )
+                    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToList, "ManageLaws", null, new {@class = "btn btn-default btn-sm"} )
+                </p>
+    </div>
+
+    <div class="col-md-9">
+        <div class="panel">
+            <div class="panel-heading">
+                @GlobalLocalization.Admin_Global_InfoBox_Heading
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+
+                    <dt>@GlobalLocalization.Global_Laws</dt>
+                    <dd> @Html.Action("InfoBoxStatus", new {Reference = Model.LawID, Partition = Model.ParliamentID, BoxName = "Law", Type = "Law"}) </dd>
+
+                    <dt>@GlobalLocalization.Admin_Global_InfoBox_TopList</dt>
+                    <dd> @Html.Action("InfoBoxStatus", new {Reference = Model.LawID, Partition = Model.ParliamentID, BoxName = "Top", Type = "Law"}) </dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <strong>@Html.DisplayNameFor( model => model.Title )</strong>
+            </div>
+            <div class="panel-body">
+                @Html.DisplayFor( model => model.Title )
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                @Html.DisplayNameFor(model => model.Text)
+            </div>
+            <div class="panel-body">
+                @Html.DisplayFor( model => model.Text )
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="panel-body">
+                @Html.DisplayFor( model => model.Description )
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-body">
+                <strong>@Html.DisplayNameFor(model => model.TextFile)</strong>: 
+                @if ( !String.IsNullOrWhiteSpace( Model.TextFileRelativePath ) )
+                {
+                    <a href="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawDocument( Model.TextFileRelativePath )" target="_blank">@GlobalLocalization.GetLawTextFile</a>}
+                else
+                {
+                    @GlobalLocalization.Admin_Law_NoFile
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Global_ExpertsComments</div>
+                <div class="panel-body">
+                    @if ( Model.ExpertComments != null )
+                    {
+                        foreach ( var expertComment in Model.ExpertComments )
+                        {
+                            <p><strong>@expertComment.ExpertFirstName @expertComment.ExpertLastName:</strong> @Html.Raw( expertComment.Text )</p>
+                        }
+                    }
+                    <p>@Html.ActionLink( GlobalLocalization.Admin_Law_ManageLawExpertComments, "ManageLawExpertComments", new { lawId = Model.LawID } )</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Global_LawSections</div>
+                <div class="panel-body">
+                    <ul>
+                        @if ( Model.Sections != null )
+                        {
+                            foreach ( var sectionItem in Model.Sections )
+                            {
+                                <li>@sectionItem.Title</li>
+                            }
+                        }
+                    </ul>
+                    <p>@Html.ActionLink(GlobalLocalization.Admin_Law_ManageLawSections , "ManageLawSections", new { lawId = Model.LawID } )</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Admin_Law_PredefinedQuestions Predefinisana pitanja</div>
+                    <div class="panel-body">
+                        <ul>
+                            @if ( Model.Questions != null )
+                            {
+                                foreach ( var question in Model.Questions.Where( x => x.IsSuggested ) )
+                                {
+                                    <li>@question.Text</li>
+                                }
+                            }
+                        </ul>
+                    <p>@Html.ActionLink( GlobalLocalization.Admin_Law_ManagePredefinedQuestions, "ManageLawQuestions", new { lawId = Model.LawID } )</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Admin_Law_OtherQuestions</div>
+                <div class="panel-body">
+                    @if ( Model.Questions != null )
+                    {
+                        foreach ( var question in Model.Questions.Where( x => !x.IsSuggested ) )
+                        {
+                            if ( question.Verified )
+                            {
+                                <p>@question.Text</p>
+                            }
+                            else
+                            {
+                                if ( !question.AdminIgnore )
+                                {
+                                    <p style="color:red">@question.Text</p>
+                                }
+                                else
+                                {
+                                    <p>@question.Text</p>
+                                }
+                            }
+                        }
+                    }
+                    <p> @Html.ActionLink(GlobalLocalization.Admin_Law_ManageQuestions, "ManageLawQuestions", new { lawId = Model.LawID } )</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Admin_Law_PredefinedVotes</div>
+                <div class="panel-body">
+                    @if ( Model.CustomVotes != null )
+                    {
+                        foreach ( var customVote in Model.CustomVotes.Where( x => x.IsSuggested ) )
+                        {
+                            <p>@customVote.Text</p>
+                        }
+                    }
+                    @Html.ActionLink( GlobalLocalization.Admin_Law_ManagePredefinedVotes, "ManageLawCustomVotes", new { lawId = Model.LawID } )
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Admin_Law_OtherVotes</div>
+                <div class="panel-body">
+                    @if ( Model.CustomVotes != null )
+                    {
+                        foreach ( var customVote in Model.CustomVotes.Where( x => !x.IsSuggested ) )
+                        {
+                            if ( customVote.Vote.HasValue )
+                            {
+                                <p>@customVote.Text</p>
+                            }
+                            else
+                            {
+                                if ( !customVote.AdminIgnore )
+                                {
+                                    <p style="color:red">@customVote.Text</p>
+                                }
+                                else
+                                {
+                                    <p>@customVote.Text</p>
+                                }
+                            }
+                        }
+                    }
+                    <p>@Html.ActionLink( GlobalLocalization.Admin_Law_ManageVotes, "ManageLawCustomVotes", new { lawId = Model.LawID } )</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">@GlobalLocalization.Admin_Law_SuggestedRepresentatives</div>
+                <div class="panel-body">
+                    <ul>
+                    @if ( Model.Representatives != null )
+                    {
+                        foreach ( var representative in Model.Representatives )
+                        {
+                            <li>@representative.FirstName @representative.LastName, @representative.PartyName</li>
+                        }
+                    }
+                    </ul>
+                    <p>@Html.ActionLink( GlobalLocalization.Admin_Law_ManageSuggestedRepresentatives , "ManageLawSuggestedRepresentatives", new { lawId = Model.LawID } )</p>
+                </div>
+            </div>
+    </div>
+</div>

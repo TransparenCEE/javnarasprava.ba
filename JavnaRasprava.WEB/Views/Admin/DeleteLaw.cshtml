@@ -1,0 +1,74 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Law_Delete_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>@GlobalLocalization.Admin_Law_Delete_Heading</h3>
+<div>
+    <dl class="dl-horizontal">
+
+        @Html.HiddenFor( model => model.LawID )
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Text )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Title )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Description )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Submitter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Submitter )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDateTimeUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.CreateDateTimeUtc )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpetedVotingDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.ExpetedVotingDay )
+        </dd>        
+
+    </dl>
+
+    @using ( Html.BeginForm() )
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@GlobalLocalization.Admin_Global_Delete" class="btn btn-default" /> |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "LawDetails", new { lawId = Model.LawID } )
+        </div>
+    }
+</div>

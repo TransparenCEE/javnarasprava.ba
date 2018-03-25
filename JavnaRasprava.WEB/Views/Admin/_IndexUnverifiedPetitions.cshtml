@@ -1,0 +1,18 @@
+﻿@model List<JavnaRasprava.WEB.Models.PetitionModel>
+
+<h3>@GlobalLocalization.Admin_UnverifiedPetitions_Heading</h3>
+
+@if ( Model != null && Model.Count > 0 )
+{
+    <div>
+        @foreach ( var petition in Model )
+        {
+            <div>@Html.ActionLink( petition.Title, "PetitionDetails", new { petitionId = petition.PetitionID } )</div>
+                <br />
+        }
+    </div>
+}
+else
+{
+    <p>@GlobalLocalization.Admin_Unverified_NothingHere</p>
+}

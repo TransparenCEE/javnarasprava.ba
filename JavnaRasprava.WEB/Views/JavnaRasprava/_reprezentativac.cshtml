@@ -1,0 +1,31 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeModel
+
+<div class="representative thumbnail thumbnail-light">
+    <div class="col-xs-3 col-sm-2 no-padding">
+        <a class="" href="Representatives/Representative?repId=86">
+            <img src="/Content/Images/Representatives/JXNFXALA.jpg" class="img-responsive">
+        </a>
+    </div>
+    <div class="col-xs-9 col-sm-10 no-padding">
+        <div class="representative-stats">
+            <span class="title">
+                <strong>@Html.RouteLink(Model.Representative.DisplayName, Routes.Representatives_Representative, new {repId = Model.Representative.RepresentativeID })</strong>
+            </span>
+            <br />
+            @GlobalLocalization.Global_Party: @Model.Representative.Party.Name
+            <br />
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger" style="width: 11%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100">
+                @Model.PercentageAnswered%
+                </div>
+            </div>
+            <div class="col-xs-6 no-padding small-space-bottom">
+                @GlobalLocalization.Global_QuestionCount: <span class="badge">@Model.TotalQuestions</span>
+            </div>
+            <div class="col-xs-6 no-padding small-space-bottom">
+                @GlobalLocalization.Global_AnsweCount: <span class="badge">@Model.TotalAnswers</span>
+            </div>
+        </div>
+    </div>
+</div>
+

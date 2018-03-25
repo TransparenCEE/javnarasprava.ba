@@ -1,0 +1,30 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizResultsModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Quiz_Results_PageTitle;
+}
+
+<div class="col-md-8 col-md-offset-2">
+<h2>Rezultati: @Html.DisplayFor( model => model.Title )</h2>
+
+<div class="clearfix">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>@GlobalLocalization.Quiz_Results_SectionTitle</strong>
+        </div>
+        <br />
+        @foreach ( var item in Model.Items )
+        {
+            if ( item.QuestionType == JavnaRasprava.WEB.DomainModels.QuizItemType.Law )
+            {
+                @Html.Partial( "_LawResults", item );
+            }
+            else if ( item.QuestionType == JavnaRasprava.WEB.DomainModels.QuizItemType.LawSection )
+            {
+                @Html.Partial( "_LawSectionResults", item );
+            }
+        }
+        <div class="clearfix"></div>
+    </div>
+</div>
+</div>

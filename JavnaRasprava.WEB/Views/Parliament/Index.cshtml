@@ -1,0 +1,16 @@
+﻿@model ParliamentListModel
+@{
+    ViewBag.Title = GlobalLocalization.Global_Parliament;
+}
+
+<h2>@GlobalLocalization.ChooseParliament</h2>
+@{
+    foreach ( var item in Model.Parliaments )
+    {
+        @Html.ActionLink( item.Name, "SelectParlament", "Parliament", new { parId = item.ParliamentID }, null )
+
+        <br />
+        <br />
+    }
+}
+

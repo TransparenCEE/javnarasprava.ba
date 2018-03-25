@@ -1,0 +1,29 @@
+﻿@model JavnaRasprava.WEB.Models.Representative.RepresentativeQuestionModel
+<span id="questionLikes_@Model.ID">
+    @if ( Model.UserLiked.HasValue )
+    {
+        if ( Model.UserLiked.Value )
+        {
+            <span style="opacity:1" class="label label-success"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> @Model.LikesCount</span>
+            <span style="opacity:.5" class="label label-danger"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> @Model.DislikesCount</span>
+        }
+        else
+        {
+            <span style="opacity:.5" class="label label-success"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> @Model.LikesCount</span>
+            <span style="opacity:1" class="label label-danger"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> @Model.DislikesCount</span>
+        }
+    }
+    else
+    {
+        <a style="opacity:1; margin-right:.25em" class="label label-success" data-ajax="true" data-ajax-method="Post" data-ajax-mode="replace"
+           data-ajax-update="@("#questionLikes_"+ Model.ID)"
+           href="@Url.Action("LikeQuestion", "Representatives", new { questionId = Model.ID })">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Model.LikesCount.ToString()</span>
+        </a>
+        <a style="opacity:1; margin-right:.25em" class="label label-danger" data-ajax="true" data-ajax-method="Post" data-ajax-mode="replace"
+           data-ajax-update="@("#questionLikes_"+ Model.ID)"
+           href="@Url.Action("DislikeQuestion", "Representatives", new { questionId = Model.ID })">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Model.DislikesCount.ToString()</span>
+        </a>
+    }
+</span>

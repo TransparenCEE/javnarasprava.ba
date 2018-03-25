@@ -1,0 +1,75 @@
+﻿@model JavnaRasprava.WEB.Models.Admin.AdminIndexModel
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.Action("Admin", "ParliamentSelection", new { returnUrl = Url.RouteUrl(JavnaRasprava.Resources.Routes.Admin_Index) })
+@*@Html.Partial( "../Shared/_skupstineAdmin", "Admin/Index" )*@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="media_node ">
+                <span>
+                    @Html.ActionLink( GlobalLocalization.Admin_Index_UnverifiedQuestions, "IndexUnverifiedQuestions", null,
+                    new { data_target = "#AdminBody", id = "contacts_tab", data_toggle = "tabajax", rel = "tooltip" } )
+                </span>
+                <span class="badge">@Model.UnverifiedQuestionsCount</span>
+            </li>
+            <li role="presentation" class="media_node span">
+                <span>
+                    @Html.ActionLink( GlobalLocalization.Admin_Index_DirectQuestions, "IndexUnverifiedDirectQuestions", null,
+                    new { data_target = "#AdminBody", id = "contacts_tab", data_toggle = "tabajax", rel = "tooltip" } )
+                </span>
+                <span class="badge">@Model.UnverifiedRepresentativeQuestionsCount</span>
+            </li>
+
+            <li role="presentation" class="media_node span">
+                <span>
+                    @Html.ActionLink(GlobalLocalization.Admin_Index_UnverifiedLawAnswers, "IndexUnverifiedAnswers", null,
+                    new { data_target = "#AdminBody", id = "contacts_tab", data_toggle = "tabajax", rel = "tooltip" } )
+                </span>
+                <span class="badge">@Model.UnverifiedRepresentativeQuestionsCount</span>
+            </li>
+            <li role="presentation" class="media_node span">
+                <span>
+                    @Html.ActionLink(GlobalLocalization.Admin_Index_UnverifiedLawSectionAnswers, "IndexUnverifiedSectionAnswers", null,
+                    new { data_target = "#AdminBody", id = "contacts_tab", data_toggle = "tabajax", rel = "tooltip" } )
+
+                </span>
+                <span class="badge">@Model.UnverifiedLawSectionCustomVoteCount</span>
+            </li>
+            <li role="presentation" class="media_node span">
+                <span>
+                    @Html.ActionLink(GlobalLocalization.Admin_Index_UnverifiedPetitions, "IndexUnverifiedPetitions", null,
+                    new { data_target = "#AdminBody", id = "contacts_tab", data_toggle = "tabajax", rel = "tooltip" } )
+                </span>
+                <span class="badge">@Model.UnverifiedPetitionsCount</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="AdminBody" class="panel-body">
+        @Html.Action( "IndexUnverifiedQuestions" )
+    </div>
+</div>
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+    $('[data-toggle="tabajax"]').click(function (e) {
+        var $this = $(this),
+            loadurl = $this.attr('href'),
+            targ = $this.attr('data-target');
+
+        $.get(loadurl, function (data) {
+            $(targ).html(data);
+        });
+
+        $this.tab('show');
+        return false;
+    });
+</script>

@@ -1,0 +1,30 @@
+﻿@model LawSearchModel
+
+<div class="panel-body">
+    @using ( Html.BeginForm( "Search", "AllLaws" ) )
+    {
+        <div class="row">
+            <form class="form-inline">
+                @Html.HiddenFor(x=>x.ParliamentId)
+                <div class="form-group">
+                    <div class="col-md-2">
+                        @Html.DropDownListFor( x => x.CategoryId, Model.Categories, GlobalLocalization.Global_Search_Category_ValuePlaceholder, htmlAttributes: new { @class = "form-control" } )
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-2">
+                        @Html.EnumDropDownListFor( m => m.LawSort, GlobalLocalization.Global_Search_Sort_ValuePlaceholder, htmlAttributes: new { @class = "form-control" } )
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        @Html.TextBoxFor( x => x.QueryString, htmlAttributes: new { @class = "form-control", @placeholder = GlobalLocalization.Global_Search_String_ValuePlaceholder } )
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input class="btn btn-primary btn-block" type="submit" value=@GlobalLocalization.Global_Search_Button>
+                </div>
+            </form>
+        </div>
+    }
+</div>

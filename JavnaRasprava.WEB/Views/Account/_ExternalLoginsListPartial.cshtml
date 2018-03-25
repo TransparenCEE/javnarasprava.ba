@@ -1,0 +1,36 @@
+﻿@using JavnaRasprava.WEB.Models
+@model ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if ( loginProviders.Count() == 0 )
+    {
+    <p>
+        There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
+        for details on setting up this ASP.NET application to support logging in via external services.
+    </p>
+    }
+    else
+    {
+        using ( Html.BeginForm( "ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl } ) )
+        {
+            <h4>@GlobalLocalization.Account_ExternalLoginMessage</h4>
+            @Html.AntiForgeryToken()
+            <form class="form-horizontal" role="form">
+                @foreach ( AuthenticationDescription p in loginProviders )
+                {
+                <div class="form-group">
+                <label class="col-md-2 control-label">@p.AuthenticationType</label>
+                    <div class="col-md-10">
+                        <button type="submit" class="btn btn-default btn-block" id="@p.AuthenticationType" name="provider" 
+                                value="@p.AuthenticationType" title="@GlobalLocalization.Account_LoginUsing @p.Caption @GlobalLocalization.Account">
+                        @GlobalLocalization.Account_LoginButton
+                        </button>
+                    </div>
+                </div>
+                }
+            </form>
+        }
+    }
+}

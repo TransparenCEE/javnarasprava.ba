@@ -1,0 +1,29 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_ExpertComments_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Global_ExpertsComments</h2>
+<h4>@GlobalLocalization.Admin_Global_LawTitle: @Model.Title</h4>
+
+<div>
+    @if ( Model.ExpertComments != null )
+    {
+        foreach ( var expertComment in Model.ExpertComments )
+        {
+            @Html.Partial( "_ExpertCommentDetail", expertComment )
+        }
+    }
+
+    <br />
+    <br />
+    @Html.ActionLink( GlobalLocalization.Admin_ExpertComments_AddNew, "CreateLawExpertComment", new { lawId = Model.LawID } )
+    <br />
+    <br />
+
+</div>
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToLaw, "LawDetails", new { lawId = Model.LawID } )
+</p>

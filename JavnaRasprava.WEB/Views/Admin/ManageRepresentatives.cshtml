@@ -1,0 +1,48 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeListModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Representatives_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.Action("Admin", "ParliamentSelection", new { returnUrl = Url.Action("ManageRepresentatives", "Admin") })
+@*@Html.Partial( "../Shared/_skupstineAdmin", "Admin/ManageRepresentatives" )*@
+
+
+<h3>@GlobalLocalization.Admin_Global_ParliamentHouses @Model.ParliamentName</h3>
+
+
+@{
+    foreach (var item in Model.ParliamentHouses)
+    {
+        <h4>@item.Name</h4>
+        <p>
+            @Html.ActionLink(String.Format(GlobalLocalization.Admin_Representatives_AddNewFormat, item.Name), "CreateRepresentative", new { parliamentHouseId = item.ParliamentHouseID }, new {@class="btn btn-default"})
+        </p>
+
+        <table class="table table-striped">
+            <tr>
+                <th class="col-md-6">
+                    @GlobalLocalization.Admin_Representatives_FirstNameAndLastName
+                </th>
+                <th class="col-md-2"></th>
+            </tr>
+
+            @foreach (var representative in item.Representatives)
+            {
+                <tr>
+                    <td class="col-md-6">
+                        @String.Format("{0} {1}", representative.Representative.FirstName, representative.Representative.LastName)
+                    </td>
+                    <td class="col-md-2 text-right">
+                        @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditRepresentative", new { repId = representative.Representative.RepresentativeID }) |
+                        @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "RepresentativeDetails", new { repId = representative.Representative.RepresentativeID }) |
+                        @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteRepresentative", new { repId = representative.Representative.RepresentativeID })
+                    </td>
+                </tr>
+
+            }
+        </table>
+
+    }
+}

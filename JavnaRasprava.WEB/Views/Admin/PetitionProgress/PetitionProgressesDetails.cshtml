@@ -1,0 +1,86 @@
+﻿@model JavnaRasprava.WEB.Models.Petition.PetitionProgressEditModel
+
+@{
+    ViewBag.Title = "Detalji progresa peticije";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div>
+    <fieldset>
+        <legend>Osnovni detalji progresa peticija</legend>
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.Raw(Model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ParliamentName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ParliamentName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SelectedRepresentativeName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SelectedRepresentativeName)
+            </dd>
+
+
+
+        </dl>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            @GlobalLocalization.Admin_PetitionProgress_WhenRepNotSet_SectionTitle
+        </legend>
+        <div class="row">
+            <div class="col-md-2" style="text-align:right;font-weight:bold; ">
+                @Html.DisplayNameFor(model => model.NumberOfVotes)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayFor(model => model.NumberOfVotes)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" style="text-align:right;font-weight:bold; ">
+                @Html.DisplayNameFor(model => model.ImageToDoRelativePath)
+            </div>
+            <div class="col-md-3">
+                @if (!String.IsNullOrEmpty(Model.ImageToDoRelativePath))
+                {
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetPetitionProgressImage( Model.ImageToDoRelativePath )" class="img-responsive">}
+                else
+                {
+                    <p>@GlobalLocalization.Admin_Global_NoPictureAssigned</p>
+                }
+            </div>
+        </div>
+    </fieldset>
+</div>
+<br />
+<br />
+    <p>
+        @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditPetitionProgresses", new { petitionProgressId = Model.PetitionProgresID }) |
+        @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeletePetitionProgresses", new { petitionProgressId = Model.PetitionProgresID }) |
+        @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "ManagePetitionProgresses")
+    </p>
+

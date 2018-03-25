@@ -1,0 +1,40 @@
+﻿@model JavnaRasprava.WEB.Models.PetitionProgressModel
+
+<div class="col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>@Model.Title</strong>
+        </div>
+        <div class="panel-body">
+            <div class="bedz">
+                <small>
+                    <span class="glyphicon glyphicon-user"></span>
+                </small>
+                <br>
+                @Model.VotesCount
+                <br>
+                <small>
+                    @GlobalLocalization.Global_NumberOfVotes.ToLowerInvariant()
+                </small>
+
+            </div>
+
+            <span>
+                @if (Model.RepresentativeImageRelativePath == null)
+                {
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetPetitionProgressImage(Model.ImageRelativePath)" class="img-responsive">
+
+                }
+                else
+                {
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage(Model.RepresentativeImageRelativePath)" class="img-responsive">
+                }
+            </span>
+
+            <p>@Html.Raw(Model.Description)</p>
+        </div>
+    </div>
+
+
+
+</div>

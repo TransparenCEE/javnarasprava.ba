@@ -1,0 +1,70 @@
+﻿@model JavnaRasprava.WEB.Models.PetitionModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Petition_Delete_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>@GlobalLocalization.Admin_Petition_Delete_Heading</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>       
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetInstitution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetInstitution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmitterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmitterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Verified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Verified)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signatures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signatures)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@GlobalLocalization.Admin_Global_Delete" class="btn btn-default" /> |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList,       "ManagePetitions")
+        </div>
+    }
+</div>

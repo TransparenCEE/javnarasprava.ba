@@ -1,0 +1,33 @@
+﻿@model JavnaRasprava.WEB.Models.InfoBox.InfoBoxItemModel
+
+<div id="@String.Format("InfoBoxStatus_{0}_{1}", Model.Reference, Model.BoxName)">
+    @using ( Ajax.BeginForm( "InfoBoxStatusUpdate",
+                                                new
+                                                {
+                                                    Reference = Model.Reference,
+                                                    Partition = JavnaRasprava.WEB.Infrastructure.SessionManager.Current.CurrentParliamentId,
+                                                    BoxName = Model.BoxName,
+                                                    Type = Model.Type
+                                                },
+                                                new AjaxOptions
+                                                {
+                                                    HttpMethod = "Get",
+                                                    UpdateTargetId = String.Format( "InfoBoxStatus_{0}_{1}", Model.Reference, Model.BoxName ),
+                                                    InsertionMode = InsertionMode.Replace,
+                                                    OnSuccess = string.Format("alert(\"{0}\")",GlobalLocalization.Admin_InfoBox_SaveSuccess),
+                                                    OnFailure = string.Format("alert(\"Dogodila se greška\")", GlobalLocalization.Admin_InfoBox_SaveError),
+                                                } ) )
+    {
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-8">
+                    @Html.DropDownListFor( model => model.Position, Model.Positions, GlobalLocalization.Admin_InfoBox_NotPointedOut, new { @id = "ddlPosition", @class = "form-control" } )
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" value="@GlobalLocalization.Admin_Global_Edit" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

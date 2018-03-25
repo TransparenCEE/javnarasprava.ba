@@ -1,0 +1,20 @@
+﻿@model JavnaRasprava.WEB.Models.User.UserSearchModel
+@using PagedList.Mvc;
+
+<div class="panel-body">
+    @using ( Html.BeginForm( "SearchUsers", "Admin" ) )
+    {
+        <div class="row">
+            <form class="form-inline">                
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor( x => x.QueryString, htmlAttributes: new { @class = "form-control", @placeholder = GlobalLocalization.Global_Search_String_ValuePlaceholder } )
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input class="btn btn-primary btn-block" type="submit" value=@GlobalLocalization.Global_Search_Button>
+                </div>
+            </form>
+        </div>
+    }
+</div>

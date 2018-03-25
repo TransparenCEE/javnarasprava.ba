@@ -1,0 +1,44 @@
+﻿@model QuestionModel
+@if ( Model.UserLiked.HasValue )
+{
+    if ( Model.UserLiked.Value )
+    {
+        <button type="button" class="btn btn-default disabled">
+            <span style="opacity:1" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> @Model.LikesCount
+        </button>
+
+        <button type="button" class="btn btn-default disabled">
+            <span style="opacity:.5" class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> @Model.DislikesCount
+        </button>
+    }
+    else
+    {
+        <button type="button" class="btn btn-default disabled">
+            <span style="opacity:.5" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> @Model.LikesCount
+        </button>
+
+        <button type="button" class="btn btn-default disabled">
+            <span style="opacity:1" class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> @Model.DislikesCount
+        </button>
+    }
+}
+else
+{
+    <a style="opacity:1; " class="btn btn-default btn-sm" data-ajax="true" data-ajax-method="Post" data-ajax-mode="replace"
+       data-ajax-update="@("#questionLikes_"+ Model.Id)"
+       href="@Url.Action("LikeQuestion", "JavnaRasprava", new { questionId = Model.Id })">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Model.LikesCount.ToString()</span>
+    </a>
+
+    <a style="opacity:1; " class="btn btn-default btn-sm" data-ajax="true" data-ajax-method="Post" data-ajax-mode="replace"
+       data-ajax-update="@("#questionLikes_"+ Model.Id)"
+       href="@Url.Action("DislikeQuestion", "JavnaRasprava", new { questionId = Model.Id })">
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Model.DislikesCount.ToString()</span>
+    </a>
+}
+
+<span class="btn btn-default disabled">
+    @GlobalLocalization.Representative_QuestionAskedTimes: @Model.AskedCount
+</span>
+
+

@@ -1,0 +1,90 @@
+﻿@model JavnaRasprava.WEB.Models.Home.HomeModel
+@{
+    ViewBag.Title = JavnaRasprava.Resources.StaticPageData.HomePage_PageTitle;
+}
+
+    <div class="col-md-4">
+        <a href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_Index)" class="home-icon javna_rasprava">
+            <img class="img-responsive" src="~/Content/Images/javna_rasprava_icons-01.png" />
+        </a>
+        <h3 class="home-title">
+        <a href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.JavnaRasprava_Index)" class="javna_rasprava">
+            @JavnaRasprava.Resources.StaticPageData.HomePage_JavnaRasprava_Title
+        </a>
+        </h3>
+        @if (ViewBag.TenantCode == "TK")
+        {
+            <p class="home-teaser">@JavnaRasprava.Resources.StaticPageData.HomePage_JavnaRasprava_Description_Tuzla</p>
+        }
+        else
+        {
+        <p class="home-teaser">@JavnaRasprava.Resources.StaticPageData.HomePage_JavnaRasprava_Description</p>
+        }
+    </div>
+
+        @if ( ViewBag.TenantCode == "TK" )
+        {
+            <div class="col-md-4">
+            <a href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.Representatives_Index)" class="home-icon pitaj_parlamentarca">
+                <img class="img-responsive" src="~/Content/Images/javna_rasprava_icons-02.png" />
+            </a>
+
+            <h3 class="home-title">
+            <a href="" class="pitaj_parlamentarca">
+                @JavnaRasprava.Resources.StaticPageData.HomePage_Representatives_Title_Tuzla
+            </a>
+            </h3>
+                <p class="home-teaser">
+                   @JavnaRasprava.Resources.StaticPageData.HomePage_Representatives_Description_Tuzla
+                </p>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-4">
+            <a href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.Representatives_Index)" class="home-icon pitaj_parlamentarca">
+                <img class="img-responsive" src="~/Content/Images/javna_rasprava_icons-02.png" />
+            </a>
+
+            <h3 class="home-title">
+            <a href="@Url.RouteUrl( JavnaRasprava.Resources.Routes.Representatives_Index)" class="pitaj_parlamentarca">
+                @JavnaRasprava.Resources.StaticPageData.HomePage_Representatives_Title
+            </a>
+            </h3>
+                <p class="home-teaser">@JavnaRasprava.Resources.StaticPageData.HomePage_Representatives_Description</p>
+            </div>
+        }
+
+
+    <div class="col-md-4">
+    <a href="@Url.Action("Index", "Petitions")" class="home-icon pokrenite_peticiju">
+        <img class="img-responsive" src="~/Content/Images/javna_rasprava_icons-03.png" />
+    </a>
+    <h3 class="home-title">
+    <a href="@Url.Action("Index", "Petitions")" class="pokrenite_peticiju">
+        @JavnaRasprava.Resources.StaticPageData.HomePage_Petition_Title
+    </a>
+    </h3>
+        <p class="home-teaser">@JavnaRasprava.Resources.StaticPageData.HomePage_Petition_Description</p>
+    </div>
+    <p></p>
+
+@if (JavnaRasprava.WEB.Infrastructure.FeatureToggle.IsBosnia())
+{
+    if (ViewBag.TenantCode == FeatureToggle.Tenant_TK)
+    {
+    <div class="col-md-8 col-md-offset-2">
+        <a class="banner" href="@String.Format(AppConfig.GetStringValue("BaseTenantAddress"), "www")">
+            @Html.Raw(JavnaRasprava.Resources.StaticPageData.HomePage_Footer_Tuzla)
+        </a>
+    </div>
+    }
+    else
+    {
+    <div class="col-md-8 col-md-offset-2">
+        <a class="banner" href="@String.Format(AppConfig.GetStringValue("BaseTenantAddress"), "tk")">
+            @Html.Raw(@JavnaRasprava.Resources.StaticPageData.HomePage_Footer)
+        </a>
+    </div>
+    }
+}

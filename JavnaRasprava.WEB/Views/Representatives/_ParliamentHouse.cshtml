@@ -1,0 +1,18 @@
+﻿@model JavnaRasprava.WEB.Models.ParliamentHouseModel
+
+
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>@Html.DisplayFor( model => model.Name )</strong></div>
+    <div class="panel-body">
+        @{
+            foreach ( var item in Model.Representatives )
+            {
+                <div class="representative thumbnail thumbnail-light">
+                    @Html.Partial( "_RepresentativeQuickNavigationView", item )
+                </div>
+            }
+        }
+    </div>
+</div>
+
+

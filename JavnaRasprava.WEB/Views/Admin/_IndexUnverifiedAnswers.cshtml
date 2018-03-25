@@ -1,0 +1,18 @@
+﻿@model List<JavnaRasprava.WEB.Models.Law.CustomVoteEditModel>
+
+<h3>@GlobalLocalization.Admin_UnverifiedCustomAnswers_Heading</h3>
+
+@if ( Model != null && Model.Count > 0 )
+{
+    <div>
+        @foreach ( var customVote in Model )
+        {
+            <div>@Html.ActionLink( customVote.Text, "ManageLawCustomVotes", new { lawId = customVote.LawID } )</div>
+                <br />
+        }
+    </div>
+}
+else
+{
+    <p>@GlobalLocalization.Admin_Unverified_NothingHere</p>
+}

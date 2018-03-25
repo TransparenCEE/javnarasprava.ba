@@ -1,0 +1,34 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeModel
+
+<div class="progress">
+	@if ( Model.Green )
+	{
+		<div class="progress-bar progress-bar-success" style="min-width: @Model.PercentageAnswered%" aria-valuenow=@Model.PercentageAnswered aria-valuemin="0" aria-valuemax="100">
+			@Model.PercentageAnswered%
+		</div>
+	}
+	@if ( Model.Yellow )
+	{
+		<div class="progress-bar progress-bar-warning" style="width: @Model.PercentageAnswered%" aria-valuenow=@Model.PercentageAnswered aria-valuemin="0" aria-valuemax="100">
+			@Model.PercentageAnswered%
+		</div>
+	}
+	@if ( Model.Red )
+	{
+		<div class="progress-bar progress-bar-danger" style="width: @Model.PercentageAnswered%" aria-valuenow=@Model.PercentageAnswered aria-valuemin="0" aria-valuemax="100">
+			@Model.PercentageAnswered%
+		</div>
+	}
+	@if ( Model.Gray )
+	{
+		<div class="progress-bar progress-bar-info" style="min-width: 2em" aria-valuenow=@Model.PercentageAnswered aria-valuemin="0" aria-valuemax="100">
+			@Model.PercentageAnswered%
+		</div>
+	}
+</div>
+<div class="col-xs-6 no-padding small-space-bottom">
+	<small>@GlobalLocalization.Global_QuestionCount: <span class="badge">@Model.TotalQuestions</span></small>
+</div>
+<div class="col-xs-6 no-padding small-space-bottom">
+	<small>@GlobalLocalization.Global_AnsweCount: <span class="badge">@Model.TotalAnswers</span></small>
+</div>

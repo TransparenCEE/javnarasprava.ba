@@ -1,0 +1,29 @@
+﻿@model PagedList.IPagedList<JavnaRasprava.WEB.Models.PetitionSummaryModel>
+
+<div id="petitionGrid">
+    @if (Model != null && Model.Count > 0)
+    {
+
+
+        var grid = new WebGrid(Model, defaultSort: "Title", canPage: true, rowsPerPage: 5, ajaxUpdateContainerId: "petitionGrid");
+        var columns = grid.Columns(
+            grid.Column("Title", header: GlobalLocalization.Petition_Title, format: @<text>@Html.ActionLink((string)item.Title, "Details", "Petitions", new { petitionId = item.Id }, null)</text> ),
+            grid.Column("CurrentCount", header: GlobalLocalization.Petition_CurrentCount),
+            grid.Column("TargetInstitutionName", header: GlobalLocalization.Petition_TargetInsitution));
+
+
+        @grid.GetHtml(columns: columns,
+                tableStyle: "table table-hover",
+                headerStyle: "headerStyle",
+                footerStyle: "footerStyle",
+                rowStyle: "rowStyle",
+                alternatingRowStyle: "alternatingRowStyle",
+                mode: WebGridPagerModes.Numeric)
+    }
+    else
+    {
+        <h5>@GlobalLocalization.Global_SearchResults_NoResultsMessage</h5>
+    }
+</div>
+
+

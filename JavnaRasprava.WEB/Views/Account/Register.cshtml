@@ -1,0 +1,87 @@
+﻿@model JavnaRasprava.WEB.Models.RegisterViewModel
+@{
+    ViewBag.Title = GlobalLocalization.Account_Register_PageTitle;
+}
+
+<div class="col-md-offset-3 col-md-6">
+<h2>@GlobalLocalization.Account_Register_PageTitle</h2>
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true,"", new { @class = "text-danger" })
+    <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label hidden" })
+            @Html.TextBoxFor(
+            m => m.Email,
+            htmlAttributes: new { @class = "form-control", @placeholder =GlobalLocalization.Account_Email_ValuePlaceholder }
+            )
+            @Html.ValidationMessageFor( model => model.Email, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label hidden" })
+            @Html.PasswordFor(
+            m => m.Password,
+            htmlAttributes: new { @class = "form-control", @placeholder =GlobalLocalization.Account_Password_ValuePlaceholder }
+            )
+            @Html.ValidationMessageFor( model => model.Password, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label hidden" })
+            @Html.PasswordFor(
+            m => m.ConfirmPassword,
+            htmlAttributes: new { @class = "form-control", @placeholder = GlobalLocalization.Account_PasswordConfirmation_ValuePlaceholder }
+            )
+            @Html.ValidationMessageFor( model => model.ConfirmPassword, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+            @Html.LabelFor(m => m.LocationID, new { @class = "control-label hidden" })
+            @Html.DropDownListFor(
+            m => m.LocationID,
+            Model.Locations,
+            GlobalLocalization.Account_Location_ValuePlaceholder,
+            new { @class = "form-control" }
+            )
+            @Html.ValidationMessageFor( model => model.LocationID, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+            @Html.LabelFor(m => m.PartyID, new { @class = "control-label hidden" })
+            @Html.DropDownListFor(
+            m => m.PartyID,
+            Model.Parties,
+            GlobalLocalization.Account_Party_ValuePlaceholder,
+            new { @class = "form-control" }
+            )
+            @Html.ValidationMessageFor( model => model.PartyID, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+            @Html.LabelFor(m => m.Age, new { @class = "control-label hidden" })
+            @Html.EnumDropDownListFor(
+            m => m.Age,
+            GlobalLocalization.Account_Age_ValuePlaceholder,
+            new { @class = "form-control" }
+            )
+            @Html.ValidationMessageFor( model => model.Age, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+            @Html.LabelFor(m => m.Education, new { @class = "control-label hidden" })
+            @Html.EnumDropDownListFor(
+            m => m.Education,
+            GlobalLocalization.Account_Education_ValuePlaceholder,
+            new { @class = "form-control" }
+            )
+            @Html.ValidationMessageFor( model => model.Education, "", new { @class = "text-danger" } )
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary pull-right" value="@GlobalLocalization.Account_Register_Button" />
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<br>
+<br>
+<hr>
+<p class="alert alert-info">
+    <small>@GlobalLocalization.Account_DemographyDisclamer</small></p>
+</div>

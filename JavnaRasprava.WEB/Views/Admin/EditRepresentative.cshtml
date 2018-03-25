@@ -1,0 +1,126 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Reppresentative_Edit_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Reppresentative_Edit_PageTitle</h3>
+
+@using ( Html.BeginForm( "EditRepresentative", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" } ) )
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.HiddenFor( x => x.RepresentativeID )
+        <hr />
+        @Html.ValidationSummary( true, "", new { @class = "text-danger" } )
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.FirstName )
+                @Html.ValidationMessageFor( model => model.FirstName, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.LastName, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.LastName )
+                @Html.ValidationMessageFor( model => model.LastName, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Email, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.Email )
+                @Html.ValidationMessageFor( model => model.Email, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label( GlobalLocalization.Admin_Global_Image, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div id="Image" class="col-md-10">
+                @if ( String.IsNullOrEmpty( @Model.ImageRelativePath ) )
+                {
+                    <input type="File" name="Image" id="Image" value="@GlobalLocalization.Admin_Global_ChooseImage" class="form-control" />
+                }
+                else
+                {
+                    @Html.HiddenFor( x => x.ImageRelativePath )
+                    @Html.TextBoxFor( x => x.ImageRelativePath, new { disabled = "disabled" } )
+                    <a onclick="AddUploadFileControl('Image', '@GlobalLocalization.Admin_Global_ChooseImage')">Izmijeni/Obriši fotografiju</a>
+                }
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Resume, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Resume, new { htmlAttributes = new { @class = "form-control", @style = "width: 944px; height: 519px;" } } )
+                @Html.RequiredFieldFor( model => model.Resume )
+                @Html.ValidationMessageFor( model => model.Resume, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedPartyID, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.DropDownListFor( model => model.SelectedPartyID,
+                            Model.Parties.Select( x => new SelectListItem
+                            {
+                                Text = x.Name,
+                                Value = x.PartyID.ToString()
+                            } ).ToList(),
+                            GlobalLocalization.Global_Dropdown_ValuePlaceHolder,
+                            new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.SelectedPartyID )
+                @Html.ValidationMessageFor( model => model.SelectedPartyID, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfVotes, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.NumberOfVotes, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.NumberOfVotes )
+                @Html.ValidationMessageFor( model => model.NumberOfVotes, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EletorialUnit, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.EletorialUnit, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.EletorialUnit )
+                @Html.ValidationMessageFor( model => model.EletorialUnit, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Function, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Function, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.RequiredFieldFor( model => model.Function )
+                @Html.ValidationMessageFor( model => model.Function, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@GlobalLocalization.Admin_Global_Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<div>
+    @Html.ActionLink(@GlobalLocalization.Admin_Global_BackToDetail, "RepresentativeDetails", new { repId = Model.RepresentativeID } )
+</div>

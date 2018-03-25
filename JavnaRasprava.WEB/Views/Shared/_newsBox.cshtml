@@ -1,0 +1,18 @@
+﻿@model JavnaRasprava.WEB.Models.News.NewsModel
+
+<div class="col-sm-3 col-md-3 space-bottom-lg">
+    @if ( !String.IsNullOrWhiteSpace( Model.ImageRelativePath ) )
+    {
+        <div class="img-container-4x3">
+            <a href='@Url.Action( "Details", "News", new { id = Model.NewsId} )'>
+                <img src='@Url.Content( @JavnaRasprava.WEB.Infrastructure.ImageHelper.GetNewsImage( Model.ImageRelativePath ) )' class="img-responsive" />
+            </a>
+        </div>
+    }
+    <div class="theme-stats">
+        <p class="nadnaslov"><i class="fa fa-newspaper-o"></i> @GlobalLocalization.Global_News</p>
+        <h4>@Html.ActionLink( Model.Title, "Details", "News", new { id = Model.NewsId }, null )</h4>
+        <span>@Model.Summary</span>        
+    </div>
+</div>
+

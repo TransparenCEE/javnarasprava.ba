@@ -1,0 +1,1949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Llogaria</value>
+  </data>
+  <data name="Account_ChangePassword_Button" xml:space="preserve">
+    <value>Ndryshoni fjalëkalimin</value>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Fjalëkalimi u ndryshua me sukses.</value>
+  </data>
+  <data name="Account_ConfirmPassword" xml:space="preserve">
+    <value>Konfirmoni fjalëkalimin</value>
+  </data>
+  <data name="Account_ConfirmPassword_Error" xml:space="preserve">
+    <value>Fjalëkalimi i ri si dhe konfirmimi i fjalëkalimit të ri duhet të jenë njëlloj.</value>
+  </data>
+  <data name="Account_DemographyAge" xml:space="preserve">
+    <value>Mosha</value>
+  </data>
+  <data name="Account_DemographyEducation" xml:space="preserve">
+    <value>Niveli i edukimit</value>
+  </data>
+  <data name="Account_DemographyLocation" xml:space="preserve">
+    <value>Vendbanimi</value>
+  </data>
+  <data name="Account_DemographyParty" xml:space="preserve">
+    <value>Partia politike për të cilën keni votuar në zgjedhjet e fundit.</value>
+  </data>
+  <data name="Account_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ErrorOcurred" xml:space="preserve">
+    <value>Ka ndodhur një gabim.</value>
+  </data>
+  <data name="InvalidUsernameOrPasswordError" xml:space="preserve">
+    <value>Përdorues ose fjalëkalim i gabuar</value>
+  </data>
+  <data name="LoggedInUser" xml:space="preserve">
+    <value>Përdorues i regjistruar</value>
+  </data>
+  <data name="Account_LoginUsing" xml:space="preserve">
+    <value>Futuni duke përdorur</value>
+  </data>
+  <data name="MinLengthError" xml:space="preserve">
+    <value>{0} duhet të jetë të paktën {2} karaktere.</value>
+  </data>
+  <data name="Account_NewPassword" xml:space="preserve">
+    <value>Fjalëkalim i ri</value>
+  </data>
+  <data name="Account_OldPassword" xml:space="preserve">
+    <value>Fjalëkalimi ekzistues</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Fjalëkalimi</value>
+  </data>
+  <data name="Account_RememberMe" xml:space="preserve">
+    <value>Më mban mend?</value>
+  </data>
+  <data name="RemoveLoginSuccess" xml:space="preserve">
+    <value>Llogaria e jashtme u hoq.</value>
+  </data>
+  <data name="SetPasswordSuccess" xml:space="preserve">
+    <value>Fjalëkalimi u vendos me sukses.</value>
+  </data>
+  <data name="UseOtherServiceForLogIn" xml:space="preserve">
+    <value>Përdor një shërbim tjetër për t'u futur</value>
+  </data>
+  <data name="UserDoesNotExistOrNotConfirmedError" xml:space="preserve">
+    <value>Përdoruesi ose nuk ekziston ose nuk është konfirmuar.</value>
+  </data>
+  <data name="UserNotFoundError" xml:space="preserve">
+    <value>Përdoruesi nuk gjendet.</value>
+  </data>
+  <data name="Account_Confirmation_PageTitle" xml:space="preserve">
+    <value>Konfirmimi i llogarisë</value>
+  </data>
+  <data name="Account_ConfirmationText_p1" xml:space="preserve">
+    <value>Faleminderit që konfirmuat llogarinë. Ju lutem</value>
+  </data>
+  <data name="Account_ConfirmationText_p2" xml:space="preserve">
+    <value>Klikoni këtu për t'u futur.</value>
+  </data>
+  <data name="Account_CreateLocalAccount_Message" xml:space="preserve">
+    <value>Krijoni një llogari lokale.</value>
+  </data>
+  <data name="Account_NoLocalAccountWarning" xml:space="preserve">
+    <value>Ju nuk keni një llogari lokale për këtë faqe. Ju lutem regjistroni një llogari lokale me qëllim që të futeni pa përdorur një llogari të jashtme.</value>
+    <comment>There are two types of accounts for the site. One is a registration directly on site (local account), and the other one is via Facebook (external account).</comment>
+  </data>
+  <data name="Account_RegistredAccounts" xml:space="preserve">
+    <value>LLogaritë e regjistruara në mediat sociale</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Hiq</value>
+  </data>
+  <data name="Account_SetPassword_Button" xml:space="preserve">
+    <value>Vendos fjalëkalimin</value>
+  </data>
+  <data name="Account_2" xml:space="preserve">
+    <value>llogari</value>
+  </data>
+  <data name="AddCommentButton" xml:space="preserve">
+    <value>Shtoni një koment</value>
+  </data>
+  <data name="JavnaRasprava_AddCustomAnswer_ValuePlaceHolder" xml:space="preserve">
+    <value>Shtoni përgjigjen tuaj</value>
+  </data>
+  <data name="AskQuestion" xml:space="preserve">
+    <value>Bëni një pyetje</value>
+  </data>
+  <data name="AskRepresentativeChooseButton" xml:space="preserve">
+    <value>Zgjidhni</value>
+  </data>
+  <data name="JavnaRasprava_AskRepresentatives_BoxTitle" xml:space="preserve">
+    <value>Pyesni deputetët</value>
+  </data>
+  <data name="Account_AssignYour_Message" xml:space="preserve">
+    <value>Caktoni </value>
+  </data>
+  <data name="Account_ExternalLogin_AssociationForm" xml:space="preserve">
+    <value>Formular për të lidhur llogaritë në rrjetet sociale</value>
+  </data>
+  <data name="Account_ExternalLogin_AuthenticationWithSuccessMessage" xml:space="preserve">
+    <value>Llogaria juaj u verifikua me sukses me</value>
+    <comment>You've successfully authenticated with [LoginProvider]
+            </comment>
+  </data>
+  <data name="ChooseOtherRepresentatives" xml:space="preserve">
+    <value>Zgjidhni një deputet tjetër</value>
+  </data>
+  <data name="ChooseParliament" xml:space="preserve">
+    <value>Zgjidhni parlamentin</value>
+  </data>
+  <data name="Global_Close" xml:space="preserve">
+    <value>Mbyllni</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Krijoni një llogari tjetër re</value>
+  </data>
+  <data name="Global_Dropdown_ValuePlaceHolder" xml:space="preserve">
+    <value>Zgjidhni...</value>
+  </data>
+  <data name="Account_ForgotPassword_EmailLinkButton" xml:space="preserve">
+    <value>Dërgoni një lidhje për të rivendosur fjalëkalimin në email</value>
+  </data>
+  <data name="Account_ForgotPassword_EnterEmailMessage" xml:space="preserve">
+    <value>Vendosni emailin tuaj</value>
+  </data>
+  <data name="Global_Error" xml:space="preserve">
+    <value>Gabim</value>
+  </data>
+  <data name="Global_ExpertsComments" xml:space="preserve">
+    <value>Mendimi i ekspertit</value>
+  </data>
+  <data name="Law_ExpetedVotingDay" xml:space="preserve">
+    <value>Data e pritshme e votimit</value>
+  </data>
+  <data name="Account_ExternalLogin_ConfirmationButton" xml:space="preserve">
+    <value>Regjistrohuni</value>
+    <comment>Register</comment>
+  </data>
+  <data name="Account_ForgotPassword_PageTitle" xml:space="preserve">
+    <value>Keni harruar fjalëkalimin?</value>
+  </data>
+  <data name="Account_ForgotPasswordConfirmation_PageTitle" xml:space="preserve">
+    <value>Konfirmimi i fjalëkalimit të harruar</value>
+  </data>
+  <data name="LawText" xml:space="preserve">
+    <value>Teksti i ligjit</value>
+  </data>
+  <data name="Account_LogIn_PageTitle" xml:space="preserve">
+    <value>Futuni</value>
+  </data>
+  <data name="Account_LoginFailure_PageTitle" xml:space="preserve">
+    <value>Nuk jeni futur dot</value>
+  </data>
+  <data name="Account_Manage" xml:space="preserve">
+    <value>Administroni llogarinë tuaj</value>
+  </data>
+  <data name="NewCommentTitle" xml:space="preserve">
+    <value>Koment i ri</value>
+  </data>
+  <data name="NewCommentWarningText" xml:space="preserve">
+    <value>Për të postuar një koment ju duhet të</value>
+  </data>
+  <data name="Global_Parliament" xml:space="preserve">
+    <value>Kuvendi</value>
+  </data>
+  <data name="Global_ParliamentHouse" xml:space="preserve">
+    <value>Seanca Plenare</value>
+  </data>
+  <data name="Global_Party" xml:space="preserve">
+    <value>Partia</value>
+  </data>
+  <data name="Account_PleaseCheckEmailToResetPassword_Message" xml:space="preserve">
+    <value>Ju lutem kontrolloni emailin tuaj për të rivendosur fjalëkalimin.</value>
+  </data>
+  <data name="Account_ExternalLogin_PleaseEnterUsernameMessage" xml:space="preserve">
+    <value>Ju lutem vendosni më poshtë një emër përdoruesi dhe klikoni butonin Regjistrohuni për të përfunduar regjistrimin.</value>
+  </data>
+  <data name="Law_Procedure" xml:space="preserve">
+    <value>Lloji i procedurës</value>
+  </data>
+  <data name="RegisterAsNewUserButton" xml:space="preserve">
+    <value>Regjistrohuni si një përdorues i ri</value>
+  </data>
+  <data name="Account_Register_Button" xml:space="preserve">
+    <value>Regjistrohuni</value>
+  </data>
+  <data name="Account_Register_PageTitle" xml:space="preserve">
+    <value>Regjistrimi</value>
+  </data>
+  <data name="Representatives" xml:space="preserve">
+    <value>Deputetët</value>
+  </data>
+  <data name="JavnaRasprava_RepresentativesAnswers_Heading" xml:space="preserve">
+    <value>Përgjigja e deputetit</value>
+  </data>
+  <data name="Error_RequestError" xml:space="preserve">
+    <value>Ka ndodhur një gabim gjatë përpunimit të kërkesës tuaj.</value>
+  </data>
+  <data name="Account_Reset_Button" xml:space="preserve">
+    <value>Rivendosni</value>
+  </data>
+  <data name="Account_ResetPassword_PageTitle" xml:space="preserve">
+    <value>Rivendosni fjalëkalimin</value>
+  </data>
+  <data name="Account_ResetPassword_ConfirmationLink" xml:space="preserve">
+    <value>Klikoni këtu për ta konfirmuar</value>
+  </data>
+  <data name="Account_ResetPassword_ConfirmationText" xml:space="preserve">
+    <value>Fjalëkalimi u rivendos me sukses. Ju lutem kontrolloni emailin tuaj për lidhjen që rivendos fjalëkalimin tuaj.</value>
+  </data>
+  <data name="Account_ResetPasswordConfirmation_PageTitle" xml:space="preserve">
+    <value>Konfirmimi i rivendosjes së fjalëkalimit</value>
+  </data>
+  <data name="SectionExplanation" xml:space="preserve">
+    <value>Çështje të veçanta</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Shpërndaje</value>
+  </data>
+  <data name="Global_Statistics" xml:space="preserve">
+    <value>Statistikat</value>
+  </data>
+  <data name="Law_Submitter" xml:space="preserve">
+    <value>Propozuesi</value>
+  </data>
+  <data name="Top10LawDiscussions" xml:space="preserve">
+    <value>10 projektligje më të mira</value>
+  </data>
+  <data name="Account_UnsuccessfulLoginWithService_Message" xml:space="preserve">
+    <value>Nuk keni arritur të futeni nëpërmjet shërbimit.</value>
+  </data>
+  <data name="UseLocalAccountToLogIn" xml:space="preserve">
+    <value>Përdorni një llogari lokale për t'u futur.</value>
+  </data>
+  <data name="Global_UserComments" xml:space="preserve">
+    <value>Komentet e përdoruesit</value>
+  </data>
+  <data name="Global_Vote" xml:space="preserve">
+    <value>Votoni</value>
+  </data>
+  <data name="VotingWarningText" xml:space="preserve">
+    <value>Në mënyrë që të votoni, ju duhet të</value>
+  </data>
+  <data name="JavnaRasprava_CustomAnswersDistribution_Heading" xml:space="preserve">
+    <value>Shpërndarja e votave</value>
+  </data>
+  <data name="Global_Search_Age_ValuePlaceHolder" xml:space="preserve">
+    <value>Mosha...</value>
+  </data>
+  <data name="Global_Search_Education_ValuePlaceHolder" xml:space="preserve">
+    <value>Edukimi...</value>
+  </data>
+  <data name="Global_Search_Location_ValuePlaceHolder" xml:space="preserve">
+    <value>Vendndodhja...</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtrim</value>
+  </data>
+  <data name="FilterResults" xml:space="preserve">
+    <value>Rezultatet e filtrimit</value>
+  </data>
+  <data name="JavnaRasprava_MoreDetails" xml:space="preserve">
+    <value>Më shumë detaje</value>
+  </data>
+  <data name="Global_VoteDown" xml:space="preserve">
+    <value>Kundër</value>
+  </data>
+  <data name="Global_VoteUp" xml:space="preserve">
+    <value>Pro</value>
+  </data>
+  <data name="JavnaRasprava_VotingResultsModal_Title" xml:space="preserve">
+    <value>Rezultatet e votimit</value>
+  </data>
+  <data name="JavnaRasprava_AskRepresentativeSuccess_Message" xml:space="preserve">
+    <value>Ju faleminderit, pyetja juaj i është dërguar deputetit të zgjedhur. Përgjigja e deputetit do të jetë publike për të gjithë.</value>
+  </data>
+  <data name="JavnaRasprava_AskRepresentativesWarningText" xml:space="preserve">
+    <value>Për t'i bërë një pyetje deputetit, ju duhet të</value>
+  </data>
+  <data name="JavnaRasprava_OpenAskRepresentativeModal_Button" xml:space="preserve">
+    <value>Bëni një pyetje</value>
+  </data>
+  <data name="Global_ToLogIn" xml:space="preserve">
+    <value>Futuni</value>
+  </data>
+  <data name="Global_ToRegister" xml:space="preserve">
+    <value>Regjistrohuni</value>
+  </data>
+  <data name="JavnaRasprava_LawQuestionsAndAnswers_Button" xml:space="preserve">
+    <value>Të gjitha pyetjet dhe përgjigjet</value>
+  </data>
+  <data name="LawQuestionsAndAnswersTitle" xml:space="preserve">
+    <value>Të gjitha pyetjet dhe përgjigjet</value>
+  </data>
+  <data name="LatestLawsTitle" xml:space="preserve">
+    <value>Projektligjet e fundit që janë shtuar</value>
+  </data>
+  <data name="MostActiveLawsTitle" xml:space="preserve">
+    <value>Projektligjet më aktive</value>
+  </data>
+  <data name="NextLawsInVoteTitle" xml:space="preserve">
+    <value>Projektligjet e tjera që janë në procedurë miratimi</value>
+  </data>
+  <data name="PointedOutLawsTitle" xml:space="preserve">
+    <value>Projektligjet me rëndësi</value>
+  </data>
+  <data name="Petition_CreateNewPetition_Button" xml:space="preserve">
+    <value>Krijoni një peticion të ri</value>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>Përshkrim i shkurtër</value>
+  </data>
+  <data name="Petition_Description" xml:space="preserve">
+    <value>Përshkrimi</value>
+  </data>
+  <data name="Petition_EndTime" xml:space="preserve">
+    <value>Fundi i peticionit</value>
+  </data>
+  <data name="Petition_StartTime" xml:space="preserve">
+    <value>Fillimi i peticionit</value>
+  </data>
+  <data name="Petition_TargetInsitution" xml:space="preserve">
+    <value>Institucioni që i drejtohet</value>
+  </data>
+  <data name="Petition_Title" xml:space="preserve">
+    <value>Titulli i peticionit</value>
+  </data>
+  <data name="GetLawTextFile" xml:space="preserve">
+    <value>Shkarkoni tekstin e plotë të projektligjit</value>
+  </data>
+  <data name="Global_Description" xml:space="preserve">
+    <value>Përshkrimi</value>
+  </data>
+  <data name="Global_Title" xml:space="preserve">
+    <value>Titulli</value>
+  </data>
+  <data name="Global_RequiredMessage" xml:space="preserve">
+    <value>"{0}" është një fushë e detyrueshme.</value>
+  </data>
+  <data name="Law_Status" xml:space="preserve">
+    <value>Statusi i ligjit</value>
+  </data>
+  <data name="Global_Expert" xml:space="preserve">
+    <value>Eksperti</value>
+  </data>
+  <data name="Representative_Reason" xml:space="preserve">
+    <value>Arsyetimi</value>
+  </data>
+  <data name="Global_Representative" xml:space="preserve">
+    <value>Deputeti</value>
+  </data>
+  <data name="Global_aVote" xml:space="preserve">
+    <value>Votoni</value>
+  </data>
+  <data name="Global_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Global_FirstName" xml:space="preserve">
+    <value>Emri</value>
+  </data>
+  <data name="GlobalImageRelativePath" xml:space="preserve">
+    <value>Rruga drejt figurës</value>
+  </data>
+  <data name="Global_LastName" xml:space="preserve">
+    <value>Mbiemri</value>
+  </data>
+  <data name="Global_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="Global_AdminIgnore" xml:space="preserve">
+    <value>Injoroje</value>
+  </data>
+  <data name="Global_IsSuggested" xml:space="preserve">
+    <value>E këshilluar</value>
+  </data>
+  <data name="BodyEmaila" xml:space="preserve">
+    <value>&lt;html&gt;
+
+&lt;head&gt;
+&lt;meta http-equiv=Content-Type content="text/html; charset=windows-1252"&gt;
+&lt;meta name=Generator content="Microsoft Word 15 (filtered)"&gt;
+&lt;style&gt;
+&lt;!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--&gt;
+&lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body lang=EN-US&gt;
+
+&lt;div class=WordSection1&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;I nderuar ##FNAME## ##LNAME##,&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Ju është bërë një pyetje nëpërmjet portalit konsultimipublik.al në lidhje me projektligjin  ##LAWTITLE##. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Pyeta është bërë 
+##QUESTIONCOUNT## dhe është:&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;##QUESTIONTEXT##&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Në rast se keni dëshirë të shikoni gjitha diskutimet që janë bërë për këtë projektligj ju lutem klinkoni në lidhjen e mëposhtme ##LAWLINK##.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;Në rast se keni dëshirë t'i përgjigjeni pyetjes ju lutem klikoni në lidhjen e mëposhtme ##ANSWERLINK##.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;With regards,&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;javnarasprava.ba team&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class=MsoNormal&gt;&lt;span lang=BS-LATN-BA&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</value>
+  </data>
+  <data name="PointedOutSectionsTitle" xml:space="preserve">
+    <value>Çështjet me rëndësi</value>
+  </data>
+  <data name="Petition_YoutubeCode" xml:space="preserve">
+    <value>Kodi i videos së Youtube</value>
+  </data>
+  <data name="Petition_SubmitterName" xml:space="preserve">
+    <value>Personi që paraqet peticionin</value>
+  </data>
+  <data name="JavnaRasprava_LawDescriptionModal_Title" xml:space="preserve">
+    <value>Shpjegim i detajuar i projektligjit</value>
+  </data>
+  <data name="JavnaRasprava_LawStatusModal_Title" xml:space="preserve">
+    <value>Gjendja e projektligjit</value>
+  </data>
+  <data name="Section_Description" xml:space="preserve">
+    <value>Përshkrim i veçantë i çështjes</value>
+  </data>
+  <data name="Law_Category" xml:space="preserve">
+    <value>Lloji i ligjit</value>
+    <comment>It can be healthcare, economy etc</comment>
+  </data>
+  <data name="UnknownExpectedVotingDay" xml:space="preserve">
+    <value>E panjohur</value>
+    <comment>This is used when the vote date for the law is unknown</comment>
+  </data>
+  <data name="Petition_CurrentCount" xml:space="preserve">
+    <value>Numri i nënshkrimeve</value>
+  </data>
+  <data name="Global_Verified" xml:space="preserve">
+    <value>U verifikua</value>
+    <comment>This is a global value, because you have to verify the petitions and questions from the admin side</comment>
+  </data>
+  <data name="NoPartySelected" xml:space="preserve">
+    <value>Unë nuk kam votuar</value>
+  </data>
+  <data name="AnswerDislikeCount" xml:space="preserve">
+    <value>Përgjigja nuk u pëlqye</value>
+    <comment>The users can like or dislike the answer given by the representatives</comment>
+  </data>
+  <data name="AnswerLikeCount" xml:space="preserve">
+    <value>Përgjigja u pëlqye</value>
+    <comment>The users can like or dislike the answer given by the representatives</comment>
+  </data>
+  <data name="Question_DislikeCount" xml:space="preserve">
+    <value>Pyetja nuk u pëlqye</value>
+    <comment>The users can like or dislike the questions that are submitted</comment>
+  </data>
+  <data name="Question_LikeCount" xml:space="preserve">
+    <value>Pyetja u pëlqye</value>
+    <comment>The users can like or dislike the answer given by the representatives</comment>
+  </data>
+  <data name="Account_DemographyAge_Required" xml:space="preserve">
+    <value>Mosha është një fushë e detyrueshme</value>
+  </data>
+  <data name="Account_DemographyEducation_Required" xml:space="preserve">
+    <value>Edukimi është një fushë e detyrueshme</value>
+  </data>
+  <data name="Account_DemographyLocation_Required" xml:space="preserve">
+    <value>Vendbanimi është një fushë e detyrueshme</value>
+  </data>
+  <data name="Account_DemographyParty_Required" xml:space="preserve">
+    <value>Partia që keni votuar në zgjedhjet e fundit është një fushë e detyrueshme</value>
+  </data>
+  <data name="Account_Email_Required" xml:space="preserve">
+    <value>Email është një fushë e detyrueshme.</value>
+  </data>
+  <data name="Account_NewPassword_Required" xml:space="preserve">
+    <value>Fjalëkalimi i ri është një fushë e detyrueshme</value>
+  </data>
+  <data name="Account_OldPassword_Required" xml:space="preserve">
+    <value>Fjalëkalini ekzistues është një fushë e detyrueshme</value>
+  </data>
+  <data name="Account_Password_Required" xml:space="preserve">
+    <value>Fjalëkalimi është një fushë e detyrueshme</value>
+  </data>
+  <data name="Quiz_Description" xml:space="preserve">
+    <value>Përshkrimi i pyetjeve të shpejta</value>
+  </data>
+  <data name="Quiz_LawTitle" xml:space="preserve">
+    <value>Titulli i projektligjit</value>
+  </data>
+  <data name="Quiz_QuestionDescription" xml:space="preserve">
+    <value>Përshkrimi i pyetjeve të shpejta</value>
+  </data>
+  <data name="Quiz_SectionTitle" xml:space="preserve">
+    <value>Çështja me rëndësi</value>
+    <comment>This refers to the highlihted policy issue in a Quiz.</comment>
+  </data>
+  <data name="Quiz_Title" xml:space="preserve">
+    <value>Titulli i pyetjeve të shpejta</value>
+  </data>
+  <data name="Quiz_TimeCreated" xml:space="preserve">
+    <value>Koha e krijimit</value>
+  </data>
+  <data name="Law" xml:space="preserve">
+    <value>Projektligji</value>
+  </data>
+  <data name="LawSection" xml:space="preserve">
+    <value>Çështja me rëndësi</value>
+    <comment>This refers to the highlihted policy issue.</comment>
+  </data>
+  <data name="PointedOutTop" xml:space="preserve">
+    <value>Me rëndësi</value>
+  </data>
+  <data name="News_Summary" xml:space="preserve">
+    <value>Përmbledhje e lajmeve</value>
+  </data>
+  <data name="News_Text" xml:space="preserve">
+    <value>Teksti i lajmeve</value>
+  </data>
+  <data name="News_Title" xml:space="preserve">
+    <value>Titulli i lajmeve</value>
+  </data>
+  <data name="Global_About" xml:space="preserve">
+    <value>Përshkrimi i shkurtër</value>
+  </data>
+  <data name="Party_FullName" xml:space="preserve">
+    <value>Emri i plotë i partisë</value>
+  </data>
+  <data name="Party_Name" xml:space="preserve">
+    <value>Shkronjat nistore të partisë</value>
+  </data>
+  <data name="Account_Age_ValuePlaceholder" xml:space="preserve">
+    <value>Zgjidhni gamën e moshës *</value>
+  </data>
+  <data name="Account_DemographyDisclamer" xml:space="preserve">
+    <value>Çdo e dhënë demografike që mblidhet nëpërmjet kësaj faqeje përdoret vetëm për qëllim statistikor dhe nuk mund të përdoret për ndonjë qëllim tjetër.</value>
+  </data>
+  <data name="Account_Education_ValuePlaceholder" xml:space="preserve">
+    <value>Zgjidhni nivelin e edukimit *</value>
+  </data>
+  <data name="Account_EmailLoginMessage" xml:space="preserve">
+    <value>Futuni në faqe me emailin tuaj...</value>
+  </data>
+  <data name="Account_Email_ValuePlaceholder" xml:space="preserve">
+    <value>Emaili juaj *</value>
+  </data>
+  <data name="Account_ExternalLoginMessage" xml:space="preserve">
+    <value>...ose duke përdorur llogarinë tuaj në mediat sociale.</value>
+  </data>
+  <data name="Account_ForgotPassword" xml:space="preserve">
+    <value>Keni harruar fjalëkalimin?</value>
+  </data>
+  <data name="Account_Location_ValuePlaceholder" xml:space="preserve">
+    <value>Zgjidhni vendbanimin tuaj *</value>
+  </data>
+  <data name="Account_LoginButton" xml:space="preserve">
+    <value>Futuni</value>
+  </data>
+  <data name="Account_Party_ValuePlaceholder" xml:space="preserve">
+    <value>Zgjidhni partinë që keni votuar në zgjedhjet e fundit parlamentare</value>
+  </data>
+  <data name="Account_Password" xml:space="preserve">
+    <value>Fjalëkalimi</value>
+  </data>
+  <data name="Account_PasswordConfirmation_ValuePlaceholder" xml:space="preserve">
+    <value>Konfirmoni fjalëkalimin *</value>
+  </data>
+  <data name="Account_Password_ValuePlaceholder" xml:space="preserve">
+    <value>Shkruani fjalëkalimin *</value>
+  </data>
+  <data name="Account_Register" xml:space="preserve">
+    <value>Regjistrohuni</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Global_SearchResults_NoResultsMessage" xml:space="preserve">
+    <value>Kërkimi juaj nuk shfaqi asnjë rezultat.</value>
+  </data>
+  <data name="Global_Search_Category_ValuePlaceholder" xml:space="preserve">
+    <value>Zgjidhni kategorinë...</value>
+    <comment>This refers to the law category mostly, health, economics etc.</comment>
+  </data>
+  <data name="Global_Search_Sort_ValuePlaceholder" xml:space="preserve">
+    <value>Rendisni sipas...</value>
+  </data>
+  <data name="Global_Search_String_ValuePlaceholder" xml:space="preserve">
+    <value>Titulli/Përshkrimi</value>
+  </data>
+  <data name="AllLawSections_Index_PageTitle" xml:space="preserve">
+    <value>Të gjitha Çështjet me rëndësi</value>
+    <comment>Refers to the highlighted policy issues within the law.</comment>
+  </data>
+  <data name="AllLaws_Index_PageTitle" xml:space="preserve">
+    <value>Të gjitha projektligjet</value>
+  </data>
+  <data name="Global_Search_Button" xml:space="preserve">
+    <value>Kërkoni</value>
+  </data>
+  <data name="Global_Laws" xml:space="preserve">
+    <value>Projektligjet</value>
+  </data>
+  <data name="Global_LawSections" xml:space="preserve">
+    <value>Çështjet me rëndësi</value>
+  </data>
+  <data name="Global_News" xml:space="preserve">
+    <value>Lajmet</value>
+  </data>
+  <data name="Global_Paging" xml:space="preserve">
+    <value>faqja {0} nga {1}</value>
+  </data>
+  <data name="News_PageTitle" xml:space="preserve">
+    <value>Lajmet</value>
+  </data>
+  <data name="News_Search_String_ValuePlaceholder" xml:space="preserve">
+    <value>Titulli/teksti:</value>
+  </data>
+  <data name="PetitionYoutubeUrl_ValuePlaceholder" xml:space="preserve">
+    <value>Në rast se doni të përfshini një video në YouTube, ju lutem vedosni URL e videos</value>
+  </data>
+  <data name="Petition_Create_PageTitle" xml:space="preserve">
+    <value>Peticion i ri</value>
+  </data>
+  <data name="Petition_Details_PageTitle" xml:space="preserve">
+    <value>Peticion</value>
+  </data>
+  <data name="Petition_ImageRelativePath" xml:space="preserve">
+    <value>Imazh</value>
+  </data>
+  <data name="Petition_Index_PageTitle" xml:space="preserve">
+    <value>Peticionet</value>
+  </data>
+  <data name="Petition_LatestList_Title" xml:space="preserve">
+    <value>Peticionet e fundit</value>
+  </data>
+  <data name="Petition_List_Link" xml:space="preserve">
+    <value>Të gjitha peticionet</value>
+  </data>
+  <data name="Petition_MostActiveList_Title" xml:space="preserve">
+    <value>Peticionet më aktive</value>
+  </data>
+  <data name="Petition_PetitionManual_Link" xml:space="preserve">
+    <value>Bëni një peticion të suksesshëm...</value>
+  </data>
+  <data name="Petition_Search_Title" xml:space="preserve">
+    <value>Kërkoni për peticione</value>
+  </data>
+  <data name="Petition_TargetInsitution_ValuePlaceholder" xml:space="preserve">
+    <value>Institucioni përgjegjës... *</value>
+  </data>
+  <data name="Petition_Title_ValuePlaceHolder" xml:space="preserve">
+    <value>Titulli i peticionit</value>
+  </data>
+  <data name="Petition_YoutubeUrl" xml:space="preserve">
+    <value>Video nga Youtube</value>
+  </data>
+  <data name="Global_BackToList_Link" xml:space="preserve">
+    <value>Kthehuni në listën</value>
+  </data>
+  <data name="Global_NumberOfVotes" xml:space="preserve">
+    <value>vota</value>
+  </data>
+  <data name="Petition_AlreadySigned_Message" xml:space="preserve">
+    <value>Ju sapo nënshkruat këtë peticion!</value>
+  </data>
+  <data name="Petition_Created_ConfirmationMessage" xml:space="preserve">
+    <value>Ju sapo krijuar një peticion! Peticioni do të publikohet sapo të verifikohet nga administratori.</value>
+  </data>
+  <data name="Petition_Created_PageTitle" xml:space="preserve">
+    <value>Peticioni u krijua</value>
+  </data>
+  <data name="Petition_Manual_PageTitle" xml:space="preserve">
+    <value>Manuali për të krijuar një peticion të suksesshëm</value>
+  </data>
+  <data name="Petition_SearchFilter_InstitutionValuePlaceholder" xml:space="preserve">
+    <value>Zgjidhni një institucion...</value>
+  </data>
+  <data name="Petition_Signatures" xml:space="preserve">
+    <value>Nënshkrimet</value>
+  </data>
+  <data name="Petition_SignInToSign_Message" xml:space="preserve">
+    <value>Ju duhet të futeni në faqe për të nënshkruar një peticion!</value>
+  </data>
+  <data name="Petition_Unverified_Message" xml:space="preserve">
+    <value>Peticioni nuk është verifikuar nga administratori dhe për momentin, nuk mund të nënshkruhet.</value>
+  </data>
+  <data name="Answer_Date" xml:space="preserve">
+    <value>Data e përgjigjes</value>
+  </data>
+  <data name="Global_AnsweCount" xml:space="preserve">
+    <value>Numri i përgjigjeve</value>
+  </data>
+  <data name="Global_Answer" xml:space="preserve">
+    <value>Përgjigja</value>
+  </data>
+  <data name="Global_Filter" xml:space="preserve">
+    <value>Filtri</value>
+  </data>
+  <data name="Global_NoAnswer" xml:space="preserve">
+    <value>Nuk ka përgjigje</value>
+  </data>
+  <data name="Global_Question" xml:space="preserve">
+    <value>Pyetje</value>
+  </data>
+  <data name="Global_QuestionCount" xml:space="preserve">
+    <value>NUmri i pyetjeve</value>
+  </data>
+  <data name="Global_Quizes" xml:space="preserve">
+    <value>Pyetjet e shpejta</value>
+  </data>
+  <data name="Global_Search_Name_ValuePlaceHolder" xml:space="preserve">
+    <value>Emri dhe/ose mbiemri</value>
+  </data>
+  <data name="Global_Search_Party_ValuePlaceHolder" xml:space="preserve">
+    <value>Partia...</value>
+  </data>
+  <data name="Global_Search_SortBy_MostAnswers" xml:space="preserve">
+    <value>Më shumë përgjigje</value>
+  </data>
+  <data name="Global_Search_SortBy_MostQuestions" xml:space="preserve">
+    <value>Më shumë pyetje</value>
+  </data>
+  <data name="Global_Search_SortBy_ValuePlaceHolder" xml:space="preserve">
+    <value>Rendisni sipas...</value>
+  </data>
+  <data name="Global_Text" xml:space="preserve">
+    <value>Teksti</value>
+  </data>
+  <data name="Quiz_PageTitle" xml:space="preserve">
+    <value>Të gjitha pyetjet e shpejta</value>
+  </data>
+  <data name="Quiz_Results_PageTitle" xml:space="preserve">
+    <value>Rezultati i pyetjeve të shpejta</value>
+  </data>
+  <data name="Quiz_Results_SectionTitle" xml:space="preserve">
+    <value>Krahasimi ndërmjet votimit tuaj dhe mënyrës së përgjithshme të votimit në faqe</value>
+  </data>
+  <data name="Quiz_Take_ChooseAnswer_Message" xml:space="preserve">
+    <value>Zgjidhni përgjigjen:</value>
+  </data>
+  <data name="Quiz_Take_Footer" xml:space="preserve">
+    <value>Ky pyetësor është krijuar për t'ju ndihmuar që ju të jepni mendimin tuaj mbi projekligjet që po shqyrtohen nga parlamenti në një kohë sa më të shkurtër. Në fund të këtij pyetësori, ju mund të krahasoni mënyrën tuaj të votimit me mënyrën se si kanë votuar përdoruesit e tjerë të kësaj platforme.</value>
+  </data>
+  <data name="Quiz_Take_NextQuestion_Button" xml:space="preserve">
+    <value>Pyetja tjetër</value>
+  </data>
+  <data name="Quiz_Take_SeeResults_Button" xml:space="preserve">
+    <value>Shikoni rezultatet</value>
+  </data>
+  <data name="Quiz_Take_StartQuiz_Button" xml:space="preserve">
+    <value>Filloni pyetjet</value>
+  </data>
+  <data name="Representatives_Parliament_1_Members" xml:space="preserve">
+    <value>Deputetët e Kuvendit të Shqipërisë</value>
+    <comment>Translate this just as 'Members of Albanian Parliament'</comment>
+  </data>
+  <data name="Representatives_Parliament_2_Members" xml:space="preserve">
+    <value>Deputetët e Kuvendit të Shqipërisë</value>
+    <comment>Translate this just as 'Members of Albanian Parliament'</comment>
+  </data>
+  <data name="Representatives_Parliament_3_Members" xml:space="preserve">
+    <value>Deputetët e Kuvendit të Shqipërisë</value>
+    <comment>Translate this just as 'Members of Albanian Parliament'</comment>
+  </data>
+  <data name="Representatives_Parliament_4_Members" xml:space="preserve">
+    <value>Deputetët e Kuvendit të Shqipërisë</value>
+    <comment>Translate this just as 'Members of Albanian Parliament'</comment>
+  </data>
+  <data name="Representative_AskDirectQuestion_Button" xml:space="preserve">
+    <value>Dërgoni një pyetje këtij deputeti</value>
+  </data>
+  <data name="Representative_AskRepresentative" xml:space="preserve">
+    <value>Dërgoni një pyetje këtij deputeti</value>
+  </data>
+  <data name="Representative_AskRep_Button" xml:space="preserve">
+    <value>Dërgoni pyetjen</value>
+  </data>
+  <data name="Representative_AskRep_Success_Message" xml:space="preserve">
+    <value>Faleminderit për pyetjen...</value>
+  </data>
+  <data name="Representative_Assignments" xml:space="preserve">
+    <value>Anëtar i Komisionit</value>
+  </data>
+  <data name="Representative_DirectQuestions" xml:space="preserve">
+    <value>Pyetjet që i janë parashtruar</value>
+  </data>
+  <data name="Representative_ElectoralUnit" xml:space="preserve">
+    <value>Zona zgjedhore</value>
+  </data>
+  <data name="Representative_ExternalLinks" xml:space="preserve">
+    <value>Lidhjet e jashtme</value>
+  </data>
+  <data name="Representative_Filter_Buton" xml:space="preserve">
+    <value>Filtri</value>
+  </data>
+  <data name="Representative_Function" xml:space="preserve">
+    <value>Detyra</value>
+  </data>
+  <data name="Representative_LawQuestions" xml:space="preserve">
+    <value>Konsultimi publik: pyetje dhe përgjigje</value>
+  </data>
+  <data name="Representative_LoginOrSignin_Message" xml:space="preserve">
+    <value>Për t'i parashtruar një pyetje deputetit, ju duhet të {0} ose {1}.</value>
+  </data>
+  <data name="Representative_NoAnswer" xml:space="preserve">
+    <value>Deputeti nuk i është përgjigjur kësaj pyetje.</value>
+  </data>
+  <data name="Representative_NumberOfVotes" xml:space="preserve">
+    <value>Numri i votave</value>
+  </data>
+  <data name="Representative_QuestionAskedTimes" xml:space="preserve">
+    <value>Sa herë është bërë kjo pyetje</value>
+  </data>
+  <data name="Global_JavnaRasprava" xml:space="preserve">
+    <value>Konsultimi publik</value>
+  </data>
+  <data name="Global_Law" xml:space="preserve">
+    <value>Projektligji</value>
+  </data>
+  <data name="Global_Search_Parliament_ValuePlaceHolder" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Global_Send" xml:space="preserve">
+    <value>Dërgoni</value>
+  </data>
+  <data name="Global_Thanks" xml:space="preserve">
+    <value>Faleminderit</value>
+  </data>
+  <data name="Global_YourAnswer" xml:space="preserve">
+    <value>Përgjigja juaj</value>
+  </data>
+  <data name="JavnaRasprava_Answering_ClickForLawMessage" xml:space="preserve">
+    <value>Për më shumë informacione për këtë projektligj klikoni </value>
+  </data>
+  <data name="JavnaRasprava_Answering_Failed_Message" xml:space="preserve">
+    <value>Fatkeqësisht, përgjigja juaj nuk mund të pranohet. Përgjigja ose është dërguar ose URL juaj nuk është e vlefshme. Ju lutem kontaktoni me administratorin për ndihmë. 
+
+Për të vizituar profilin tuaj, klikoni</value>
+  </data>
+  <data name="JavnaRasprava_Answering_Falied_PageTitle" xml:space="preserve">
+    <value>Përgjigje e pasuksesshme</value>
+  </data>
+  <data name="JavnaRasprava_Answering_Heading" xml:space="preserve">
+    <value>Dërgoni një përgjigje kësaj pyetjeje</value>
+  </data>
+  <data name="JavnaRasprava_Answering_PageTitle" xml:space="preserve">
+    <value>Përgjigjuni pyetjes</value>
+  </data>
+  <data name="JavnaRasprava_Answering_ThankYouMessage" xml:space="preserve">
+    <value>Faleminderit që iu përgjigjet pyetjes. Për të shkuar në faqen tuaj të profilit, klikoni</value>
+  </data>
+  <data name="JavnaRasprava_Breadcrumb_Home" xml:space="preserve">
+    <value>Kryefaqja</value>
+  </data>
+  <data name="JavnaRasprava_Index_PageTitle" xml:space="preserve">
+    <value>Bëhu pjesë</value>
+  </data>
+  <data name="JavnaRasprava_NoCurrentQuestions" xml:space="preserve">
+    <value>Për momentin, nuk ka ndonjë pyetje.</value>
+  </data>
+  <data name="JavnaRasprava_Rep_NoAnswer" xml:space="preserve">
+    <value>Deputetët që nuk i janë përgjigjur kësaj pyetje.</value>
+  </data>
+  <data name="JavnaRasprava_Search_PageTitle" xml:space="preserve">
+    <value>Kërkimi i një projektligji</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Kontaktoni administratorin për ndihmë.</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Për të shkuar në faqen tuaj të profilit, klikoni</value>
+  </data>
+  <data name="Facebook_Law_PageDescription" xml:space="preserve">
+    <value>Bashku me diskutimet mbi projektligjet në shqyrtim nga Kuvendi në konsultimipublik.al</value>
+  </data>
+  <data name="Global_Cancel" xml:space="preserve">
+    <value>Mbylleni</value>
+  </data>
+  <data name="Global_Search_FilterData_Button" xml:space="preserve">
+    <value>Filtroni rezultatet</value>
+  </data>
+  <data name="JavnaRasprava_AskRep_ChooseOter" xml:space="preserve">
+    <value>Zgjidhni një deputet tjetër</value>
+  </data>
+  <data name="JavnaRasprava_AskRep_CustomQuestion_ValuePlaceHolder" xml:space="preserve">
+    <value>Bëni vetë një pyetje</value>
+  </data>
+  <data name="JavnaRasprava_AskRep_SelectedRep_Heading" xml:space="preserve">
+    <value>Deputeti përgjegjës për këtë çështje</value>
+  </data>
+  <data name="JavnaRasprava_ExpertComments_BoxTitle" xml:space="preserve">
+    <value>Mendimi i ekspertit</value>
+  </data>
+  <data name="JavnaRasprava_HomePage_AllLaws_Link" xml:space="preserve">
+    <value>Të gjitha projektligjet</value>
+  </data>
+  <data name="JavnaRasprava_HomePage_AllSections_Link" xml:space="preserve">
+    <value>Të gjitha çështjet</value>
+    <comment>Refers to the policy issues</comment>
+  </data>
+  <data name="JavnaRasprava_Home_Vote_NumberDown" xml:space="preserve">
+    <value>Vota kundër</value>
+  </data>
+  <data name="JavnaRasprava_Home_Vote_NumberUp" xml:space="preserve">
+    <value>Vota pro</value>
+  </data>
+  <data name="JavnaRasprava_LawSectionVote_Message" xml:space="preserve">
+    <value>Kjo është një nga &lt;strong&gt;çështjet më të rëndësishme&lt;/strong&gt;&lt;br&gt; në këtë projektligj.</value>
+  </data>
+  <data name="JavnaRasprava_LawSectionVote_VoteMessage" xml:space="preserve">
+    <value>Jepni mendimin tuaj dhe bashkohu me konsultimin publik!</value>
+  </data>
+  <data name="JavnaRasprava_Law_LawSections_BoxTitle" xml:space="preserve">
+    <value>Çështjet më të rëndësishme në këtë projektligj</value>
+  </data>
+  <data name="JavnaRasprava_Representative_MostActive" xml:space="preserve">
+    <value>Deputetët më aktiv</value>
+  </data>
+  <data name="JavnaRasprava_ResultsFilter_Heading" xml:space="preserve">
+    <value>Shikoni shpërndarjen e përgjigjeve sipas të dhënave demografike të përdoruesve.</value>
+  </data>
+  <data name="JavnaRasprava_Stat_MostActiveLaw_MessageFormat" xml:space="preserve">
+    <value>Me {0} pyetje, ligji më aktiv i së njëjtës kategori</value>
+  </data>
+  <data name="JavnaRasprava_Stat_MostActiveRep_MessageFormat" xml:space="preserve">
+    <value>Me {0} përgjigje, deputeti më aktiv në Parlament</value>
+  </data>
+  <data name="JavnaRasprava_Stat_NoAnswers" xml:space="preserve">
+    <value>Asnjë deputet nuk është përgjigjur</value>
+  </data>
+  <data name="JavnaRasprava_Stat_NoQuestions" xml:space="preserve">
+    <value>Nuk ka projektligje me pyetje në të njëjtën kategori.</value>
+  </data>
+  <data name="JavnaRasprava_Stat_TotalNumberOfQuestions" xml:space="preserve">
+    <value>Numri i përgjithshëm i pyetjeve për këtë projektligj</value>
+  </data>
+  <data name="JavnaRasprava_VoteLawModel_Title" xml:space="preserve">
+    <value>Cili është mendimi juaj për këtë projektligj?</value>
+  </data>
+  <data name="JavnaRasprava_VoteLawSectionModal_Title" xml:space="preserve">
+    <value>Cili është mendimi juaj për këtë çështje?</value>
+  </data>
+  <data name="Admin_Expert_CreateNew" xml:space="preserve">
+    <value>Shtoni një projekt të ri</value>
+  </data>
+  <data name="Admin_Expert_Create_Heading" xml:space="preserve">
+    <value>Ekspert i ri</value>
+  </data>
+  <data name="Admin_Expert_Create_PageTitle" xml:space="preserve">
+    <value>Ekspert i ri</value>
+  </data>
+  <data name="Admin_Expert_Delete_Heading" xml:space="preserve">
+    <value>A jeni i sigurt që doni ta fshini këtë ekspert?</value>
+  </data>
+  <data name="Admin_Expert_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini ekspertin</value>
+  </data>
+  <data name="Admin_Expert_Details_PageTitle" xml:space="preserve">
+    <value>Të dhënat bazë të ekspertit</value>
+  </data>
+  <data name="Admin_Expert_Edit_PageTitle" xml:space="preserve">
+    <value>Ndrysho të dhënat e ekspertit</value>
+  </data>
+  <data name="Admin_Expert_Index_PageTitle" xml:space="preserve">
+    <value>Administroni të ekspertit</value>
+  </data>
+  <data name="Admin_Global_BackToList" xml:space="preserve">
+    <value>Kthehu tek lista</value>
+  </data>
+  <data name="Admin_Global_Create" xml:space="preserve">
+    <value>Krijoni</value>
+  </data>
+  <data name="Admin_Global_Delete" xml:space="preserve">
+    <value>Fshini</value>
+  </data>
+  <data name="Admin_Global_Details" xml:space="preserve">
+    <value>Detajet</value>
+  </data>
+  <data name="Admin_Global_Edit" xml:space="preserve">
+    <value>Ndryshoni</value>
+  </data>
+  <data name="Admin_Global_Image" xml:space="preserve">
+    <value>Imazhi</value>
+  </data>
+  <data name="Admin_Global_ImageForHompage" xml:space="preserve">
+    <value>Imazhi për faqen kryesore</value>
+  </data>
+  <data name="Admin_Global_InfoBox_Heading" xml:space="preserve">
+    <value>Kutia me informacione</value>
+  </data>
+  <data name="Admin_Global_InfoBox_TopList" xml:space="preserve">
+    <value>Lista me më të rëndësishmet</value>
+  </data>
+  <data name="Admin_Global_LookOnPublicSite" xml:space="preserve">
+    <value>Shikoje paraprakisht në faqe</value>
+  </data>
+  <data name="Admin_Global_NoPictureAssigned" xml:space="preserve">
+    <value>Imazhi nuk është caktuar</value>
+  </data>
+  <data name="Admin_Global_Save" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
+  <data name="Admin_InfoBox_NotPointedOut" xml:space="preserve">
+    <value>Nuk është shtuar si e rëndësishme</value>
+  </data>
+  <data name="Admin_InfoBox_SaveError" xml:space="preserve">
+    <value>Ka ndodhur një gabim</value>
+  </data>
+  <data name="Admin_InfoBox_SaveSuccess" xml:space="preserve">
+    <value>U ruajt me sukses</value>
+  </data>
+  <data name="Admin_Menu_Experts" xml:space="preserve">
+    <value>Administroni ekspertët</value>
+  </data>
+  <data name="Admin_Menu_Laws" xml:space="preserve">
+    <value>Administroni projektligjet</value>
+  </data>
+  <data name="Admin_Menu_News" xml:space="preserve">
+    <value>Administroni lajmet</value>
+  </data>
+  <data name="Admin_Menu_Party" xml:space="preserve">
+    <value>Administroni partitë</value>
+  </data>
+  <data name="Admin_Menu_PetitionProgress" xml:space="preserve">
+    <value>Administroni momentet e rëndësishme të peticioneve</value>
+  </data>
+  <data name="Admin_Menu_Petitions" xml:space="preserve">
+    <value>Administroni peticionet</value>
+  </data>
+  <data name="Admin_Menu_Quiz" xml:space="preserve">
+    <value>Administroni pyetjet e shpejta</value>
+  </data>
+  <data name="Admin_Menu_Representatives" xml:space="preserve">
+    <value>Administroni deputetët</value>
+  </data>
+  <data name="Admin_Menu_Top" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Admin_News_CreateNew" xml:space="preserve">
+    <value>Shtoni një lajm të ri</value>
+  </data>
+  <data name="Admin_News_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këtë lajm?</value>
+  </data>
+  <data name="Admin_News_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini këtë artikull</value>
+  </data>
+  <data name="Admin_News_Details_PageTitle" xml:space="preserve">
+    <value>Detajet bazë të artikullit</value>
+  </data>
+  <data name="Admin_News_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni lajmet</value>
+  </data>
+  <data name="Admin_News_Index_PageTitle" xml:space="preserve">
+    <value>Administroni lajmet</value>
+  </data>
+  <data name="Admin_News_New_PageTitle" xml:space="preserve">
+    <value>Një lajm i ri</value>
+  </data>
+  <data name="Global_Answers" xml:space="preserve">
+    <value>Pyetjet</value>
+    <comment>Shumësi</comment>
+  </data>
+  <data name="Global_Questions" xml:space="preserve">
+    <value>Pyetjet</value>
+    <comment>Plural</comment>
+  </data>
+  <data name="Global_Quiz" xml:space="preserve">
+    <value>Pyetjet e shpejta</value>
+  </data>
+  <data name="Login_Login" xml:space="preserve">
+    <value>Futuni</value>
+  </data>
+  <data name="Login_Logout" xml:space="preserve">
+    <value>Dilni</value>
+  </data>
+  <data name="Login_Profile" xml:space="preserve">
+    <value>Profili</value>
+  </data>
+  <data name="Login_Register" xml:space="preserve">
+    <value>Regjistrohuni</value>
+  </data>
+  <data name="Admin_Global_BackToDetail" xml:space="preserve">
+    <value>Kthehu pas tek detajet</value>
+  </data>
+  <data name="Admin_Party_CreateNew" xml:space="preserve">
+    <value>Shtoni një parti të re</value>
+  </data>
+  <data name="Admin_Party_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këtë parti?</value>
+  </data>
+  <data name="Admin_Party_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini partinë</value>
+  </data>
+  <data name="Admin_Party_Details_PageTitle" xml:space="preserve">
+    <value>Detajet bazë të partisë</value>
+  </data>
+  <data name="Admin_Party_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni partinë</value>
+  </data>
+  <data name="Admin_Party_Index_PageTitle" xml:space="preserve">
+    <value>Administroni partitë</value>
+  </data>
+  <data name="Admin_Party_New_PageTitle" xml:space="preserve">
+    <value>Parti e re</value>
+  </data>
+  <data name="Admin_PetitionProgress_CreateNew" xml:space="preserve">
+    <value>Shtoni një moment të ri të rëndësishëm për peticionin</value>
+  </data>
+  <data name="Admin_PetitionProgress_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këtë moment të rëndësishëm për peticionin?</value>
+  </data>
+  <data name="Admin_PetitionProgress_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini momentin e rëndësishëm për peticionin</value>
+  </data>
+  <data name="Admin_PetitionProgress_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni momentin e rëndësishëm për peticionin</value>
+  </data>
+  <data name="Admin_PetitionProgress_Index_PageTitle" xml:space="preserve">
+    <value>Administroni momentet e rëndësishme për peticionin</value>
+  </data>
+  <data name="Admin_PetitionProgress_New_PageTitle" xml:space="preserve">
+    <value>Moment i ri i rëndësishëm për peticionin</value>
+  </data>
+  <data name="Admin_Petition_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këtë peticion?</value>
+  </data>
+  <data name="Admin_Petition_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini peticionin</value>
+  </data>
+  <data name="Admin_Petition_Details_PageTitle" xml:space="preserve">
+    <value>Detajet bazë të peticionit</value>
+  </data>
+  <data name="Admin_Petition_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni peticionin</value>
+  </data>
+  <data name="Admin_Petition_Index_PageTitle" xml:space="preserve">
+    <value>Administroni peticionet</value>
+  </data>
+  <data name="Admin_QuizItems_AddNewItem" xml:space="preserve">
+    <value>Shtoni një pyetje të re</value>
+  </data>
+  <data name="Admin_QuizItems_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni pyetjet</value>
+  </data>
+  <data name="Admin_QuizItem_ChooseLaw" xml:space="preserve">
+    <value>Zgjidhni projektligjin</value>
+  </data>
+  <data name="Admin_QuizItem_ChooseLawSection" xml:space="preserve">
+    <value>Në mënyrë alternative, zgjidhni një çështje të posaçme të projektligjit</value>
+  </data>
+  <data name="Admin_QuizItem_Create_Heading" xml:space="preserve">
+    <value>Krijoni një pyetje</value>
+  </data>
+  <data name="Admin_QuizItem_Create_PageTitle" xml:space="preserve">
+    <value>Krijoni një pyetje</value>
+  </data>
+  <data name="Admin_Quiz_CreateItem" xml:space="preserve">
+    <value>Krijoni një pyetje</value>
+  </data>
+  <data name="Admin_Quiz_CreateNew" xml:space="preserve">
+    <value>Krijoni një seri pyetjesh të shpejta të re</value>
+  </data>
+  <data name="Admin_Quiz_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këto pyetje të shpejta?</value>
+  </data>
+  <data name="Admin_Quiz_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini pyetjet e shpejta</value>
+  </data>
+  <data name="Admin_Quiz_Details_PageTitle" xml:space="preserve">
+    <value>Detajet bazike të pyetjeve të shpejta</value>
+  </data>
+  <data name="Admin_Quiz_EditItems" xml:space="preserve">
+    <value>Administroni pyetjet</value>
+  </data>
+  <data name="Admin_Quiz_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni pyetjet</value>
+  </data>
+  <data name="Admin_Quiz_Index_PageTitle" xml:space="preserve">
+    <value>Administroni pyetjet e shpejta</value>
+  </data>
+  <data name="Admin_Quiz_Items" xml:space="preserve">
+    <value>Pyetjet</value>
+  </data>
+  <data name="Admin_Quiz_New_PageTitle" xml:space="preserve">
+    <value>Pyetje të shpejta të reja</value>
+  </data>
+  <data name="Admin_Quiz_QuizItem_DeleteConfirm" xml:space="preserve">
+    <value>A jeni i sigurt që doni ta fshini këtë pyetje?</value>
+  </data>
+  <data name="Admin_Quiz_StartQuiz" xml:space="preserve">
+    <value>Filloni pyetjet e shpejta</value>
+  </data>
+  <data name="Admin_RepQuestions_Answered" xml:space="preserve">
+    <value>I jeni përgjigjur</value>
+  </data>
+  <data name="Admin_RepQuestions_AskedTimes" xml:space="preserve">
+    <value>Numri që pyetja është bërë:</value>
+  </data>
+  <data name="Admin_RepQuestions_CommandFail" xml:space="preserve">
+    <value>Ka ndodhur një gabim, provojeni përsëri</value>
+  </data>
+  <data name="Admin_RepQuestions_CommandSuccess" xml:space="preserve">
+    <value>Të dhënat u morën me sukses. Rifreskoni faqen pas disa momentesh për të parë vlerat e reja.</value>
+  </data>
+  <data name="Admin_RepQuestions_EmailNumber" xml:space="preserve">
+    <value>E-mailet:</value>
+  </data>
+  <data name="Admin_RepQuestions_Heading" xml:space="preserve">
+    <value>Pyetjet që i janë dërguar deputetëve</value>
+  </data>
+  <data name="Admin_RepQuestions_OnLaw" xml:space="preserve">
+    <value>Për projektligjin:</value>
+  </data>
+  <data name="Admin_RepQuestions_Predefined" xml:space="preserve">
+    <value>E paracaktuar</value>
+  </data>
+  <data name="Admin_RepQuestions_SendEmailAgain" xml:space="preserve">
+    <value>Dërgojeni edhe njëherë emailin</value>
+  </data>
+  <data name="Admin_RepQuestions_Verified" xml:space="preserve">
+    <value>U verifikua</value>
+  </data>
+  <data name="PetitionProgress_Description" xml:space="preserve">
+    <value>Përshkrimi</value>
+  </data>
+  <data name="PetitionProgress_ImageDone" xml:space="preserve">
+    <value>Imazhi për arritjen e momentit të rëndësishëm</value>
+  </data>
+  <data name="PetitionProgress_ImageToDo" xml:space="preserve">
+    <value>Imazhi për momentin tjetër të rëndësishëm</value>
+  </data>
+  <data name="PetitionProgress_ParliamentName" xml:space="preserve">
+    <value>Kuvendi</value>
+  </data>
+  <data name="PetitionProgress_Representative" xml:space="preserve">
+    <value>Deputetët</value>
+  </data>
+  <data name="PetitionProgress_Title" xml:space="preserve">
+    <value>Titulli</value>
+  </data>
+  <data name="QuizItem_LawTitle" xml:space="preserve">
+    <value>Projektligji</value>
+  </data>
+  <data name="QuizItem_Order" xml:space="preserve">
+    <value>Jo. </value>
+  </data>
+  <data name="QuizItem_SectionTitle" xml:space="preserve">
+    <value>Çështje me rëndësi</value>
+  </data>
+  <data name="Quiz_Items" xml:space="preserve">
+    <value>Pyetjet</value>
+  </data>
+  <data name="Admin_CustomVoteDetail_VoteTypeIgnore" xml:space="preserve">
+    <value>Pyetja nuk është caktuar - administratori e ka shënuar këtë pyetje si të papërfillur</value>
+  </data>
+  <data name="Admin_CustomVoteDetail_VoteTypeNotSet" xml:space="preserve">
+    <value>Pyetja nuk është caktuar</value>
+  </data>
+  <data name="Admin_CustomVote_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni pyetjen e paracaktuar</value>
+  </data>
+  <data name="Admin_CustomVote_New_PageTitle" xml:space="preserve">
+    <value>Përgjigje e re e paracaktuar</value>
+  </data>
+  <data name="Admin_ExpertComments_AddNew" xml:space="preserve">
+    <value>Krijoni një mendim të ri eksperti</value>
+  </data>
+  <data name="Admin_ExpertComments_Index_PageTitle" xml:space="preserve">
+    <value>Ndryshoni mendimin e ekspertit</value>
+  </data>
+  <data name="Admin_ExpertComment_New_PageTitle" xml:space="preserve">
+    <value>Shtoni projektligjit mendimin e ekspertit</value>
+  </data>
+  <data name="Admin_Global_AddNewPredefinedAnswer" xml:space="preserve">
+    <value>Shtoni përgjigje të paracaktuar</value>
+  </data>
+  <data name="Admin_Global_AdminSetIgnore" xml:space="preserve">
+    <value>Jo, por administratori zgjodhi të mos e përfillte</value>
+  </data>
+  <data name="Admin_Global_BackToLaw" xml:space="preserve">
+    <value>Kthehuni tek projektligji</value>
+  </data>
+  <data name="Admin_Global_ChangeFile" xml:space="preserve">
+    <value>Ndryshoni/Fshini file</value>
+  </data>
+  <data name="Admin_Global_ChangeImage" xml:space="preserve">
+    <value>Ndryshoni/Fshini imazhin</value>
+  </data>
+  <data name="Admin_Global_ChooseFile" xml:space="preserve">
+    <value>Zgjidhni file...</value>
+  </data>
+  <data name="Admin_Global_ChooseImage" xml:space="preserve">
+    <value>Zgjidhni imazhin...</value>
+  </data>
+  <data name="Admin_Global_LawTitle" xml:space="preserve">
+    <value>Titulli i projektligjit</value>
+  </data>
+  <data name="Admin_Global_MainDetails" xml:space="preserve">
+    <value>Detajet bazike</value>
+  </data>
+  <data name="Admin_Global_OtherAnswers" xml:space="preserve">
+    <value>Përgjigjet e tjera</value>
+  </data>
+  <data name="Admin_Global_ParliamentHouses" xml:space="preserve">
+    <value>Parliamentary Houses</value>
+  </data>
+  <data name="Admin_Global_PredefinedAnswers" xml:space="preserve">
+    <value>Përgjigjet e paracaktuara</value>
+  </data>
+  <data name="Admin_Index_DirectQuestions" xml:space="preserve">
+    <value>Pyetje e drejtëpërdrejtë për deputetin</value>
+  </data>
+  <data name="Admin_Index_PageTitle" xml:space="preserve">
+    <value>Kryefaqja e Admin</value>
+  </data>
+  <data name="Admin_Index_UnverifiedLawAnswers" xml:space="preserve">
+    <value>Përgjigjet e propozuara</value>
+  </data>
+  <data name="Admin_Index_UnverifiedLawSectionAnswers" xml:space="preserve">
+    <value>Përgjigjet e propozuara për çështjet me rëndësi</value>
+  </data>
+  <data name="Admin_Index_UnverifiedPetitions" xml:space="preserve">
+    <value>Peticione të paverifikuara</value>
+  </data>
+  <data name="Admin_Index_UnverifiedQuestions" xml:space="preserve">
+    <value>Pyetje të paverifikuara</value>
+  </data>
+  <data name="Admin_LawSeciton_Edit_PageTitle" xml:space="preserve">
+    <value>Ndrysho çështjen me rëndësi</value>
+  </data>
+  <data name="Admin_LawSections_AddNew" xml:space="preserve">
+    <value>Shto një çështje të re me rëndësi</value>
+  </data>
+  <data name="Admin_LawSections_Index_PageTitle" xml:space="preserve">
+    <value>Administroni çështjet me rëndësi</value>
+  </data>
+  <data name="Admin_LawSection_New_PageTitle" xml:space="preserve">
+    <value>Një çështje e re me rëndësi</value>
+  </data>
+  <data name="Admin_Laws_AddNew" xml:space="preserve">
+    <value>Shtoni një projektligj të ri</value>
+  </data>
+  <data name="Admin_Laws_Index_PageTitle" xml:space="preserve">
+    <value>Administroni projektligjet</value>
+  </data>
+  <data name="Admin_Law_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këtë projektligj?</value>
+  </data>
+  <data name="Admin_Law_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini projektligjin</value>
+  </data>
+  <data name="Admin_Law_Details_PageTitle" xml:space="preserve">
+    <value>Detajet e projektligjit</value>
+  </data>
+  <data name="Admin_Law_Details_SeeLaw" xml:space="preserve">
+    <value>Shikoni paraprakisht projektligin në KonsultimiPublik</value>
+  </data>
+  <data name="Admin_Law_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni projektligjin</value>
+  </data>
+  <data name="Admin_Law_ManageLawExpertComments" xml:space="preserve">
+    <value>Administroni mendimet e ekspertëve</value>
+  </data>
+  <data name="Admin_Law_ManageLawSections" xml:space="preserve">
+    <value>Administroni çështjet me rëndësi</value>
+  </data>
+  <data name="Admin_Law_ManagePredefinedQuestions" xml:space="preserve">
+    <value>Administroni pyetjet e paracaktuara</value>
+  </data>
+  <data name="Admin_Law_ManagePredefinedVotes" xml:space="preserve">
+    <value>Administroni votat e paracaktuara</value>
+  </data>
+  <data name="Admin_Law_ManageQuestions" xml:space="preserve">
+    <value>Administroni pyetjet</value>
+  </data>
+  <data name="Admin_Law_ManageSuggestedRepresentatives" xml:space="preserve">
+    <value>Administroni deputetët me rëndësi</value>
+  </data>
+  <data name="Admin_Law_ManageVotes" xml:space="preserve">
+    <value>Administroni votat</value>
+  </data>
+  <data name="Admin_Law_New_PageTitle" xml:space="preserve">
+    <value>Projektligj i ri</value>
+  </data>
+  <data name="Admin_Law_NoFile" xml:space="preserve">
+    <value>Këtij projektligji nuk i është caktuar një tekst i plotë</value>
+  </data>
+  <data name="Admin_Law_OtherQuestions" xml:space="preserve">
+    <value>Pyetje të tjera rreth këtij projektligji</value>
+  </data>
+  <data name="Admin_Law_OtherVotes" xml:space="preserve">
+    <value>Përgjigje të tjera që janë dhënë gjatë votimit</value>
+  </data>
+  <data name="Admin_Law_PredefinedQuestions" xml:space="preserve">
+    <value>Pyetjet e paracaktuara</value>
+  </data>
+  <data name="Admin_Law_PredefinedVotes" xml:space="preserve">
+    <value>Përgjigjet e paracaktuara</value>
+  </data>
+  <data name="Admin_Law_SuggestedRepresentatives" xml:space="preserve">
+    <value>Deputetët në vemendje</value>
+  </data>
+  <data name="Admin_PredefinedAnswer_AddNew" xml:space="preserve">
+    <value>Shtoni një pyetje të re të paracaktuar</value>
+  </data>
+  <data name="Admin_PredefinedAnswer_Index_PageTitle" xml:space="preserve">
+    <value>Administroni përgjigjet e paracaktuara</value>
+  </data>
+  <data name="Admin_PredefinedQuestion_AddNew" xml:space="preserve">
+    <value>Shtoni një pyetje të re të paracaktuar</value>
+  </data>
+  <data name="Admin_PredefinedQuestion_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni pyetjen e paracaktuar</value>
+  </data>
+  <data name="Admin_Reppresentative_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni detajet e deputetit</value>
+  </data>
+  <data name="Admin_RepQuestions_ParliamentNameMessage" xml:space="preserve">
+    <value>Nga Kuvendi</value>
+  </data>
+  <data name="Admin_RepQuestions_RepNameMessage" xml:space="preserve">
+    <value>Deputetit iu bë një pyetje</value>
+  </data>
+  <data name="Admin_RepresentativeAssignment_PageTitle" xml:space="preserve">
+    <value>Ndryshoni anëtarësimin në komision</value>
+  </data>
+  <data name="Admin_RepresentativeLinks_PageTitle" xml:space="preserve">
+    <value>Ndryshoni lidhjet e jashtme</value>
+  </data>
+  <data name="Admin_Representatives_AddNewFormat" xml:space="preserve">
+    <value>Shtoni një deputet në {0}</value>
+  </data>
+  <data name="Admin_Representatives_Assignments" xml:space="preserve">
+    <value>Anëtarësimi në komision</value>
+  </data>
+  <data name="Admin_Representatives_Deatail_PageTitle" xml:space="preserve">
+    <value>Detajet e deputetit</value>
+  </data>
+  <data name="Admin_Representatives_ExternalLinks" xml:space="preserve">
+    <value>Lidhjet e jashtme</value>
+  </data>
+  <data name="Admin_Representatives_FirstNameAndLastName" xml:space="preserve">
+    <value>Emri dhe mbiemri</value>
+  </data>
+  <data name="Admin_Representatives_Index_PageTitle" xml:space="preserve">
+    <value>Administroni deputetin</value>
+  </data>
+  <data name="Admin_Representatives_SeeProfile" xml:space="preserve">
+    <value>Shikoni profilin në KonsultimiPublik</value>
+  </data>
+  <data name="Admin_Representative_New_PageTitle" xml:space="preserve">
+    <value>Deputet i ri</value>
+  </data>
+  <data name="Admin_Rep_Delete_Heading" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini këtë deputet?</value>
+  </data>
+  <data name="Admin_Rep_Delete_PageTitle" xml:space="preserve">
+    <value>Doni ta fshini deputetin?</value>
+  </data>
+  <data name="Admin_SuggestedQuestion_New_PageTitle" xml:space="preserve">
+    <value>Përgjigje e re e sugjeruar</value>
+  </data>
+  <data name="Admin_SuggestedRepresentatives" xml:space="preserve">
+    <value>Deputet në vemendje</value>
+  </data>
+  <data name="Admin_SuggestedRepresentatives_AddNew" xml:space="preserve">
+    <value>Shtoni një deputet të ri në vemendje</value>
+  </data>
+  <data name="Admin_SuggestedRepresentatives_PageTitle" xml:space="preserve">
+    <value>Administroni një deputet të ri në vemendje</value>
+  </data>
+  <data name="Admin_SuggestedRep_New_PageTitle" xml:space="preserve">
+    <value>Shtoni një deputet në vemendje</value>
+  </data>
+  <data name="Admin_UnverifiedCustomAnswers_Heading" xml:space="preserve">
+    <value>Përgjigje e sugjeruar e paverifikuar</value>
+  </data>
+  <data name="Admin_UnverifiedDirectQuestions_Heading" xml:space="preserve">
+    <value>Pyetje e paverifikuar që i është bërë drejtpërdrejtë deputetit</value>
+  </data>
+  <data name="Admin_UnverifiedLawQuestions_Heading" xml:space="preserve">
+    <value>Pyetje e paverifikuar e bërë për një ligj të vecantë</value>
+  </data>
+  <data name="Admin_UnverifiedLawSectionQuestions_Heading" xml:space="preserve">
+    <value>Përgjigje të paverifikuara mbi çështjet me rëndësi</value>
+  </data>
+  <data name="Admin_UnverifiedPetitions_Heading" xml:space="preserve">
+    <value>Peticione tçështje me rëndësi paverifikuara</value>
+  </data>
+  <data name="Admin_Unverified_NothingHere" xml:space="preserve">
+    <value>Nuk ka asgjë të re për të verifikuar.</value>
+  </data>
+  <data name="Global_AreYouSureToDelete" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini, ky veprim nuk mund të kthehet pas?</value>
+  </data>
+  <data name="Global_FollowLink" xml:space="preserve">
+    <value>Ndiq</value>
+  </data>
+  <data name="Global_Name" xml:space="preserve">
+    <value>Emri</value>
+  </data>
+  <data name="Global_Negative" xml:space="preserve">
+    <value>Negative</value>
+  </data>
+  <data name="Global_No" xml:space="preserve">
+    <value>Jo</value>
+  </data>
+  <data name="Global_Positive" xml:space="preserve">
+    <value>Pozitive</value>
+  </data>
+  <data name="Global_Resume" xml:space="preserve">
+    <value>CV</value>
+  </data>
+  <data name="Global_Yes" xml:space="preserve">
+    <value>Po</value>
+  </data>
+  <data name="Law_IsActive" xml:space="preserve">
+    <value>Aktive</value>
+  </data>
+  <data name="Law_StatusText" xml:space="preserve">
+    <value>Përshkrimi i gjendjes së projektligjit</value>
+  </data>
+  <data name="Law_StatusTitle" xml:space="preserve">
+    <value>Gjendja e projektligjit</value>
+  </data>
+  <data name="Law_TextFile" xml:space="preserve">
+    <value>Teksti i projektligjit</value>
+  </data>
+  <data name="Account_ChangePassword_EmailBody" xml:space="preserve">
+    <value>Për të ndryshuar fjalëkalimin tuaj ju lutem klikoni &lt;a href="{0}"&gt;këtu.&lt;/a&gt;</value>
+  </data>
+  <data name="Account_ChangePassword_EmailSubject" xml:space="preserve">
+    <value>Shkruani fjalëkalimin</value>
+  </data>
+  <data name="Account_ConfirmEmailRepeated" xml:space="preserve">
+    <value>Ju lutem konfirmoni emailin tuaj. </value>
+  </data>
+  <data name="Account_ConfirmEmail_EmailBody" xml:space="preserve">
+    <value>Për të aktivizuar llogarinë tuaj ju lutem klikoni &lt;a href="{0}"&gt;këtu&lt;/a&gt;</value>
+  </data>
+  <data name="Account_ConfirmEmail_EmailSent_Message" xml:space="preserve">
+    <value>Emaili për regjistrimin ju është dërguar në adresën tuaj. Në rast se keni dëshirë që të konfirmoni regjistrimin, ju lutem klikoni në linkun që përmban emaili i dërguar. </value>
+  </data>
+  <data name="Account_ConfirmEmail_EmailSubject" xml:space="preserve">
+    <value>Ju lutem konfirmoni adresën tuaj të emailit</value>
+  </data>
+  <data name="Account_DisabledMessage" xml:space="preserve">
+    <value>Ju lutem kontaktoni me administratorin</value>
+  </data>
+  <data name="Account_PleaseConfirmEmailMessage" xml:space="preserve">
+    <value>Ju duhet të konfirmoni emailin tuaj për t'u futur. </value>
+  </data>
+  <data name="Admin_Menu_Manage" xml:space="preserve">
+    <value>Administroni</value>
+  </data>
+  <data name="Admin_Menu_Parliament" xml:space="preserve">
+    <value>Administroni Kuvendin</value>
+  </data>
+  <data name="Admin_Menu_Users" xml:space="preserve">
+    <value>Administroni përdoruesit</value>
+  </data>
+  <data name="Admin_ParliamentHouses_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni Kuvendin</value>
+  </data>
+  <data name="Admin_ParliamentHouse_AddNewItem" xml:space="preserve">
+    <value>Krijoni një dhomë të re</value>
+  </data>
+  <data name="Admin_ParliamentHouse_Create_PageTitle" xml:space="preserve">
+    <value>Krijoni një dhomë të Kuvendit</value>
+  </data>
+  <data name="Admin_ParliamentHouse_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni Dhomat e Kuvendit</value>
+  </data>
+  <data name="Admin_Parliament_CreateNew" xml:space="preserve">
+    <value>Krijoni një Kuvend të ri</value>
+  </data>
+  <data name="Admin_Parliament_Delete_Heading" xml:space="preserve">
+    <value>A jeni i sigurt që doni ta fshini Kuvendin?</value>
+  </data>
+  <data name="Admin_Parliament_Delete_PageTitle" xml:space="preserve">
+    <value>Fshini Kuvendin</value>
+  </data>
+  <data name="Admin_Parliament_Details_PageTitle" xml:space="preserve">
+    <value>Të dhënat e Kuvendit</value>
+  </data>
+  <data name="Admin_Parliament_EditParliamentHouses" xml:space="preserve">
+    <value>Ndryshoni Dhomat e Kuvendit</value>
+  </data>
+  <data name="Admin_Parliament_Edit_PageTitle" xml:space="preserve">
+    <value>Ndryshoni Kuvendin</value>
+  </data>
+  <data name="Admin_Parliament_Index_PageTitle" xml:space="preserve">
+    <value>Administroni Kuvendet</value>
+  </data>
+  <data name="Admin_Parliament_New_PageTitle" xml:space="preserve">
+    <value>Kuvendet</value>
+  </data>
+  <data name="Admin_Parliament_ParliamentHouses" xml:space="preserve">
+    <value>Dhomat e Kuvendit</value>
+  </data>
+  <data name="Admin_Parliament_ParliamentHouse_DeleteConfirm" xml:space="preserve">
+    <value>A jeni të sigurt që doni ta fshini Dhomën e Kuvedit?</value>
+  </data>
+  <data name="Admin_PetitionProgress_WhenRepNotSet_SectionTitle" xml:space="preserve">
+    <value>Vlerat që mund të përdoren kur Deputeti nuk është vendosur</value>
+  </data>
+  <data name="Admin_Users_AddToAdmin" xml:space="preserve">
+    <value>Shtojeni në listën e administratorëve</value>
+  </data>
+  <data name="Admin_Users_DisableUser" xml:space="preserve">
+    <value>Hiqini të drejtat përdoruesit</value>
+  </data>
+  <data name="Admin_Users_EnableUser" xml:space="preserve">
+    <value>Vendosini të drejtat përdoruesit</value>
+  </data>
+  <data name="Admin_Users_RemoveFromAdmin" xml:space="preserve">
+    <value>Hiqeni nga lista e Administratorëve</value>
+  </data>
+  <data name="Admin_User_Details_PageTitle" xml:space="preserve">
+    <value>Të dhënat e përdoruesit</value>
+  </data>
+  <data name="Admin_User_Index_PageTitle" xml:space="preserve">
+    <value>Administroni përdoruesit</value>
+  </data>
+  <data name="Education_Bachelor" xml:space="preserve">
+    <value>Bachelor</value>
+  </data>
+  <data name="Education_Doctoral" xml:space="preserve">
+    <value>Gradë Shkencore Doktor</value>
+  </data>
+  <data name="Education_Elementary" xml:space="preserve">
+    <value>Arsimi Fillor</value>
+  </data>
+  <data name="Education_Faculty" xml:space="preserve">
+    <value>Arsimi i Lartë</value>
+  </data>
+  <data name="Education_Master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="Education_MiddleScool" xml:space="preserve">
+    <value>Arsimi i Mesëm i Ulët</value>
+  </data>
+  <data name="Education_UpperSchool" xml:space="preserve">
+    <value>Arsimi i Mesëm i Lartë</value>
+  </data>
+  <data name="Global_Or" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Global_ParliamentHouses" xml:space="preserve">
+    <value>Dhomat e Kuvendit</value>
+  </data>
+  <data name="Global_Sort_Latest" xml:space="preserve">
+    <value>Më i riu</value>
+  </data>
+  <data name="Global_Sort_QuestionCount" xml:space="preserve">
+    <value>Numri i pyetjeve</value>
+  </data>
+  <data name="Global_Sort_Title" xml:space="preserve">
+    <value>Titulli</value>
+  </data>
+  <data name="Global_Sort_VoteTime" xml:space="preserve">
+    <value>Data e votimit</value>
+  </data>
+  <data name="JavnaRasprava_DiscussWithReps" xml:space="preserve">
+    <value>dhe diskutoni me Deputetët</value>
+  </data>
+  <data name="JavnaRasprava_LawVote_Message" xml:space="preserve">
+    <value>A jeni ju &lt;strong&gt;PRO &lt;/strong&gt; apo  &lt;strong&gt;KUNDËR &lt;/strong&gt; këtij projektligji?</value>
+  </data>
+  <data name="JavnaRasprava_Representative_MostInactive" xml:space="preserve">
+    <value>Deputetët më inaktiv</value>
+  </data>
+  <data name="JavnaRasprava_VoteLawModal_CustomVote_Placeholder" xml:space="preserve">
+    <value>Mendimi juaj</value>
+  </data>
+  <data name="ParliamentHouse_Name" xml:space="preserve">
+    <value>Emri i Dhomës së Kuvendit</value>
+  </data>
+  <data name="ParliamentHouse_Order" xml:space="preserve">
+    <value>Renditja sipas listës</value>
+  </data>
+  <data name="ParliamentHouse_Order_Description" xml:space="preserve">
+    <value>Dhomat e Kuvendit do të renditen sipas këtij numri </value>
+  </data>
+  <data name="Parliament_Code" xml:space="preserve">
+    <value>Kodi</value>
+  </data>
+  <data name="Parliament_Code_Description" xml:space="preserve">
+    <value>Kodi i Kuvendit do të jetë pjesë e urls. Duhet të jetë i shkurtër, jo më shumë se 8 karaktere</value>
+  </data>
+  <data name="Parliament_IsExclusive" xml:space="preserve">
+    <value>Është i vetëm</value>
+  </data>
+  <data name="Parliament_IsExclusive_Description" xml:space="preserve">
+    <value>Në rast se është i vetëm, nuk do të ketë një seksion të Kuvendit për këtë Kuvend</value>
+  </data>
+  <data name="Parliament_Name" xml:space="preserve">
+    <value>Emri</value>
+    <comment>Emri i Kuvendit</comment>
+  </data>
+  <data name="Parliament_Name_Description" xml:space="preserve">
+    <value>Emri i Kuvendit do të shfaqet në seksionin kryesor të Kuvendit dhe në listën me përzgjedhje</value>
+  </data>
+  <data name="Parliament_Order" xml:space="preserve">
+    <value>Renditja sipas listës</value>
+  </data>
+  <data name="Parliament_Order_Description" xml:space="preserve">
+    <value>Kuvendet do të renditen sipas këtij numri</value>
+  </data>
+  <data name="Parliament_RepScreenName" xml:space="preserve">
+    <value>Emri në ekran</value>
+  </data>
+  <data name="Parliament_RepScreenName_Description" xml:space="preserve">
+    <value>Emri në ekran do të përdoret si titull për seksionin e Kuvendit në ekran</value>
+  </data>
+  <data name="Petition_Create_Button" xml:space="preserve">
+    <value>Krijoni Peticionin</value>
+  </data>
+  <data name="Petition_Sign_Button" xml:space="preserve">
+    <value>Nënshkruani peticionin</value>
+  </data>
+  <data name="Quiz_Take_AlreadyVoted_Message" xml:space="preserve">
+    <value>Ju keni votuar njëherë:</value>
+  </data>
+  <data name="Quiz_YourVote" xml:space="preserve">
+    <value>Përgjigjuni</value>
+  </data>
+  <data name="User_AccessFailedCount" xml:space="preserve">
+    <value>Numërimi i rasteve kur ka dështuar hyrja</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_EmailConfirmed" xml:space="preserve">
+    <value>Email u konfirmua</value>
+  </data>
+  <data name="User_IsAdmin" xml:space="preserve">
+    <value>Është Administratori</value>
+  </data>
+  <data name="User_IsDisabled" xml:space="preserve">
+    <value>Përdoruesit i janë hequr të drejtat</value>
+  </data>
+  <data name="User_UserName" xml:space="preserve">
+    <value>Emri i Përdoruesit</value>
+  </data>
+  <data name="JS_Admin_DeleteError" xml:space="preserve">
+    <value>Nuk u fshi një gabim.</value>
+  </data>
+  <data name="JS_Admin_DeleteSuccess" xml:space="preserve">
+    <value>Fshihet me sukses.</value>
+  </data>
+  <data name="JS_Global_Error" xml:space="preserve">
+    <value>Gabim</value>
+  </data>
+  <data name="JS_Law_ErrorSavingVote" xml:space="preserve">
+    <value>Ndodhi një gabim gjatë ruajtjes së votës.</value>
+  </data>
+  <data name="JS_Law_PleaseChooseOneOfAnswers" xml:space="preserve">
+    <value>Ju lutemi zgjidhni një nga përgjigjet e ofruara.</value>
+  </data>
+  <data name="JS_Law_PleaseProvideYourAnswer" xml:space="preserve">
+    <value>Ju lutem shkruani përgjigjen tuaj.</value>
+  </data>
+  <data name="JS_Law_PleaseSelectQuestion" xml:space="preserve">
+    <value>Ju lutemi zgjidhni një pyetje të paracaktuar ose kërkoni pyetjen tuaj. &lt;br/&gt;</value>
+  </data>
+  <data name="JS_Law_PleaseSelectRep" xml:space="preserve">
+    <value>Ju lutemi zgjidhni deputetët që po kërkoni.</value>
+  </data>
+</root>

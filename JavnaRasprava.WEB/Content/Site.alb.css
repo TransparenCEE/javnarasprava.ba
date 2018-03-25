@@ -1,0 +1,21 @@
+﻿@media(min-width:640px) {
+    .representative-full {
+        width: 100%;
+        float: left;
+        margin: 0 .5% .5em .5%;
+        display: block;
+        overflow: hidden;
+        clear: none;
+        position: relative;
+    }
+
+    .representative {
+        width: 49%;
+        float: left;
+        margin: 0 .5% .5em .5%;
+        display: block;
+        overflow: hidden;
+        clear: none;
+        position: relative;
+    }
+}

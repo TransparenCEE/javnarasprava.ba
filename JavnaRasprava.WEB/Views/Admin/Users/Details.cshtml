@@ -1,0 +1,108 @@
+﻿@model JavnaRasprava.WEB.Models.User.UserModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_User_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="col-md-6 col-md-offset-3">
+
+    <h2>@GlobalLocalization.Admin_User_Details_PageTitle</h2>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @GlobalLocalization.User_UserName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @GlobalLocalization.User_IsDisabled
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDisabled)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.User_EmailConfirmed
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailConfirmed)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.User_IsAdmin
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAdmin)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.User_AccessFailedCount
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessFailedCount)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.Account_DemographyAge
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeValue)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.Account_DemographyEducation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationValue)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.Account_DemographyLocation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @GlobalLocalization.Account_DemographyParty
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Party)
+        </dd>
+
+    </dl>
+    <p>
+        @if (Model.IsAdmin)
+        {
+            @Html.ActionLink(GlobalLocalization.Admin_Users_RemoveFromAdmin, "SetAdmin", "Admin", new { id = Model.Id, adminState = false }, null);
+        }
+        else
+        {
+            @Html.ActionLink(GlobalLocalization.Admin_Users_AddToAdmin, "SetAdmin", "Admin", new { id = Model.Id, adminState = true }, null);
+        }
+
+        @if (Model.IsDisabled)
+        {
+            @Html.ActionLink(GlobalLocalization.Admin_Users_EnableUser, "SetDisabled", "Admin", new { id = Model.Id, disabledState = false }, null);
+        }
+        else
+        {
+            @Html.ActionLink(GlobalLocalization.Admin_Users_DisableUser, "SetDisabled", "Admin", new { id = Model.Id, disabledState = true }, null);
+        }
+    </p>
+    <p>
+        @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "GetAllUsers", "Admin")
+    </p>
+</div>

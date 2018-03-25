@@ -1,0 +1,18 @@
+﻿@model List<JavnaRasprava.WEB.Models.Law.PredefinedQuestionEditModel>
+
+
+<h3>@GlobalLocalization.Admin_UnverifiedLawQuestions_Heading</h3>
+@if ( Model != null && Model.Count > 0 )
+{
+    <div>
+        @foreach ( var question in Model.OrderBy( x => x.LawTitle ) )
+        {
+            <div>@Html.ActionLink( question.LawTitle + " - " + question.Text, "ManageLawQuestions", new { lawId = question.LawID } )</div>
+                <br />
+        }
+    </div>
+}
+else
+{
+    <p>@GlobalLocalization.Admin_Unverified_NothingHere</p>
+}

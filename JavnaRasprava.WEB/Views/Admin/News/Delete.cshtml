@@ -1,0 +1,47 @@
+﻿@model JavnaRasprava.WEB.Models.News.NewsModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_News_Delete_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Admin_News_Delete_Heading</h2>
+<div>
+    <hr />
+    @Html.HiddenFor( x => x.NewsId )
+    @if ( !String.IsNullOrEmpty( Model.ImageRelativePath ) )
+    {
+        <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetNewsImage( Model.ImageRelativePath )" class="img-responsive" />
+    }
+    else
+    {
+        <p>@GlobalLocalization.Admin_Global_NoPictureAssigned</p>
+    }
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor( model => model.Title )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Title )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.Summary )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Summary )
+        </dd>
+    </dl>
+
+    @using ( Html.BeginForm() )
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@GlobalLocalization.Admin_Global_Delete" class="btn btn-default" /> |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "GetAllNews" )
+        </div>
+    }
+</div>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = GlobalLocalization.Account_Confirmation_PageTitle;
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <p>
+       @GlobalLocalization.Account_ConfirmationText_p1  
+        @Html.ActionLink( GlobalLocalization.Account_ConfirmationText_p2, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" } )
+    </p>
+</div>

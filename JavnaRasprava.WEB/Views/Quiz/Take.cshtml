@@ -1,0 +1,188 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizAnsweringModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="col-md-8 col-md-offset-2">
+<h2>@Html.DisplayFor( model => model.Title )</h2>
+
+<div>
+        @if (!Model.CurrentItemIndex.HasValue)
+        {
+            <p class="lead">@Html.DisplayFor( model => model.Description )</p>
+        }
+
+        @if ( !Model.QuestionType.HasValue )
+        {
+        <!-- This is for initial page -->
+        }
+        else if ( Model.QuestionType == JavnaRasprava.WEB.DomainModels.QuizItemType.Law )
+        {
+        <!-- This is for law -->
+
+            <h3>
+                @Html.RouteLink(Model.LawTitle, JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.LawId }, new { target = "_blank" })
+                <small><i class="fa fa-external-link"></i></small>
+            </h3>
+
+            @* @Html.DisplayNameFor( model => model.QuestionDescription ) *@
+
+            <p class="lead">@Html.Raw( Model.QuestionDescription )</p>
+            <hr>
+
+            <h4>@GlobalLocalization.Quiz_Take_ChooseAnswer_Message</h4>
+
+                   <p>
+                @using ( Html.BeginForm( "VoteLaw", "Quiz" ) )
+                {
+                    @Html.Hidden( "LawId", Model.LawId );
+                    @Html.Hidden( "QuizId", Model.QuizId );
+                    @Html.Hidden( "NextQuestionId", Model.NextQuestionId );
+
+                    <div class="row space-bottom-lg">
+
+                        <div class="col-md-6">
+                            <input
+                            type="submit" @Model.VotingDisabledAttribute()
+                            formaction="@Url.Action("VoteLaw","Quiz", new { lawVote = -3})"
+                            value="@GlobalLocalization.Global_VoteUp"
+                            class="btn btn-lg btn-success btn-block" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input
+                            type="submit"
+                            @Model.VotingDisabledAttribute()
+                            formaction="@Url.Action("VoteLaw","Quiz", new { lawVote = -2})"
+                            value="@GlobalLocalization.Global_VoteDown" 
+                                   class="btn btn-lg btn-danger btn-block" />
+                        </div>
+
+                    </div>
+
+                }
+
+                @if ( Model.UserVoteId.HasValue )
+                {
+                    <div class="alert alert-info text-center">
+                        <span>@GlobalLocalization.Quiz_Take_AlreadyVoted_Message</span>
+                        @switch ( Model.UserVoteId.Value )
+                        {
+                            case -3:
+                                <span class="success">@GlobalLocalization.Global_VoteUp</span>
+                                break;
+                            case -2:
+                                <span class="danger">@GlobalLocalization.Global_VoteDown</span>
+                                break;
+                            case -1:
+                                <span class="danger">@Model.CustomUserVoteText</span>
+                                break;
+                        }
+                    </div>
+                }
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@Model.ProgressPercentage"
+                             aria-valuemin="0" aria-valuemax="100" style="width:@Model.ProgressPercentage%">
+                            
+                        </div>
+                    </div>
+            </p>
+        }
+        else
+        {
+        <!-- This is for section -->
+
+                   <h3>
+                       <small>@Html.ActionLink(Model.LawTitle, "LawDetails", "JavnaRasprava", new { lawId = Model.LawId }, new { target = "_blank" }) <small><i class="fa fa-external-link"></i></small></small>
+                       <br>
+                       @Html.DisplayNameFor(model => model.SectionTitle):
+                       @Html.RouteLink(Model.SectionTitle, JavnaRasprava.Resources.Routes.JavnaRasprava_LawDetails, new { lawId = Model.LawId, sp = "lawSection_" + Model.SectionId },new { target = "_blank" }) 
+                       <small><i class="fa fa-external-link"></i></small>
+                   </h3>
+
+            <p class="lead">
+                @Html.Raw( Model.QuestionDescription )
+            </p>
+            <hr>
+
+            <h4>@GlobalLocalization.Quiz_Take_ChooseAnswer_Message</h4>
+            <p>
+                @using ( Html.BeginForm( "VoteSection", "Quiz" ) )
+                {
+                    @Html.Hidden( "SectionId", Model.SectionId );
+                    @Html.Hidden( "QuizId", Model.QuizId );
+                    @Html.Hidden( "NextQuestionId", Model.NextQuestionId );
+
+                    <div class="row space-bottom-lg">
+
+                        <div class="col-md-6">
+                            <input
+                            type="submit" @Model.VotingDisabledAttribute()
+                            formaction="@Url.Action("VoteSection","Quiz", new { sectionVote = -3})"
+                            value="@GlobalLocalization.Global_VoteUp"
+                            class="btn btn-lg btn-success btn-block" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input
+                            type="submit"
+                            @Model.VotingDisabledAttribute()
+                            formaction="@Url.Action("VoteSection","Quiz", new { sectionVote = -2})"
+                            value="@GlobalLocalization.Global_VoteDown" 
+                            class="btn btn-lg btn-danger btn-block" />
+                        </div>
+
+                    </div>
+                }
+
+                @if ( Model.UserVoteId.HasValue )
+                {
+                    
+                    <div class="alert alert-info text-center">
+                        <span>@GlobalLocalization.Quiz_Take_AlreadyVoted_Message</span>
+                        @switch ( Model.UserVoteId.Value )
+                        {
+                            case -3:
+                                <span class="success">@GlobalLocalization.Global_VoteUp</span>break;
+                            case -2:
+                                <span class="danger">@GlobalLocalization.Global_VoteDown</span>break;
+                            case -1:
+                                <span class="danger">@Model.CustomUserVoteText</span>break;
+                        }
+                    </div>
+                }
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@Model.ProgressPercentage"
+                             aria-valuemin="0" aria-valuemax="100" style="width:@Model.ProgressPercentage%">
+                            
+                        </div>
+                    </div>
+            </p>
+        }
+
+</div>
+
+<p>
+    @if (!Model.CurrentItemIndex.HasValue)
+    {
+        @Html.ActionLink( GlobalLocalization.Quiz_Take_StartQuiz_Button, "Take", new { id = Model.QuizId, questionId = Model.NextQuestionId }, new { @class = "btn btn-lg btn-primary btn-block" } )
+    }
+    else if ( Model.NextQuestionId.Value != -1 )
+    {
+    <!-- Next question -->
+        @Html.ActionLink( GlobalLocalization.Quiz_Take_NextQuestion_Button, "Take", new { id = Model.QuizId, questionId = Model.NextQuestionId }, new { @class = "btn btn-lg btn-primary btn-block" } )
+    }
+    else
+    {
+    <!-- Go to results -->
+        @Html.ActionLink( GlobalLocalization.Quiz_Take_SeeResults_Button, "Results", new { id = Model.QuizId }, new { @class = "btn btn-lg btn-primary btn-block" } )
+
+    }
+</p>
+
+<p class="alert alert-info">
+    @GlobalLocalization.Quiz_Take_Footer
+</p>
+
+</div>

@@ -1,0 +1,103 @@
+﻿@model JavnaRasprava.WEB.Models.Law.LawSectionEditModel
+
+<div id="divSection_@Model.LawSectionID">
+
+    <h3><strong>@Model.Title</strong> </h3>
+
+    <fieldset>
+        <legend>
+            @GlobalLocalization.Admin_Global_ImageForHompage
+        </legend>
+        <div class="row">
+            <div class="col-md-3">
+                @if (!String.IsNullOrEmpty(Model.ImageRelativePath))
+                {
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawSectionImage( Model.ImageRelativePath )" class="img-responsive">}
+                else
+                {
+                    <p>@GlobalLocalization.Admin_Global_NoPictureAssigned</p>
+                }
+            </div>
+        </div>
+        <br />
+    </fieldset>
+
+
+    <fieldset>
+        <legend>@GlobalLocalization.Admin_Global_MainDetails</legend>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+        </dl>
+        <p>
+            @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditLawSection", new { lawSectionId = Model.LawSectionID }) |
+            @Ajax.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteLawSection", new { lawSectionId = Model.LawSectionID }, new AjaxOptions { OnSuccess = "DeleteSection", HttpMethod = "Post", Confirm = GlobalLocalization.Global_AreYouSureToDelete }) |
+        </p>
+
+
+        <fieldset>
+            <legend>@GlobalLocalization.Admin_Global_InfoBox_Heading</legend>
+
+            <dl class="dl-horizontal">
+
+                <dt>@GlobalLocalization.Global_LawSections</dt>
+
+                <dd>
+                    @Html.Action("InfoBoxStatus", new
+               {
+                   Reference = Model.LawSectionID,
+                   Partition = JavnaRasprava.WEB.Infrastructure.SessionManager.Current.CurrentParliamentId,
+                   BoxName = "LawSection",
+                   Type = "LawSection"
+               })
+                </dd>
+
+
+                <dt>@GlobalLocalization.Admin_Global_InfoBox_TopList</dt>
+
+                <dd>
+                    @Html.Action("InfoBoxStatus", new
+               {
+                   Reference = Model.LawSectionID,
+                   Partition = JavnaRasprava.WEB.Infrastructure.SessionManager.Current.CurrentParliamentId,
+                   BoxName = "Top",
+                   Type = "LawSection"
+               })
+                </dd>
+            </dl>
+        </fieldset>
+
+        <fieldset>
+            <legend>@GlobalLocalization.Admin_Global_PredefinedAnswers</legend>
+            @Html.ActionLink(GlobalLocalization.Admin_Global_AddNewPredefinedAnswer, "CreateSectionCustomVote", new { lawSectionId = Model.LawSectionID, lawID = Model.LawID })
+            <br />
+            <br />
+            @foreach (var sectionCustomVote in Model.LawSectionVotes.Where(x => x.IsSuggested))
+            {
+                @Html.Partial("_SectionCustomVoteDetail", sectionCustomVote)
+            }
+        </fieldset>
+        <fieldset>
+            <legend>@GlobalLocalization.Admin_Global_OtherAnswers</legend>
+            <br />
+            <br />
+            @foreach (var sectionCustomVote in Model.LawSectionVotes.Where(x => !x.IsSuggested))
+            {
+                @Html.Partial("_SectionCustomVoteDetail", sectionCustomVote)
+            }
+        </fieldset>
+    </fieldset>
+
+</div>

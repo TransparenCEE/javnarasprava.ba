@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.Petition.PetitionProgressSummaryModel>
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_PetitionProgress_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.Action("Admin", "ParliamentSelection", new { returnUrl = new { returnUrl = Url.Action("ManagePetitionProgresses", "admin") })
+@*@Html.Partial("../Shared/_skupstineAdmin", "Admin/ManagePetitionProgresses")*@
+
+<h3>@GlobalLocalization.Admin_PetitionProgress_Index_PageTitle</h3>
+
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_PetitionProgress_CreateNew, "CreatePetitionProgresses")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-6">
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th class="col-md-2"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col-md-6">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class="col-md-2 text-right">
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditPetitionProgresses", new { petitionProgressId = item.PetitionProgressId }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "PetitionProgressesDetails", new { petitionProgressId = item.PetitionProgressId }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeletePetitionProgresses", new { petitionProgressId = item.PetitionProgressId })
+            </td>
+        </tr>
+    }
+
+</table>

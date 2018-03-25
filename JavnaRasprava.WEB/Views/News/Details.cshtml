@@ -1,0 +1,12 @@
+﻿@model JavnaRasprava.WEB.Models.News.NewsModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="col-md-8 col-md-offset-2">
+    <h2>@Model.Title</h2>
+    <p class="lead"><i>@Model.Summary</i></p>
+    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetNewsImage( Model.ImageRelativePath )" class="img-responsive" />
+    <p>@Html.Raw( Model.Text )</p>
+</div>

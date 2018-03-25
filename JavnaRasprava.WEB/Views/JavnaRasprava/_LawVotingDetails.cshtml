@@ -1,0 +1,61 @@
+﻿@model LawModel
+
+<div class="col-md-6 pull-right no-padding" style="margin-left:1em;">
+
+<div class="lawVotingDetailsInner paper">
+
+@if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+{
+        <div class="progress">
+            @if ( Model.VotesUpPercentage != 0 )
+            {
+                <div class="progress-bar progress-bar-success" style="width: @Model.VotesUpPercentage%" aria-valuenow=@Model.VotesUpPercentage aria-valuemin="0" aria-valuemax="100">
+                    @Model.VotesUpPercentage%
+                </div>
+            }
+            @if ( Model.VotesDownPercentage != 0 )
+            {
+                <div class="progress-bar progress-bar-danger" style="width: @Model.VotesDownPercentage%" aria-valuenow=@Model.VotesDownPercentage aria-valuemin="0" aria-valuemax="100">
+                    @Model.VotesDownPercentage%
+                </div>
+            }
+        </div>
+}
+else
+{
+    <div class="progress">
+        <div class="progress-bar progress-bar-info" role=" progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+         0%
+        </div>
+    </div>
+}
+
+<div class="row">
+
+    <div class="col-md-8">
+        <span class="label label-success">@GlobalLocalization.Global_VoteUp: @Model.VotesUp</span>
+        <span class="label label-danger">@GlobalLocalization.Global_VoteDown: @Model.VotesDown</span>
+    </div>
+
+    <div class="col-md-4 small-space-bottom">
+        @if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+        {
+        <a class="btn btn-xs btn-default pull-right" onclick="OpenVotingDetailsModal('GetVotingDetails', @Model.Law.LawID)">@GlobalLocalization.JavnaRasprava_MoreDetails</a>
+        }
+    </div>
+
+    <div class="col-xs-12">
+        <p class="text-center" style="padding:5px 0 0">
+            @Html.Raw(@GlobalLocalization.JavnaRasprava_LawVote_Message)
+        </p>
+            @{string votingDisabled = Model.UserVoted ? "disabled" : "";}
+            <button id="openLawVoteDialog" type="button" class="btn btn-primary btn-block" onclick="GetLawVoteOptions(@Model.Law.LawID, '@Model.UserVoted')" @votingDisabled>@GlobalLocalization.Global_Vote</button>
+            <p class="text-center" style="padding:10px 0 0; margin:0">
+                @GlobalLocalization.Global_Or <a class="" onclick="OpenAskRepresentativesModal('@User.Identity.IsAuthenticated', @Model.Law.LawID)">@GlobalLocalization.AskQuestion</a> @GlobalLocalization.JavnaRasprava_DiscussWithReps 
+            </p>
+    </div>
+
+</div>
+
+</div>
+</div>

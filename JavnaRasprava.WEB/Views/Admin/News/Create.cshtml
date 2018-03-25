@@ -1,0 +1,74 @@
+﻿@model JavnaRasprava.WEB.Models.News.NewsModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_News_New_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@GlobalLocalization.Admin_News_New_PageTitle</h2>
+
+@using ( Html.BeginForm( "NewsCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" } ) )
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary( true, "", new { @class = "text-danger" } )
+
+        @Html.HiddenFor( x => x.ParliamentId )
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Title, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.ValidationMessageFor( model => model.Title, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.TextAreaFor( model => model.Summary, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.ValidationMessageFor( model => model.Summary, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.EditorFor( model => model.Text, new { htmlAttributes = new { @class = "form-control" } } )
+                @Html.ValidationMessageFor( model => model.Text, "", new { @class = "text-danger" } )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label( GlobalLocalization.Admin_Global_Image, htmlAttributes: new { @class = "control-label col-md-2" } )
+            <div id="Image" class="col-md-10">
+                @if ( String.IsNullOrEmpty( @Model.ImageRelativePath ) )
+                {
+                    <input type="File" name="Image" id="Image" value="@GlobalLocalization.Admin_Global_ChooseImage" class="form-control" />
+                }
+                else
+                {
+                    @Html.HiddenFor( x => x.ImageRelativePath )
+                    @Html.TextBoxFor( x => x.ImageRelativePath, new { disabled = "disabled" } )
+                    <a onclick="AddUploadFileControl('Image', '@GlobalLocalization.Admin_Global_ChooseImage')">@GlobalLocalization.Admin_Global_ChangeImage</a>
+                }
+            </div>
+        </div>
+
+
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@GlobalLocalization.Admin_Global_Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink( GlobalLocalization.Admin_Global_BackToList, "GetAllNews" )
+</div>

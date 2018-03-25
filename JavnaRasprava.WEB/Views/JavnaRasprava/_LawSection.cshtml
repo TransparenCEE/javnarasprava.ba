@@ -1,0 +1,17 @@
+﻿@model JavnaRasprava.WEB.Models.LawSectionModel
+<li class="list-group-item clearfix">
+    <p></p>
+    <div class="col-md-6">
+        <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetLawSectionImage( Model.ImageRelativePath )" class="img-responsive">
+        <h4><strong>@Model.LawSection.Title</strong></h4>
+        <p>@Model.LawSection.Text</p>
+
+    </div>
+    <div id="sectionVotingDetails_@Model.LawSection.LawSectionID">
+        @Html.Partial( "_SectionVotingDetails", Model )
+    </div>
+
+    <div id="lawSection_@Model.LawSection.LawSectionID"></div>
+    <div class="clearfix"></div>
+    <br>
+</li>

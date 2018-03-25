@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <parameter name="Database ConnectionString"
+   description="Please provide the database connection string for DefaultConnection."
+   defaultValue="__Database.ConnectionString__"
+   tags="">
+    <parameterEntry
+      kind="XmlFile"
+      scope="obj\\Debug\\Package\\PackageTmp\\Web\.config$"
+      match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  
+</parameters>

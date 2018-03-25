@@ -1,0 +1,37 @@
+﻿@model JavnaRasprava.WEB.Models.Parliament.ParliamentEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Parliament_Delete_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>@GlobalLocalization.Admin_Parliament_Delete_Heading</h3>
+<div>
+    
+    <fieldset>
+        <legend>
+            @GlobalLocalization.Admin_Parliament_Details_PageTitle
+        </legend>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor( model => model.Name )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Name )
+            </dd>
+            
+        </dl>
+    </fieldset>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@GlobalLocalization.Admin_Global_Delete" class="btn btn-default" /> |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "ManageParliament")
+        </div>
+    }
+</div>

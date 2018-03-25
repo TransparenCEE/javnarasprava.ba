@@ -1,0 +1,47 @@
+﻿@model JavnaRasprava.WEB.Models.Law.CustomVoteEditModel
+
+<div id="divCustomVote_@Model.LawCustomVoteID">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Text) Tekst
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Text )
+        </dd>
+        <dt>
+            +/-
+        </dt>
+
+        <dd>
+            @if ( Model.Vote.HasValue )
+            {
+                if ( Model.Vote.Value )
+                {
+                    <p>@GlobalLocalization.Global_Positive</p>
+                }
+                else
+                {
+                    <p>@GlobalLocalization.Global_Negative</p>
+                }
+            }
+            else
+            {
+                if ( !Model.AdminIgnore )
+                {
+                    <p style="color:red">@GlobalLocalization.Admin_CustomVoteDetail_VoteTypeNotSet</p>
+                }
+                else
+                {
+                    <p>@GlobalLocalization.Admin_CustomVoteDetail_VoteTypeIgnore</p>
+                }
+            }
+        </dd>
+        <dd>
+            @Ajax.ActionLink(@GlobalLocalization.Admin_Global_Delete ,     "DeleteLawCustomVote", new { customVoteId = Model.LawCustomVoteID }, new AjaxOptions { OnSuccess = "DeleteCustomVote", HttpMethod = "Post", Confirm = GlobalLocalization.Global_AreYouSureToDelete } ) |
+            @Html.ActionLink(@GlobalLocalization.Admin_Global_Edit,   "EditLawCustomVote", new { customVoteId = Model.LawCustomVoteID } )
+        </dd>
+    </dl>
+  
+
+</div>

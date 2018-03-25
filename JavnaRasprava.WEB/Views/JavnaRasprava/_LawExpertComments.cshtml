@@ -1,0 +1,18 @@
+﻿@model ICollection<JavnaRasprava.WEB.DomainModels.ExpertComment>
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <strong>@GlobalLocalization.JavnaRasprava_ExpertComments_BoxTitle</strong>
+    </div>
+    <div class="panel-body">
+
+    @foreach ( var comment in Model )
+    {
+        <blockquote>
+            <p>@Html.Raw(comment.Text)</p>
+            <footer>@comment.Expert.FirstName @comment.Expert.LastName, <cite title="Source Title">@comment.Expert.About</cite></footer>
+        </blockquote>
+    }
+</div>
+</div>

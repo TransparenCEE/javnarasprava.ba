@@ -1,0 +1,95 @@
+﻿@model JavnaRasprava.WEB.Models.VotingResultsModel
+
+<div>
+    <div class="col-md-12">
+        <h3>@GlobalLocalization.JavnaRasprava_ResultsFilter_Heading:</h3>
+    </div>
+
+    <div class="clearfix">
+        @using ( Ajax.BeginForm( actionName: Model.ActionName, routeValues: null, ajaxOptions: new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "votingDetailsBody", InsertionMode = InsertionMode.Replace } ) )
+        {
+            <div class="pull-left col-md-7">
+                @Html.HiddenFor( m => m.ID )
+                @Html.EnumDropDownListFor( m => m.Age, GlobalLocalization.Global_Search_Age_ValuePlaceHolder, htmlAttributes: new { @class = "modal-dropdown-list" } )
+                <br>
+                @Html.EnumDropDownListFor( m => m.Education, GlobalLocalization.Global_Search_Education_ValuePlaceHolder, htmlAttributes: new { @class = "modal-dropdown-list" } )
+                <br>
+                @Html.DropDownListFor( m => m.LocationID, Model.Locations, GlobalLocalization.Global_Search_Location_ValuePlaceHolder, htmlAttributes: new { @class = "modal-dropdown-list" } )
+                <br>
+                @Html.DropDownListFor( m => m.PartyID, Model.Parties, GlobalLocalization.Global_Search_Party_ValuePlaceHolder, htmlAttributes: new { @class = "modal-dropdown-list" } )
+            </div>
+            
+            <div class="col-md-5">
+            <span class="label label-success label">@GlobalLocalization.Global_VoteUp: @Model.VotesUp</span>
+            <span class="label label-danger label">@GlobalLocalization.Global_VoteDown: @Model.VotesDown</span>
+            <br>
+            <br>
+            <input class="btn btn-sm btn-default btn-block" type="submit" value="@GlobalLocalization.Global_Search_FilterData_Button" />
+            </div>
+
+        }
+    </div>
+
+    <br>
+
+    @if ( Model.VotesDown != 0 || Model.VotesUp != 0 )
+    {
+        <div class="clearfix col-md-12">
+            <div class="progress">
+                @if ( Model.VotesUpPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-success" style="width: @Model.VotesUpPercentage%" aria-valuenow=@Model.VotesUpPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesUpPercentage%
+                    </div>
+                }
+                @if ( Model.VotesDownPercentage != 0 )
+                {
+                    <div class="progress-bar progress-bar-danger" style="width: @Model.VotesDownPercentage%" aria-valuenow=@Model.VotesDownPercentage aria-valuemin="0" aria-valuemax="100">
+                        @Model.VotesDownPercentage%
+                    </div>
+                }
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+            0%
+        </div>
+    }
+    
+
+</div>
+<div class="col-md-12">
+    <table class="table">
+        <tr>
+            <th>
+                @GlobalLocalization.JavnaRasprava_CustomAnswersDistribution_Heading	
+            </th>
+            <td><span class="glyphicon glyphicon-user"></span></td>
+            <td></td>
+        </tr>
+        @foreach ( var item in Model.CustomResultsDistribution )
+        {
+        <tr>
+            <td>
+                <i>@item.Text</i>
+            </td>
+            <td>
+                @item.Count
+            </td>
+            <td style="width:100px">
+                @if ( item.Vote.HasValue )
+                {
+                    var className = item.Vote.Value ? "progress-bar-success" : "progress-bar-danger";
+                    <div class="progress-bar @className" style="width: @item.Percent%" aria-valuenow=@item.Percent aria-valuemin="0" aria-valuemax="100">
+                        @item.Percent%
+                    </div>
+                }
+            </td>
+        </tr>
+        }
+    </table>
+</div>
+<div class="clearfix"></div>

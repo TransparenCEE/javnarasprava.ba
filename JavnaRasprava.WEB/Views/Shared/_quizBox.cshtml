@@ -1,0 +1,22 @@
+﻿@model JavnaRasprava.WEB.Models.Quiz.QuizSummaryModel
+
+<div class="col-sm-3 col-md-3 space-bottom-lg">
+    @if ( !String.IsNullOrWhiteSpace( Model.ImageRelativePath ) )
+    {
+        <div class="img-container-4x3">
+            <a href='@Url.Action( "Take", "Quiz", new { id = Model.QuizId })' target="_blank">
+                <img src='@Url.Content( @JavnaRasprava.WEB.Infrastructure.ImageHelper.GetQuizImage( Model.ImageRelativePath ) )' class="img-responsive" />
+            </a>
+        </div>
+    }
+    <div class="theme-stats">
+        <p class="nadnaslov"><i class="fa fa-question-circle"></i> @GlobalLocalization.Global_Quiz</p>
+        <h4>@Html.ActionLink( Model.Title, "Take", "Quiz", new { id = Model.QuizId }, null )</h4>
+        <span>@Model.Description</span>
+    </div>
+
+
+
+
+</div>
+

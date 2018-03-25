@@ -1,0 +1,83 @@
+﻿@model JavnaRasprava.WEB.Models.PetitionModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Petition_Details_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <fieldset>
+        <legend>@GlobalLocalization.Admin_Petition_Details_PageTitle</legend>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor( model => model.Title )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Title )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.Description )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Description )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.TargetInstitution )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.TargetInstitution )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.SubmitterName )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.SubmitterName )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.AdminIgnore )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.AdminIgnore )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.YoutubeCode )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.YoutubeCode )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.Verified )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Verified )
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor( model => model.Signatures )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor( model => model.Signatures )
+            </dd>
+        </dl>
+    </fieldset>
+
+</div>
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditPetition", new { petitionId = Model.PetitionID }) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "DeletePetition", new { petitionId = Model.PetitionID }) |
+    @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "ManagePetitions")
+</p>

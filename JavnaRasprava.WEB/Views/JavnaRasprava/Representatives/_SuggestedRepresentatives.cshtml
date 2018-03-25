@@ -1,0 +1,51 @@
+﻿@model LawModel
+<div class="panel panel-default">
+    <div class="panel-heading">@GlobalLocalization.JavnaRasprava_AskRepresentatives_BoxTitle</div>
+    <div class="panel-body">
+        @foreach ( var representative in Model.Law.LawRepresentativeAssociations )
+        {
+            <div class="representative thumbnail" onclick="OpenAskRepresentativesModal('@User.Identity.IsAuthenticated', @Model.Law.LawID, @representative.RepresentativeID)" style="cursor: pointer">
+                <div class="col-xs-4 col-sm-2 no-padding">
+                    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( representative.Representative.ImageRelativePath )" class="img-responsive">
+                </div>
+                <div class="col-xs-8 col-sm-9 no-padding">
+                    <div class="representative-info">
+                        <strong>@representative.Representative.DisplayName</strong>
+                        <br>
+                        @representative.Representative.Party.Name
+                        <br>
+                        @representative.Reason
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="ask-representative">
+            <a class="btn btn-block btn-primary" onclick="OpenAskRepresentativesModal('@User.Identity.IsAuthenticated', @Model.Law.LawID)">
+                @GlobalLocalization.JavnaRasprava_OpenAskRepresentativeModal_Button
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="representativesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@GlobalLocalization.Global_Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@GlobalLocalization.JavnaRasprava_AskRepresentatives_BoxTitle</h4>
+            </div>
+            <div class="modal-body" id="representatives">
+                @if ( !User.Identity.IsAuthenticated )
+                {
+                    <i>@GlobalLocalization.JavnaRasprava_AskRepresentativesWarningText 
+                            @Html.ActionLink( GlobalLocalization.Global_ToRegister, "Register", "Account", 
+                                 routeValues: new { returnUrl = "/JavnaRasprava/LawDetails?lawId=" + Model.Law.LawID }, htmlAttributes: null ) /
+                            @Html.ActionLink( GlobalLocalization.Global_ToLogIn, "Login", "Account", routeValues: new { returnUrl = "/JavnaRasprava/LawDetails?lawId=" + Model.Law.LawID }, htmlAttributes: null ).</i>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="representativesModalFooterButton">@GlobalLocalization.Global_Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

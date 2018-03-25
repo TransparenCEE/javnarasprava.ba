@@ -1,0 +1,8 @@
+﻿@model JavnaRasprava.WEB.DomainModels.Representative
+
+<a href="#">
+    <img src="@JavnaRasprava.WEB.Infrastructure.ImageHelper.GetRepresentativeImage( Model.ImageRelativePath )" style="max-width: 100px; height:auto;">
+</a>
+@Html.DisplayFor( model => model.FirstName )
+@Html.DisplayFor( model => model.LastName )
+@Html.DisplayFor( model => model.Party.Name )

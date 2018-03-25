@@ -1,0 +1,12 @@
+﻿@model List<JavnaRasprava.WEB.DomainModels.Parliament>
+
+<div class="row">
+    @foreach (var parliament in Model)
+    {
+        <div class="@ViewBag.DivClass sveto-trojstvo" role="presentation">
+            @Html.ActionLink(parliament.Name, "SelectParliament", "Parliament",
+    new { parId = parliament.ParliamentID, home = ViewBag.ReturnUrl },
+    new { @class = JavnaRasprava.WEB.Infrastructure.SessionManager.Current.CurrentParliamentId == parliament.ParliamentID ? "parliament active paper" : "psbih" })
+        </div>
+    }
+</div>

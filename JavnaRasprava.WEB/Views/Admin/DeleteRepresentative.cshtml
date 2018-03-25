@@ -1,0 +1,43 @@
+﻿@model JavnaRasprava.WEB.Models.RepresentativeEditModel
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Rep_Delete_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>@GlobalLocalization.Admin_Rep_Delete_Heading</h3>
+<div>
+    <dl class="dl-horizontal">
+
+        @Html.HiddenFor( model => model.RepresentativeID )
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.FirstName )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.LastName )
+        </dd>        
+
+    </dl>
+
+    @using ( Html.BeginForm() )
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@GlobalLocalization.Admin_Global_Delete" class="btn btn-default" /> |
+            @Html.ActionLink(GlobalLocalization.Admin_Global_BackToList, "RepresentativeDetails", new { repId = Model.RepresentativeID } )
+        </div>
+    }
+</div>

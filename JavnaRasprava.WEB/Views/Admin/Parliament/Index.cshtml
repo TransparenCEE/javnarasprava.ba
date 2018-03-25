@@ -1,0 +1,35 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.Models.Parliament.ParliamentEditModel>
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Parliament_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Parliament_Index_PageTitle</h3>
+
+<p>
+    @Html.ActionLink( GlobalLocalization.Admin_Parliament_CreateNew, "CreateParliament" )
+</p>
+<table class="table">
+    <tr>
+        <th class="col-md-6">
+            @Html.DisplayNameFor( model => model.Name )
+        </th>
+        <th class="col-md-2"></th>
+    </tr>
+
+    @foreach ( var item in Model )
+    {
+        <tr>
+            <td class="col-md-6">
+                @Html.DisplayFor( modelItem => item.Name )
+            </td>
+            <td class="col-md-2">
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Edit, "EditParliament", new { id = item.ParliamentID }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Details, "ParliamentDetails", new { id = item.ParliamentID }) |
+                @Html.ActionLink(GlobalLocalization.Admin_Global_Delete, "DeleteParliament", new { id = item.ParliamentID })
+            </td>
+        </tr>
+    }
+
+</table>

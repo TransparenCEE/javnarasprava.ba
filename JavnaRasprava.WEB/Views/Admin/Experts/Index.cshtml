@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JavnaRasprava.WEB.DomainModels.Expert>
+
+@{
+    ViewBag.Title = GlobalLocalization.Admin_Expert_Index_PageTitle;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>@GlobalLocalization.Admin_Expert_Index_PageTitle</h3>
+
+<p>
+    @Html.ActionLink(GlobalLocalization.Admin_Expert_CreateNew, "ExpertCreate", "Admin")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th class="col-md-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th class="col-md-4">
+            @Html.DisplayNameFor(model => model.About)
+        </th>
+        <th class="col-md-2"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="col-md-2">
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td class="col-md-2">
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td class="col-md-4">
+            @Html.DisplayFor(modelItem => item.About)
+        </td>
+        <td class="col-md-2 text-right">
+            @Html.ActionLink("Izmjeni", "ExpertEdit", "Admin", new { id=item.ExpertID }, null) |
+            @Html.ActionLink("Detalji", "ExpertDetails", "Admin", new { id=item.ExpertID }, null ) |
+            @Html.ActionLink("Izbriši", "ExpertDelete", "Admin", new { id=item.ExpertID }, null )
+        </td>
+    </tr>
+}
+
+</table>
